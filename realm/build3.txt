@@ -1,0 +1,615 @@
+gojimmypi:/mnt/c/workspace/osp-gojimmypi/realm
+$ ./build_wolfssl_with_realm.sh
+USE_GIT=true
+FETCH_WOLFSSL=false
+CONFIGURE_WOLFSSL=false
+BUILD_WOLFSSL=
+Skipping wolfSSL source fetch
+Skipping wolfSSL configure
+Skipping wolfSSL build
+Skipping wolfSSL install
+Current dir to fetch realm-core: /mnt/c/workspace/osp-gojimmypi/realm
+Current dir 1: /mnt/c/workspace/osp-gojimmypi/realm
+Skipping git clone, found existing REALM_CORE_DIR=realm-core
+Current directory: /mnt/c/workspace/osp-gojimmypi/realm/realm-core
+git reset --hard HEAD
+HEAD is now at a5e87a39c core v13.26.0
+git checkout a5e87a39
+HEAD is now at a5e87a39c core v13.26.0
+git submodule update --init --recursive
+Current dir 2: /mnt/c/workspace/osp-gojimmypi/realm
+Current dir 3: /mnt/c/workspace/osp-gojimmypi/realm/realm-core
+Looking for path file realm-commit-a5e87a39.patch in /mnt/c/workspace/osp-gojimmypi/realm/realm-core
+Applying patch to realm-core: ../realm-commit-a5e87a39.patch
+Found BUILD_DIR: build
+Configuring realm-core to use local wolfSSL installation from /home/gojimmypi/wolfssl-install-dir...
+-- CMake version: 3.22.1
+Dependencies:  PACKAGE_NAME=realm-core VERSION=13.26.0 OPENSSL_VERSION=3.0.8 ZLIB_VERSION=1.2.13 BAAS_VERSION=5087ffd5a0e4975e625f0fbcceed23107f611055
+-- Using linker gold
+-- Could NOT find LibUV (missing: LibUV_LIBRARY LibUV_INCLUDE_DIR) (found version "")
+-- LibUV not found, building from source with FetchContent
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/workspace/osp-gojimmypi/realm/realm-core/build
+Building realm-core...
+Consolidate compiler generated dependencies of target s2geometry
+[  0%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s1angle.cc.o
+[  0%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2.cc.o
+[  0%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2cellid.cc.o
+[  0%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2latlng.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s1interval.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2cap.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2cell.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2cellunion.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2edgeindex.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2edgeutil.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2latlngrect.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2loop.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2pointregion.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2polygon.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2polygonbuilder.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2polyline.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2r2rect.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2region.cc.o
+[  3%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/util/math/mathutil.cc.o
+[  3%] Built target s2geometry
+Consolidate compiler generated dependencies of target Bid
+[  5%] Built target Bid
+Consolidate compiler generated dependencies of target Storage
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/query.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/array.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_with_find.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/alloc.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/alloc_slab.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_backlink.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_binary.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_blob.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_blobs_small.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_blobs_big.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_decimal128.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_fixed_bytes.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_integer.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_key.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_mixed.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_unsigned.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_string.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_string_short.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_timestamp.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/bplustree.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/chunked_binary.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/cluster.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/collection.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/cluster_tree.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/error_codes.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/column_binary.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/decimal128.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/dictionary.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/disable_sync_to_disk.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/exceptions.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/group.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/db.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/group_writer.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/history.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/impl/copy_replication.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/impl/output_stream.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/impl/simulated_failure.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/impl/transact_log.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/index_string.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/link_translator.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/list.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/node.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/mixed.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/obj.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/object_converter.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/global_key.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/query_engine.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/query_expression.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/query_value.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/replication.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/set.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/spec.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/string_data.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/table.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/table_ref.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/obj_list.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/object_id.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/table_view.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/tokenizer.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/transaction.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/sort_descriptor.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/status.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/unicode.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/utilities.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/uuid.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/version.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/backup_restore.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/interprocess_mutex.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/geospatial.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/backtrace.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/base64.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/basic_system_errors.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/compression.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/encrypted_file_mapping.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/fifo_helper.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/file.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/file_mapper.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/interprocess_condvar.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/logger.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/platform_info.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/misc_errors.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/serializer.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/sha_crypto.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/terminate.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/time.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/timestamp_formatter.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/timestamp_logger.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/thread.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/to_string.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/demangle.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/enum.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/json_parser.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/load_file.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/misc_ext_errors.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/resource_limits.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/uri.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/bson/bson.cpp.o
+[ 21%] Linking CXX static library librealm-dbg.a
+[ 21%] Built target Storage
+Consolidate compiler generated dependencies of target QueryParser
+[ 21%] Building CXX object src/realm/parser/CMakeFiles/QueryParser.dir/driver.cpp.o
+[ 21%] Building CXX object src/realm/parser/CMakeFiles/QueryParser.dir/keypath_mapping.cpp.o
+[ 21%] Building CXX object src/realm/parser/CMakeFiles/QueryParser.dir/generated/query_flex.cpp.o
+[ 21%] Building CXX object src/realm/parser/CMakeFiles/QueryParser.dir/generated/query_bison.cpp.o
+[ 22%] Linking CXX static library librealm-parser-dbg.a
+[ 22%] Built target QueryParser
+Consolidate compiler generated dependencies of target Sync
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/config.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/changeset_index.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_history_impl.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_impl_base.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_reset.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_reset_operation.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_reset_recovery.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/compact_changesets.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/migration_store.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/pending_bootstrap_store.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/protocol_codec.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/sync_metadata_schema.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/sync_schema_migration.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/changeset_encoder.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/changeset_parser.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/changeset.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/client.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/history.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/instruction_applier.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/instruction_replication.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/instructions.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/object_id.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/protocol.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/subscriptions.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/transform.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/default_socket.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/http.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/network.cpp.o
+[ 28%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/network_ssl.cpp.o
+[ 28%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/websocket.cpp.o
+[ 28%] Linking CXX static library librealm-sync-dbg.a
+[ 28%] Built target Sync
+Consolidate compiler generated dependencies of target ObjectStore
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/collection.cpp.o
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/collection_notifications.cpp.o
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/dictionary.cpp.o
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/index_set.cpp.o
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/list.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/class.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/object.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/object_changeset.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/object_schema.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/object_store.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/results.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/schema.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sectioned_results.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/set.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/shared_realm.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/thread_safe_reference.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/collection_change_builder.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/collection_notifier.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/deep_change_checker.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/list_notifier.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/object_notifier.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/realm_coordinator.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/results_notifier.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/transact_log_handler.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/weak_realm_notifier.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/util/scheduler.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/app.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/app_utils.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/app_credentials.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/generic_network_transport.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/async_open_task.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/sync_manager.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/sync_session.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/sync_user.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/mongo_client.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/mongo_collection.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/mongo_database.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/push_client.cpp.o
+[ 34%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/impl/sync_file.cpp.o
+[ 34%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/impl/sync_metadata.cpp.o
+[ 34%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/epoll/external_commit_helper.cpp.o
+[ 34%] Linking CXX static library librealm-object-store-dbg.a
+[ 34%] Built target ObjectStore
+Consolidate compiler generated dependencies of target RealmFFIStatic
+[ 34%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/config.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/dictionary.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/error.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/logging.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/notifications.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/object.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/list.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/query.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/realm.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/scheduler.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/schema.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/set.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/util.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/app.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/http.cpp.o
+[ 38%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/sync.cpp.o
+[ 38%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/socket_provider.cpp.o
+[ 38%] Linking CXX static library librealm-ffi-static-dbg.a
+[ 38%] Built target RealmFFIStatic
+Consolidate compiler generated dependencies of target InspectorInspectClientRealm
+[ 38%] Building CXX object src/realm/sync/tools/CMakeFiles/InspectorInspectClientRealm.dir/inspect_client_realm.cpp.o
+[ 38%] Linking CXX executable realm-inspect-client-realm-dbg
+[ 38%] Built target InspectorInspectClientRealm
+Consolidate compiler generated dependencies of target InspectorPrintChangeset
+[ 39%] Building CXX object src/realm/sync/tools/CMakeFiles/InspectorPrintChangeset.dir/print_changeset.cpp.o
+[ 39%] Linking CXX executable realm-print-changeset-dbg
+[ 39%] Built target InspectorPrintChangeset
+Consolidate compiler generated dependencies of target ApplyToStateCommand
+[ 39%] Building CXX object src/realm/sync/tools/CMakeFiles/ApplyToStateCommand.dir/apply_to_state_command.cpp.o
+[ 39%] Linking CXX executable realm-apply-to-state-dbg
+[ 39%] Built target ApplyToStateCommand
+Consolidate compiler generated dependencies of target HistCommand
+[ 39%] Building CXX object src/realm/sync/tools/CMakeFiles/HistCommand.dir/hist_command.cpp.o
+[ 39%] Linking CXX executable realm-hist-dbg
+[ 39%] Built target HistCommand
+Consolidate compiler generated dependencies of target RealmImporter
+[ 39%] Building CXX object src/realm/exec/CMakeFiles/RealmImporter.dir/importer_tool.cpp.o
+[ 39%] Building CXX object src/realm/exec/CMakeFiles/RealmImporter.dir/importer.cpp.o
+[ 39%] Linking CXX executable realm-importer-dbg
+[ 39%] Built target RealmImporter
+Consolidate compiler generated dependencies of target RealmDaemon
+[ 39%] Building CXX object src/realm/exec/CMakeFiles/RealmDaemon.dir/realmd.cpp.o
+[ 39%] Linking CXX executable realmd-dbg
+[ 39%] Built target RealmDaemon
+Consolidate compiler generated dependencies of target RealmTrawler
+[ 39%] Building CXX object src/realm/exec/CMakeFiles/RealmTrawler.dir/realm_trawler.cpp.o
+[ 40%] Linking CXX executable realm-trawler-dbg
+[ 40%] Built target RealmTrawler
+Consolidate compiler generated dependencies of target RealmDecrypt
+[ 41%] Building CXX object src/realm/exec/CMakeFiles/RealmDecrypt.dir/realm_decrypt.cpp.o
+[ 41%] Linking CXX executable realm-decrypt-dbg
+[ 41%] Built target RealmDecrypt
+Consolidate compiler generated dependencies of target RealmEncrypt
+[ 41%] Building CXX object src/realm/exec/CMakeFiles/RealmEncrypt.dir/realm_encrypt.cpp.o
+[ 41%] Linking CXX executable realm-encrypt-dbg
+[ 41%] Built target RealmEncrypt
+Consolidate compiler generated dependencies of target RealmBrowser
+[ 41%] Building CXX object src/realm/exec/CMakeFiles/RealmBrowser.dir/realm_browser.cpp.o
+[ 41%] Linking CXX executable realm-browser-10-dbg
+[ 41%] Built target RealmBrowser
+Consolidate compiler generated dependencies of target Realm2JSON
+[ 41%] Building CXX object src/realm/exec/CMakeFiles/Realm2JSON.dir/realm2json.cpp.o
+[ 41%] Linking CXX executable realm2json-dbg
+[ 41%] Built target Realm2JSON
+Consolidate compiler generated dependencies of target RealmDump
+[ 41%] Built target RealmDump
+Consolidate compiler generated dependencies of target CoreTestLib
+[ 41%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_query.cpp.o
+[ 41%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_query2.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_query_big.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_table.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_lang_bind_helper.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_parser.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_alloc.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_blob.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_blobs_big.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_blobs_small.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_float.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_integer.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_mixed.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_string_short.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_binary_data.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_bplus_tree.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_column.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_column_float.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_column_string.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_column_timestamp.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_compaction.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_db.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_decimal128.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_destroy_guard.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_dictionary.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_file.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_file_locks.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_global_key.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_group.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_impl_simulated_failure.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_index_string.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_json.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_link_query_view.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_links.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_mixed_null_assertions.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_object_id.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_optional.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_priority_queue.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_replication.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_safe_int_ops.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_self.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_set.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_shared.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_status.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_string_data.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_table_view.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_thread.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_transactions.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_transactions_lasse.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_typed_links.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_unresolved_links.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_upgrade_database.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_utf8.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_any.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_backtrace.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_base64.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_chunked_binary.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_cli_args.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_compression.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_error.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_file.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_fixed_size_buffer.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_flat_map.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_from_chars.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_functional.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_future.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_logger.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_memory_stream.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_overload.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_scope_exit.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_to_string.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_uuid.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_encrypted_file_mapping.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_query_geo.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/large_tests/test_column_large.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/large_tests/test_strings.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/fuzz_group.cpp.o
+[ 53%] Built target CoreTestLib
+Consolidate compiler generated dependencies of target TestUtil
+[ 53%] Building CXX object test/util/CMakeFiles/TestUtil.dir/benchmark_results.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/crypt_key.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/demangle.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/random.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/resource_limits.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/spawned_process.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/test_only.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/test_path.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/timer.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/unit_test.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/verified_integer.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/verified_string.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/wildcard.cpp.o
+[ 57%] Building CXX object test/util/CMakeFiles/TestUtil.dir/compare_groups.cpp.o
+[ 57%] Building CXX object test/util/CMakeFiles/TestUtil.dir/dump_changesets.cpp.o
+[ 57%] Linking CXX static library libTestUtil-dbg.a
+[ 57%] Built target TestUtil
+Consolidate compiler generated dependencies of target CoreTests
+[ 58%] Building CXX object test/CMakeFiles/CoreTests.dir/main.cpp.o
+[ 58%] Building CXX object test/CMakeFiles/CoreTests.dir/test_all.cpp.o
+[ 58%] Linking CXX executable realm-tests
+[ 58%] Built target CoreTests
+Consolidate compiler generated dependencies of target SyncServer
+[ 58%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/access_control.cpp.o
+[ 58%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/access_token.cpp.o
+[ 58%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/server.cpp.o
+[ 58%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/server_dir.cpp.o
+[ 59%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/server_file_access_cache.cpp.o
+[ 59%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/server_history.cpp.o
+[ 59%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/crypto_server_openssl.cpp.o
+[ 59%] Linking CXX static library librealm-server-dbg.a
+[ 59%] Built target SyncServer
+Consolidate compiler generated dependencies of target SyncTestLib
+[ 59%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_array_sync.cpp.o
+[ 59%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_changeset_encoding.cpp.o
+[ 59%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_client_reset.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_compact_changesets.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_crypto.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_embedded_objects.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_instruction_replication.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_lang_bind_helper_sync.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_noinst_server_dir.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_stable_ids.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_auth.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_history_migration.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_protocol_codec.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_subscriptions.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_pending_bootstraps.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_error_backoff.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_transform.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_buffer_stream.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_circular_buffer.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_http.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_json_parser.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_network.cpp.o
+[ 64%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_network_ssl.cpp.o
+[ 64%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_uri.cpp.o
+[ 64%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_websocket.cpp.o
+[ 64%] Built target SyncTestLib
+Consolidate compiler generated dependencies of target SyncTests
+[ 64%] Building CXX object test/CMakeFiles/SyncTests.dir/main.cpp.o
+[ 64%] Building CXX object test/CMakeFiles/SyncTests.dir/test_all.cpp.o
+[ 64%] Linking CXX executable realm-sync-tests
+[ 64%] Built target SyncTests
+Consolidate compiler generated dependencies of target uv_a
+[ 70%] Built target uv_a
+Consolidate compiler generated dependencies of target Catch2
+[ 87%] Built target Catch2
+Consolidate compiler generated dependencies of target ObjectStoreTestLib
+[ 87%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/set.cpp.o
+[ 87%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/backup.cpp.o
+[ 87%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/collection_change_indices.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/dictionary.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/frozen_objects.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/list.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/migrations.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/object.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/object_store.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/primitive_list.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/realm.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/results.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/schema.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sectioned_results.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/test_runner.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/thread_safe_reference.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/transaction_log_parsing.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/c_api/c_api.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/event_loop.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/test_file.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/test_utils.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/geospatial.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/bson.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/app.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/client_reset.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/file.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/flx_migration.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/metadata.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/migration_store_test.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/remote_mongo_tests.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/session/connection_change_notifications.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/session/progress_notifications.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/session/session.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/session/wait_for_completion.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/sync_manager.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/user.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/sync/sync_test_utils.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/unit_test_transport.cpp.o
+[ 94%] Built target ObjectStoreTestLib
+Consolidate compiler generated dependencies of target CombinedTests
+[ 94%] Building CXX object test/CMakeFiles/CombinedTests.dir/combined_tests.cpp.o
+[ 94%] Building CXX object test/CMakeFiles/CombinedTests.dir/test_all.cpp.o
+[ 94%] Linking CXX executable realm-combined-tests
+[ 94%] Built target CombinedTests
+Consolidate compiler generated dependencies of target ObjectStoreTests
+[ 95%] Linking CXX executable realm-object-store-tests
+[ 95%] Built target ObjectStoreTests
+Consolidate compiler generated dependencies of target object-store-benchmarks
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/main.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/object.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/results.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/__/util/event_loop.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/__/util/test_file.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/__/util/test_utils.cpp.o
+[ 97%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/__/util/sync/sync_test_utils.cpp.o
+[ 97%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/client_reset.cpp.o
+[ 97%] Linking CXX executable object-store-benchmarks
+[ 97%] Built target object-store-benchmarks
+Consolidate compiler generated dependencies of target fuzz-group
+[ 97%] Building CXX object test/fuzzy/CMakeFiles/fuzz-group.dir/afl.cpp.o
+[ 97%] Building CXX object test/fuzzy/CMakeFiles/fuzz-group.dir/__/fuzz_group.cpp.o
+[ 97%] Linking CXX executable fuzz-group
+[ 97%] Built target fuzz-group
+Consolidate compiler generated dependencies of target realm-afl++
+[ 97%] Building CXX object test/realm-fuzzer/CMakeFiles/realm-afl++.dir/fuzz_engine.cpp.o
+[ 97%] Building CXX object test/realm-fuzzer/CMakeFiles/realm-afl++.dir/fuzz_object.cpp.o
+[ 97%] Building CXX object test/realm-fuzzer/CMakeFiles/realm-afl++.dir/fuzz_configurator.cpp.o
+[ 98%] Linking CXX executable realm-afl++
+[ 98%] Built target realm-afl++
+Consolidate compiler generated dependencies of target realm-benchmark-common-tasks
+[ 98%] Building CXX object test/benchmark-common-tasks/CMakeFiles/realm-benchmark-common-tasks.dir/main.cpp.o
+[ 98%] Linking CXX executable realm-benchmark-common-tasks
+[ 98%] Built target realm-benchmark-common-tasks
+Consolidate compiler generated dependencies of target realm-benchmark-crud
+[ 98%] Building CXX object test/benchmark-crud/CMakeFiles/realm-benchmark-crud.dir/main.cpp.o
+[ 98%] Linking CXX executable realm-benchmark-crud
+[ 98%] Built target realm-benchmark-crud
+Consolidate compiler generated dependencies of target realm-benchmark-sync
+[100%] Building CXX object test/benchmark-sync/CMakeFiles/realm-benchmark-sync.dir/bench_transform.cpp.o
+[100%] Building CXX object test/benchmark-sync/CMakeFiles/realm-benchmark-sync.dir/__/test_all.cpp.o
+[100%] Linking CXX executable realm-benchmark-sync
+[100%] Built target realm-benchmark-sync
+Running the test: build/test/realm-tests
+
+Realm version: 13.26.0 with Debug Enabled
+Platform: Linux Linux 4.4.0-22621-Microsoft #3672-Microsoft Fri Jan 01 08:00:00 PST 2016 x86_64
+Encryption: Enabled at compile-time (always encrypt = no)
+
+REALM_MAX_BPNODE_SIZE = 1000
+REALM_MEMDEBUG = Disabled
+
+sizeof (size_t) * 8 = 64
+
+Compiler supported SSE (auto detect):       Yes
+This CPU supports SSE (auto detect):        4.2
+Compiler supported AVX (auto detect):       Yes
+This CPU supports AVX (AVX1) (auto detect): Yes
+
+UNITTEST_RANDOM_SEED:                       1483191288
+Test path prefix:                           /mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/test
+Test resource path:                         /mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/test/resources/
+
+Number of test threads: 20 (default)
+(Use UNITTEST_THREADS=1 to serialize testing)
+
+   insertion time: 8074 ns/key
+   lookup time: 3477 ns/key
+Establishing scenario seq ins/rnd erase
+  compaction time: 7 ms
+Scenario has 100000 rows. Timing....
+   lookup obj    : 517 ns/key
+   lookup field  : 613 ns/key
+   lookup same   : 689 ns/key
+Normal: 310180 us
+Compacting: 197770 us
+1000 repetitions in Query_IntPerformance
+    time equal: 74912 ns/rep
+    time not_equal: 64960 ns/rep
+    time sum: 38989 ns/rep
+5000 BPlusTree - sequential
+   insertion time: 377 ns/row
+   lookup time   : 67 ns/row
+1000 values in dictionary
+    insertion: 4098 ns/val
+    lookup: 2884 ns/val
+100000 rows - sequential
+   insertion time: 1928 ns/key
+  compaction time: 13 ms
+   lookup obj    : 744 ns/key
+   lookup field  : 1033 ns/key
+   lookup same   : 908 ns/key
+   update time   : 1872 ns/key
+   erase time    : 40713 ns/key
+100000 rows - random
+   insertion time: 2559 ns/key
+  compaction time: 5 ms
+   lookup obj    : 554 ns/key
+   lookup field  : 639 ns/key
+   lookup same   : 719 ns/key
+   update time   : 1280 ns/key
+   erase time    : 43801 ns/key
+1000 repetitions of find_all
+    time: 9229 ns/rep
+Success: All 1582 tests passed (119620165 checks).
+Test time: 55.11s
+
+Top 5 time usage:
+-------------------------------------------------------------
+Compaction_Large<std::integral_constant<bool,+true>>   23.53s
+Compaction_Large<std::integral_constant<bool,+false>>  18.64s
+Shared_ManyReaders                                     18.07s
+Many_ConcurrentReaders                                 17.63s
+Transactions_Threaded                                  14.56s
+
+gojimmypi:/mnt/c/workspace/osp-gojimmypi/realm
+$

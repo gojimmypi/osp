@@ -34,6 +34,15 @@ TEST_EXECUTABLE="$BUILD_DIR/test/realm-tests"
 WOLFSSL_INSTALL_DIR="$HOME/wolfssl-install-dir"
 USE_SYSTEM_INSTALL=false  # Change this to true if you want to use system-wide wolfSSL installation
 USE_GIT=true  # Default method is using git, set this to false to use curl for tarball
+FETCH_WOLFSSL=false
+CONFIGURE_WOLFSSL=false
+INSTALL_WOLFSSL=false
+FETCH_REALM_CORE=true
+
+echo "USE_GIT=$USE_GIT"
+echo "FETCH_WOLFSSL=$FETCH_WOLFSSL"
+echo "CONFIGURE_WOLFSSL=$CONFIGURE_WOLFSSL"
+echo "BUILD_WOLFSSL=$BUILD_WOLFSSL"
 
 # Patch file based on REALM_CORE_COMMIT or REALM_CORE_VERSION
 PATCH_FILE=""
@@ -51,99 +60,160 @@ while getopts ":t" opt; do
   esac
 done
 
-# Step 2: Download or clone wolfSSL
-if [ "$USE_GIT" = true ]; then
-    if [ ! -d "$WOLFSSL_DIR" ]; then
-        echo "Cloning the wolfSSL repository..."
-        git clone https://github.com/wolfSSL/wolfssl.git "$WOLFSSL_DIR"
-        cd "$WOLFSSL_DIR" || exit
-        echo "Checking out commit $WOLFSSL_COMMIT..."
-        git checkout "$WOLFSSL_COMMIT"
-    else
-        cd "$WOLFSSL_DIR" || exit
-        git fetch
-        echo "Checking out commit $WOLFSSL_COMMIT..."
-        git checkout "$WOLFSSL_COMMIT"
-    fi
-else
-    if [ ! -d "$WOLFSSL_DIR" ]; then
-        echo "Downloading wolfSSL..."
-        curl -L -O "$WOLFSSL_URL"
-        echo "Extracting wolfSSL..."
-        tar -xvf "$WOLFSSL_TAR"
+if [ "$FETCH_WOLFSSL" = true ]; then
+    # Step 2: Download or clone wolfSSL
+    if [ "$USE_GIT" = true ]; then
+        if [ ! -d "$WOLFSSL_DIR" ]; then
+            echo "Cloning the wolfSSL repository..."
+            git clone https://github.com/wolfSSL/wolfssl.git "$WOLFSSL_DIR"
+            cd "$WOLFSSL_DIR" || exit
 
-        EXTRACTED_WOLFSSL_DIR=$(tar -tzf "$WOLFSSL_TAR" | head -1 | cut -f1 -d"/")
-        if [ -d "$EXTRACTED_WOLFSSL_DIR" ]; then
-            mv "$EXTRACTED_WOLFSSL_DIR" "$WOLFSSL_DIR"
+
+            if [ -n "$WSL_DISTRO_NAME" ]; then
+                # Ignore file permissions changes in WSL
+                git config core.fileMode false
+            fi
+
+            echo "Checking out commit $WOLFSSL_COMMIT..."
+            git checkout "$WOLFSSL_COMMIT"
         else
-            echo "Error: Failed to extract or find the wolfSSL directory."
-            exit 1
+            cd "$WOLFSSL_DIR" || exit
+            git fetch
+            echo "Checking out commit $WOLFSSL_COMMIT..."
+            git checkout "$WOLFSSL_COMMIT"
+        fi
+        cd ..
+    else
+        if [ ! -d "$WOLFSSL_DIR" ]; then
+            echo "Downloading wolfSSL..."
+            curl -L -O "$WOLFSSL_URL"
+            echo "Extracting wolfSSL..."
+            tar -xvf "$WOLFSSL_TAR"
+
+            EXTRACTED_WOLFSSL_DIR=$(tar -tzf "$WOLFSSL_TAR" | head -1 | cut -f1 -d"/")
+            if [ -d "$EXTRACTED_WOLFSSL_DIR" ]; then
+                mv "$EXTRACTED_WOLFSSL_DIR" "$WOLFSSL_DIR"
+            else
+                echo "Error: Failed to extract or find the wolfSSL directory."
+                exit 1
+            fi
         fi
     fi
-    cd "$WOLFSSL_DIR" || exit
-fi
-
-# Step 3: Build and install wolfSSL
-if [ "$USE_SYSTEM_INSTALL" = true ]; then
-    echo "Configuring wolfSSL for system-wide installation..."
-    ./autogen.sh
-    ./configure --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data
 else
-    ./autogen.sh
-    echo "Configuring wolfSSL for local installation at $WOLFSSL_INSTALL_DIR..."
-    ./configure --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data --prefix="$WOLFSSL_INSTALL_DIR"
+    echo "Skipping wolfSSL source fetch"
 fi
 
-echo "Building and installing wolfSSL..."
-make -j$(nproc)
-make install
+if [ "$CONFIGURE_WOLFSSL" = true ]; then
+    cd "$WOLFSSL_DIR" || exit 1
+    # Step 3: Build and install wolfSSL
+    if [ "$USE_SYSTEM_INSTALL" = true ]; then
+        echo "Configuring wolfSSL for system-wide installation..."
+        ./autogen.sh
+        ./configure --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data
+    else
+        ./autogen.sh
+        echo "Configuring wolfSSL for local installation at $WOLFSSL_INSTALL_DIR..."
+        ./configure --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data --prefix="$WOLFSSL_INSTALL_DIR"
+    fi
+    cd ..
+else
+    echo "Skipping wolfSSL configure"
+fi
+
+if [ "$BUILD_WOLFSSL" = true ]; then
+    cd "$WOLFSSL_DIR" || exit 1
+    echo "Building and installing wolfSSL..."
+    make -j$(nproc)
+    cd ..
+else
+    echo "Skipping wolfSSL build"
+fi
+
+if [ "$INSTALL_WOLFSSL" = true ]; then
+    cd "$WOLFSSL_DIR" || exit
+    make install
+    cd ..
+else
+    echo "Skipping wolfSSL install"
+fi
 
 # Step 4: Download or clone realm-core
-cd ..
-if [ "$USE_GIT" = true ]; then
-    PATCH_FILE="realm-commit-${REALM_CORE_COMMIT}.patch"
-    if [ ! -d "$REALM_CORE_DIR" ]; then
-        echo "Cloning the realm-core repository..."
-        git clone https://github.com/realm/realm-core.git "$REALM_CORE_DIR"
-        cd "$REALM_CORE_DIR" || exit
-    else
-        cd "$REALM_CORE_DIR" || exit
-    fi
-    # Reset the branch before checking out the specific commit and applying patch
-    git reset --hard HEAD
-    git checkout "$REALM_CORE_COMMIT"
-    git submodule update --init --recursive
-else
-    PATCH_FILE="realm-${REALM_CORE_VERSION}.patch"
-    if [ ! -d "$REALM_CORE_DIR" ]; then
-        echo "Downloading realm-core..."
-        curl -L -O "$REALM_URL"
-        echo "Extracting realm-core..."
-        tar -xvf "$REALM_TAR"
+echo "Current dir to fetch realm-core: $(pwd)"
 
-        EXTRACTED_REALM_DIR=$(tar -tzf "$REALM_TAR" | head -1 | cut -f1 -d"/")
-        if [ -d "$EXTRACTED_REALM_DIR" ]; then
-            mv "$EXTRACTED_REALM_DIR" "$REALM_CORE_DIR"
+if [ "$FETCH_REALM_CORE" = true ]; then
+    echo "Current dir 1: $(pwd)"
+
+    if [ "$USE_GIT" = true ]; then
+        PATCH_FILE="realm-commit-${REALM_CORE_COMMIT}.patch"
+        if [ ! -d "$REALM_CORE_DIR" ]; then
+            echo "Not found: REALM_CORE_DIR=$REALM_CORE_DIR"
+            echo "Cloning the realm-core repository..."
+            git clone https://github.com/realm/realm-core.git "$REALM_CORE_DIR"
+            if [ -n "$WSL_DISTRO_NAME" ]; then
+                # Ignore file permissions changes in WSL
+                git config core.fileMode false
+            fi
+
+            cd "$REALM_CORE_DIR" || exit 1
         else
-            echo "Error: Failed to extract or find the realm-core directory."
-            exit 1
+            echo "Skipping git clone, found existing REALM_CORE_DIR=$REALM_CORE_DIR"
+            cd "$REALM_CORE_DIR" || exit 1
         fi
+        # Reset the branch before checking out the specific commit and applying patch
+        echo "Current directory: $(pwd)"
+        echo "git reset --hard HEAD"
+        git reset --hard HEAD || { echo "Failed to git reset"; exit 1; }
 
-        cd "$REALM_CORE_DIR" || exit
+        echo "git checkout $REALM_CORE_COMMIT"
+        git checkout "$REALM_CORE_COMMIT" || { echo "Failed to checkout commit $REALM_CORE_COMMIT"; exit 1; }
+
+        echo "git submodule update --init --recursive"
+        git submodule update --init --recursive
+        cd ..
     else
-        cd "$REALM_CORE_DIR" || exit
+        PATCH_FILE="../realm-${REALM_CORE_VERSION}.patch"
+        if [ ! -d "$REALM_CORE_DIR" ]; then
+            echo "Downloading realm-core..."
+            curl -L -O "$REALM_URL"
+            echo "Extracting realm-core..."
+            tar -xvf "$REALM_TAR"
+
+            EXTRACTED_REALM_DIR=$(tar -tzf "$REALM_TAR" | head -1 | cut -f1 -d"/")
+            if [ -d "$EXTRACTED_REALM_DIR" ]; then
+                mv "$EXTRACTED_REALM_DIR" "$REALM_CORE_DIR"
+            else
+                echo "Error: Failed to extract or find the realm-core directory."
+                exit 1
+            fi
+
+            cd "$REALM_CORE_DIR" || exit 1
+        else
+            cd "$REALM_CORE_DIR" || exit
+        fi
+        cd ..
     fi
+    echo "Current dir 2: $(pwd)"
+else
+    echo "Skipping fetch REALM_CORE source"
 fi
 
+cd "$REALM_CORE_DIR"
+echo "Current dir 3: $(pwd)"
 # Step 5: Apply patch if patch file exists for realm-core
-if [ -f "$PATCH_FILE" ]; then
-    echo "Applying patch to realm-core..."
-    git apply "$PATCH_FILE"
+echo "Looking for path file $PATCH_FILE in $(pwd)"
+if [ -f "../$PATCH_FILE" ]; then
+    echo "Applying patch to realm-core: ../$PATCH_FILE" || { echo "Failed to apply patch."; exit 1; }
+    git apply "../$PATCH_FILE"
+else
+    echo "No patch applied"
+    exit 1
 fi
 
 # Step 6: Build realm-core
 if [ ! -d "$BUILD_DIR" ]; then
     mkdir "$BUILD_DIR"
+else
+    echo "Found BUILD_DIR: $BUILD_DIR"
 fi
 
 if [ "$USE_SYSTEM_INSTALL" = true ]; then
