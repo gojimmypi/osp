@@ -1,0 +1,1638 @@
+gojimmypi:/mnt/c/workspace/osp-gojimmypi/realm
+$ ./build_wolfssl_with_realm.sh
+Cloning the wolfSSL repository...
+Cloning into 'wolfssl'...
+remote: Enumerating objects: 174736, done.
+remote: Counting objects: 100% (326/326), done.
+remote: Compressing objects: 100% (181/181), done.
+remote: Total 174736 (delta 165), reused 250 (delta 145), pack-reused 174410 (from 1)
+Receiving objects: 100% (174736/174736), 679.91 MiB | 2.71 MiB/s, done.
+Resolving deltas: 100% (129184/129184), done.
+Updating files: 100% (2900/2900), done.
+Checking out commit e814d1ba...
+Note: switching to 'e814d1ba'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at e814d1bae Merge pull request #8016 from SparkiDev/dilithium_draft_final_fix
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:22: installing 'build-aux/compile'
+configure.ac:24: installing 'build-aux/config.guess'
+configure.ac:24: installing 'build-aux/config.sub'
+configure.ac:28: installing 'build-aux/install-sh'
+configure.ac:28: installing 'build-aux/missing'
+Makefile.am: installing 'build-aux/depcomp'
+parallel-tests: installing 'build-aux/test-driver'
+Configuring wolfSSL for local installation at /home/gojimmypi/wolfssl-install-dir...
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports the include directive... yes (GNU style)
+checking whether make supports nested variables... yes
+checking whether UID '1000' is supported by ustar format... yes
+checking whether GID '1000' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking dependency style of gcc... gcc3
+checking whether make supports nested variables... (cached) yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... no, using cp -pR
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether the -Werror option is usable... yes
+checking for simple visibility declarations... yes
+checking size of long long... 8
+checking size of long... 8
+checking size of time_t... 8
+checking for __uint128_t... yes
+checking for arpa/inet.h... yes
+checking for fcntl.h... yes
+checking for limits.h... yes
+checking for netdb.h... yes
+checking for netinet/in.h... yes
+checking for stddef.h... yes
+checking for time.h... yes
+checking for sys/ioctl.h... yes
+checking for sys/socket.h... yes
+checking for sys/time.h... yes
+checking for errno.h... yes
+checking for sys/un.h... yes
+checking for socket in -lnetwork... no
+checking whether byte ordering is bigendian... no
+checking for __atomic... yes
+checking for stdatomic.h... yes
+checking for gethostbyname... yes
+checking for getaddrinfo... yes
+checking for gettimeofday... yes
+checking for gmtime_r... yes
+checking for gmtime_s... no
+checking for inet_ntoa... yes
+checking for memset... yes
+checking for socket... yes
+checking for strftime... yes
+checking for atexit... yes
+checking for gcc options needed to detect all undeclared functions... none needed
+checking whether gethostbyname is declared... yes
+checking whether getaddrinfo is declared... yes
+checking whether gettimeofday is declared... yes
+checking whether gmtime_r is declared... yes
+checking whether gmtime_s is declared... no
+checking whether inet_ntoa is declared... yes
+checking whether memset is declared... yes
+checking whether socket is declared... yes
+checking whether strftime is declared... yes
+checking whether atexit is declared... yes
+checking for size_t... yes
+checking for uint8_t... yes
+checking for uintptr_t... yes
+checking dependency style of gcc... gcc3
+checking for thread local storage (TLS) class... _Thread_local
+checking for debug... no
+checking how to run the C preprocessor... gcc -E
+checking whether gcc is Clang... no
+checking whether pthreads work with "-pthread" and "-lpthread"... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for openssl... yes
+checking for cos in -lm... yes
+checking for library containing gethostbyname... none required
+checking for library containing socket... none required
+checking for vcs system... git
+checking for vcs checkout... yes
+checking whether the linker accepts -Werror... yes
+checking whether the linker accepts -z relro -z now... yes
+checking whether the linker accepts -pie... yes
+checking whether C compiler accepts -Werror... yes
+checking whether C compiler accepts -Wno-pragmas... yes
+checking whether C compiler accepts -Wall... yes
+checking whether C compiler accepts -Wextra... yes
+checking whether C compiler accepts -Wunknown-pragmas... yes
+checking whether C compiler accepts -Wthis-test-should-fail... no
+checking whether C compiler accepts --param=ssp-buffer-size=1... yes
+checking whether C compiler accepts -Waddress... yes
+checking whether C compiler accepts -Warray-bounds... yes
+checking whether C compiler accepts -Wbad-function-cast... yes
+checking whether C compiler accepts -Wchar-subscripts... yes
+checking whether C compiler accepts -Wcomment... yes
+checking whether C compiler accepts -Wfloat-equal... yes
+checking whether C compiler accepts -Wformat-security... yes
+checking whether C compiler accepts -Wformat=2... yes
+checking whether C compiler accepts -Wmaybe-uninitialized... yes
+checking whether C compiler accepts -Wmissing-field-initializers... yes
+checking whether C compiler accepts -Wmissing-noreturn... yes
+checking whether C compiler accepts -Wmissing-prototypes... yes
+checking whether C compiler accepts -Wnested-externs... yes
+checking whether C compiler accepts -Wnormalized=id... yes
+checking whether C compiler accepts -Woverride-init... yes
+checking whether C compiler accepts -Wpointer-arith... yes
+checking whether C compiler accepts -Wpointer-sign... yes
+checking whether C compiler accepts -Wshadow... yes
+checking whether C compiler accepts -Wshorten-64-to-32... no
+checking whether C compiler accepts -Wsign-compare... yes
+checking whether C compiler accepts -Wstrict-overflow=1... yes
+checking whether C compiler accepts -Wstrict-prototypes... yes
+checking whether C compiler accepts -Wswitch-enum... yes
+checking whether C compiler accepts -Wundef... yes
+checking whether C compiler accepts -Wunused... yes
+checking whether C compiler accepts -Wunused-result... yes
+checking whether C compiler accepts -Wunused-variable... yes
+checking whether C compiler accepts -Wwrite-strings... yes
+checking whether C compiler accepts -fwrapv... yes
+creating wolfssl-config - generic 5.7.2 for -lwolfssl -lpthread
+checking the number of available CPUs... 20
+configure: adding automake macro support
+configure: creating aminclude.am
+configure: added jobserver support to make for 21 jobs
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating stamp-h
+config.status: creating Makefile
+config.status: creating wolfssl/version.h
+config.status: creating wolfssl/options.h
+config.status: creating support/wolfssl.pc
+config.status: creating debian/control
+config.status: creating debian/changelog
+config.status: creating rpm/spec
+config.status: creating wolfcrypt/test/test_paths.h
+config.status: creating scripts/unit.test
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing wolfssl/wolfcrypt/async.h commands
+config.status: executing wolfssl/wolfcrypt/fips.h commands
+config.status: executing wolfssl/wolfcrypt/port/cavium/cavium_nitrox.h commands
+config.status: executing wolfssl/wolfcrypt/port/intel/quickassist.h commands
+config.status: executing wolfssl/wolfcrypt/port/intel/quickassist_mem.h commands
+configure: ---
+configure: Running make clean...
+configure: ---
+configure: Generating user options header...
+checking for wolfssl/openssl/aes.h... yes
+checking for wolfssl/openssl/asn1.h... yes
+checking for wolfssl/openssl/asn1t.h... yes
+checking for wolfssl/openssl/bio.h... yes
+checking for wolfssl/openssl/bn.h... yes
+checking for wolfssl/openssl/buffer.h... yes
+checking for wolfssl/openssl/camellia.h... yes
+checking for wolfssl/openssl/cmac.h... yes
+checking for wolfssl/openssl/cms.h... yes
+checking for wolfssl/openssl/compat_types.h... yes
+checking for wolfssl/openssl/conf.h... yes
+checking for wolfssl/openssl/crypto.h... yes
+checking for wolfssl/openssl/des.h... yes
+checking for wolfssl/openssl/dh.h... yes
+checking for wolfssl/openssl/dsa.h... yes
+checking for wolfssl/openssl/ec.h... yes
+checking for wolfssl/openssl/ec25519.h... yes
+checking for wolfssl/openssl/ec448.h... yes
+checking for wolfssl/openssl/ecdh.h... yes
+checking for wolfssl/openssl/ecdsa.h... yes
+checking for wolfssl/openssl/ed25519.h... yes
+checking for wolfssl/openssl/ed448.h... yes
+checking for wolfssl/openssl/engine.h... yes
+checking for wolfssl/openssl/err.h... yes
+checking for wolfssl/openssl/evp.h... yes
+checking for wolfssl/openssl/fips_rand.h... yes
+checking for wolfssl/openssl/hmac.h... yes
+checking for wolfssl/openssl/kdf.h... yes
+checking for wolfssl/openssl/lhash.h... yes
+checking for wolfssl/openssl/md4.h... yes
+checking for wolfssl/openssl/md5.h... yes
+checking for wolfssl/openssl/modes.h... yes
+checking for wolfssl/openssl/obj_mac.h... yes
+checking for wolfssl/openssl/objects.h... yes
+checking for wolfssl/openssl/ocsp.h... yes
+checking for wolfssl/openssl/opensslconf.h... yes
+checking for wolfssl/openssl/opensslv.h... yes
+checking for wolfssl/openssl/ossl_typ.h... yes
+checking for wolfssl/openssl/pem.h... yes
+checking for wolfssl/openssl/pkcs12.h... yes
+checking for wolfssl/openssl/pkcs7.h... yes
+checking for wolfssl/openssl/rand.h... yes
+checking for wolfssl/openssl/rc4.h... yes
+checking for wolfssl/openssl/ripemd.h... yes
+checking for wolfssl/openssl/rsa.h... yes
+checking for wolfssl/openssl/safestack.h... yes
+checking for wolfssl/openssl/sha.h... yes
+checking for wolfssl/openssl/sha3.h... yes
+checking for wolfssl/openssl/srp.h... yes
+checking for wolfssl/openssl/ssl.h... yes
+checking for wolfssl/openssl/ssl23.h... yes
+checking for wolfssl/openssl/stack.h... yes
+checking for wolfssl/openssl/tls1.h... yes
+checking for wolfssl/openssl/txt_db.h... yes
+checking for wolfssl/openssl/ui.h... yes
+checking for wolfssl/openssl/x509.h... yes
+checking for wolfssl/openssl/x509_vfy.h... yes
+checking for wolfssl/openssl/x509v3.h... yes
+---
+Configuration summary for wolfssl version 5.7.2
+
+   * Installation prefix:        /home/gojimmypi/wolfssl-install-dir
+   * System type:                pc-linux-gnu
+   * Host CPU:                   x86_64
+   * C Compiler:                 gcc
+   * C Flags:                       -Werror -Wno-pragmas -Wall -Wextra -Wunknown-pragmas --param=ssp-buffer-size=1 -Waddress -Warray-bounds -Wbad-function-cast -Wchar-subscripts -Wcomment -Wfloat-equal -Wformat-security -Wformat=2 -Wmaybe-uninitialized -Wmissing-field-initializers -Wmissing-noreturn -Wmissing-prototypes -Wnested-externs -Wnormalized=id -Woverride-init -Wpointer-arith -Wpointer-sign -Wshadow -Wsign-compare -Wstrict-overflow=1 -Wstrict-prototypes -Wswitch-enum -Wundef -Wunused -Wunused-result -Wunused-variable -Wwrite-strings -fwrapv
+   * C++ Compiler:
+   * C++ Flags:
+   * CPP Flags:
+   * CCAS Flags:
+   * LD Flags:
+   * LIB Flags:                   -pie -z relro -z now -Werror
+   * Library Suffix:
+   * Debug enabled:              no
+   * Coverage enabled:
+   * Warnings as failure:        yes
+   * make -j:                    21
+   * VCS checkout:               yes
+
+   Features
+   * Experimental settings:      Forbidden
+   * FIPS:                       no
+   * Single threaded:            no
+   * Filesystem:                 yes
+   * OpenSSH Build:              no
+   * OpenSSL Extra API:          yes
+   * OpenSSL Coexist:            no
+   * Old Names:                  yes
+   * Max Strength Build:         no
+   * Distro Build:               no
+   * Reproducible Build:         no
+   * Side-channel Hardening:     yes
+   * Single Precision Math:      no
+   * SP implementation:          all
+   * Fast Math:                  no
+   * Heap Math:                  no
+   * Assembly Allowed:           yes
+   * sniffer:                    no
+   * snifftest:                  no
+   * ARC4:                       no
+   * AES:                        yes
+   * AES-NI:                     no
+   * AES-CBC:                    yes
+   * AES-CBC length checks:      no
+   * AES-GCM:                    yes
+   * AES-GCM streaming:          no
+   * AES-CCM:                    no
+   * AES-CTR:                    no
+   * AES-CFB:                    no
+   * AES-OFB:                    no
+   * AES-XTS:                    no
+   * AES-XTS streaming:          no
+   * AES-SIV:                    no
+   * AES-EAX:                    no
+   * AES Bitspliced:             no
+   * AES Key Wrap:               no
+   * ARIA:                       no
+   * DES3:                       no
+   * DES3 TLS Suites:            no
+   * Camellia:                   no
+   * CUDA:                       no
+   * SM4-ECB:                    no
+   * SM4-CBC:                    no
+   * SM4-CTR:                    no
+   * SM4-GCM:                    no
+   * SM4-CCM:                    no
+   * NULL Cipher:                no
+   * MD2:                        no
+   * MD4:                        no
+   * MD5:                        yes
+   * RIPEMD:                     no
+   * SHA:                        yes
+   * SHA-224:                    yes
+   * SHA-384:                    yes
+   * SHA-512:                    yes
+   * SHA3:                       yes
+   * SHAKE128:                   no
+   * SHAKE256:                   no
+   * SM3:                        no
+   * BLAKE2:                     no
+   * BLAKE2S:                    no
+   * SipHash:                    no
+   * CMAC:                       no
+   * keygen:                     no
+   * acert:                      no
+   * certgen:                    yes
+   * certreq:                    no
+   * certext:                    no
+   * certgencache:               no
+   * CHACHA:                     yes
+   * XCHACHA:                    no
+   * Hash DRBG:                  yes
+   * MmemUse Entropy:
+   * (AKA: wolfEntropy):         no
+   * PWDBASED:                   yes
+   * Encrypted keys:             yes
+   * scrypt:                     no
+   * wolfCrypt Only:             no
+   * HKDF:                       yes
+   * HPKE:                       no
+   * X9.63 KDF:                  no
+   * SRTP-KDF:                   no
+   * PSK:                        no
+   * Poly1305:                   yes
+   * LEANPSK:                    no
+   * LEANTLS:                    no
+   * RSA:                        yes
+   * RSA-PSS:                    yes
+   * DSA:                        no
+   * DH:                         yes
+   * DH Default Parameters:      yes
+   * ECC:                        yes
+   * ECC Custom Curves:          no
+   * ECC Minimum Bits:           224
+   * FPECC:                      no
+   * ECC_ENCRYPT:                no
+   * Brainpool:                  no
+   * SM2:                        no
+   * CURVE25519:                 no
+   * ED25519:                    no
+   * ED25519 streaming:          no
+   * CURVE448:                   no
+   * ED448:                      no
+   * ED448 streaming:            no
+   * LMS:                        no
+   * LMS wolfSSL impl:
+   * XMSS:                       no
+   * XMSS wolfSSL impl:
+   * KYBER:                      no
+   * KYBER wolfSSL impl:         no
+   * DILITHIUM:                  no
+   * ECCSI                       no
+   * SAKKE                       no
+   * ASN:                        yes
+   * Anonymous cipher:           no
+   * CODING:                     yes
+   * MEMORY:                     yes
+   * I/O POOL:                   no
+   * wolfSentry:                 no
+   * LIGHTY:                     no
+   * WPA Supplicant:             no
+   * HAPROXY:                    no
+   * STUNNEL:                    no
+   * tcpdump:                    no
+   * libssh2:                    no
+   * ntp:                        no
+   * rsyslog:                    no
+   * Apache httpd:               no
+   * NGINX:                      no
+   * OpenResty:                  no
+   * ASIO:                       no
+   * LIBWEBSOCKETS:              no
+   * Qt:                         no
+   * Qt Unit Testing:            no
+   * SIGNAL:                     no
+   * chrony:                     no
+   * strongSwan:                 no
+   * OpenLDAP:                   no
+   * hitch:                      no
+   * memcached:                  no
+   * Mosquitto                   no
+   * ERROR_STRINGS:              yes
+   * DTLS:                       no
+   * DTLS v1.3:                  no
+   * SCTP:                       no
+   * SRTP:                       no
+   * Indefinite Length:          no
+   * Multicast:                  no
+   * SSL v3.0 (Old):             no
+   * TLS v1.0 (Old):             no
+   * TLS v1.1 (Old):             no
+   * TLS v1.2:                   yes
+   * TLS v1.3:                   yes
+   * RPK:                        no
+   * Post-handshake Auth:        no
+   * Early Data:                 no
+   * QUIC:                       no
+   * Send State in HRR Cookie:   undefined
+   * OCSP:                       yes
+   * OCSP Stapling:              no
+   * OCSP Stapling v2:           no
+   * CRL:                        no
+   * CRL-MONITOR:                no
+   * Persistent session cache:   no
+   * Persistent cert    cache:   no
+   * Atomic User Record Layer:   no
+   * Public Key Callbacks:       no
+   * libxmss:                    no
+   * liblms:                     no
+   * liboqs:                     no
+   * Whitewood netRandom:        no
+   * Server Name Indication:     yes
+   * ALPN:                       no
+   * Maximum Fragment Length:    no
+   * Trusted CA Indication:      no
+   * Truncated HMAC:             no
+   * Supported Elliptic Curves:  yes
+   * FFDHE only in client:       no
+   * Session Ticket:             no
+   * Extended Master Secret:     yes
+   * Renegotiation Indication:   no
+   * Secure Renegotiation:       no
+   * Fallback SCSV:              no
+   * Keying Material Exporter:   no
+   * All TLS Extensions:         no
+   * S/MIME:                     no
+   * PKCS#7:                     no
+   * PKCS#8:                     yes
+   * PKCS#11:                    no
+   * PKCS#12:                    yes
+   * wolfSSH:                    no
+   * wolfEngine:                 no
+   * wolfTPM:                    no
+   * wolfCLU:                    no
+   * wolfSCEP:                   no
+   * Secure Remote Password:     no
+   * Small Stack:                no
+   * Linux Kernel Module:        no
+   * valgrind unit tests:        no
+   * LIBZ:                       no
+   * Examples:                   yes
+   * Crypt tests:                yes
+   * Stack sizes in tests:       no
+   * Heap stats in tests:        no
+   * Asynchronous Crypto:        no
+   * Asynchronous Crypto (sim):  no
+   * Cavium Nitrox:              no
+   * Cavium Octeon (Sync):       no
+   * Intel Quick Assist:         no
+   * ARM ASM:                    no
+   * ARM ASM SHA512/SHA3 Crypto  no
+   * ARM ASM SM3/SM4 Crypto      no
+   * RISC-V ASM                  no
+   * Write duplicate:            no
+   * Xilinx Hardware Acc.:       no
+   * Inline Code:                yes
+   * Linux AF_ALG:               no
+   * Linux KCAPI:                no
+   * Linux devcrypto:            no
+   * PK callbacks:               no
+   * Crypto callbacks:           no
+   * i.MX CAAM:                  no
+   * IoT-Safe:                   no
+   * IoT-Safe HWRNG:             no
+   * NXP SE050:                  no
+   * Maxim Integrated MAXQ10XX:  no
+   * PSA:                        no
+   * System CA certs:            yes
+   * Dual alg cert support:      no
+   * ERR Queues per Thread:      yes
+   * rwlock:                     no
+   * keylog export:              no
+   * AutoSAR :                   no
+
+---
+./configure flags: --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data --prefix=/home/gojimmypi/wolfssl-install-dir
+---
+Note: Make sure your application includes "wolfssl/options.h" before any other wolfSSL headers.
+      You can define "WOLFSSL_USE_OPTIONS_H" in your application to include this automatically.
+Building and installing wolfSSL...
+make -j21  all-recursive
+make[1]: warning: -j21 forced in submake: resetting jobserver mode.
+make[1]: Entering directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make[2]: Entering directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make[2]: warning: -j21 forced in submake: resetting jobserver mode.
+  CC       wolfcrypt/test/testsuite_testsuite_test-test.o
+  CC       examples/client/testsuite_testsuite_test-client.o
+  CC       examples/echoclient/testsuite_testsuite_test-echoclient.o
+  CC       examples/echoserver/testsuite_testsuite_test-echoserver.o
+  CC       examples/server/testsuite_testsuite_test-server.o
+  CC       examples/client/tests_unit_test-client.o
+  CC       examples/server/tests_unit_test-server.o
+  CC       wolfcrypt/benchmark/benchmark.o
+  CC       wolfcrypt/src/src_libwolfssl_la-hmac.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-hash.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-cpuid.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-kdf.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-random.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-sha256.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-rsa.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-aes.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-sp_int.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-sha.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-sha512.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-sha3.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-logging.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-wc_port.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-error.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-wc_encrypt.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-signature.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-wolfmath.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-memory.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-dh.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-asn.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-coding.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-md5.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-poly1305.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-pwdbased.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-pkcs12.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-chacha.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-chacha20_poly1305.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-ecc.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-wc_lms.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-wc_lms_impl.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-wc_xmss.lo
+  CC       wolfcrypt/src/src_libwolfssl_la-wc_xmss_impl.lo
+  CC       src/libwolfssl_la-internal.lo
+  CC       src/libwolfssl_la-wolfio.lo
+  CC       src/libwolfssl_la-keys.lo
+  CC       src/libwolfssl_la-ssl.lo
+  CC       src/libwolfssl_la-tls.lo
+  CC       src/libwolfssl_la-tls13.lo
+  CC       src/libwolfssl_la-ocsp.lo
+  CC       wolfcrypt/test/test.o
+  CC       examples/benchmark/tls_bench.o
+  CC       examples/client/client-client.o
+  CC       examples/echoclient/echoclient.o
+  CC       examples/echoserver/echoserver.o
+  CC       examples/server/server-server.o
+  CC       examples/asn1/asn1.o
+  CC       examples/pem/pem.o
+  CC       testsuite/testsuite_test-testsuite.o
+  CC       tests/unit_test-unit.o
+  CC       tests/unit_test-api.o
+  CC       tests/unit_test-suites.o
+  CC       tests/unit_test-hash.o
+  CC       tests/unit_test-w64wrapper.o
+  CC       tests/unit_test-srp.o
+  CC       tests/unit_test-quic.o
+  CCLD     src/libwolfssl.la
+  CCLD     wolfcrypt/benchmark/benchmark
+  CCLD     wolfcrypt/test/testwolfcrypt
+  CCLD     examples/benchmark/tls_bench
+  CCLD     examples/client/client
+  CCLD     examples/echoclient/echoclient
+  CCLD     examples/echoserver/echoserver
+  CCLD     examples/server/server
+  CCLD     examples/asn1/asn1
+  CCLD     examples/pem/pem
+  CCLD     testsuite/testsuite.test
+  CCLD     tests/unit.test
+make[2]: Leaving directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make[1]: Leaving directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make -j21  install-recursive
+make[1]: Entering directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make[2]: Entering directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make[2]: warning: -j21 forced in submake: resetting jobserver mode.
+make[3]: Entering directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make[3]: warning: -j21 forced in submake: resetting jobserver mode.
+/bin/bash /mnt/c/workspace/osp-gojimmypi/realm/wolfssl/build-aux/install-sh -d /home/gojimmypi/wolfssl-install-dir/bin
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/share/doc/wolfssl'
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/share/doc/wolfssl/example'
+/usr/bin/install -c wolfssl-config /home/gojimmypi/wolfssl-install-dir/bin
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/include'
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/lib/pkgconfig'
+ /usr/bin/install -c -m 644 certs/taoCert.txt doc/README.txt doc/QUIC.md '/home/gojimmypi/wolfssl-install-dir/share/doc/wolfssl'
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/lib'
+ /usr/bin/install -c -m 644 examples/async/async_server.c examples/async/async_client.c examples/benchmark/tls_bench.c examples/client/client.c examples/echoclient/echoclient.c examples/echoserver/echoserver.c examples/server/server.c examples/sctp/sctp-server.c examples/sctp/sctp-server-dtls.c examples/sctp/sctp-client.c examples/sctp/sctp-client-dtls.c '/home/gojimmypi/wolfssl-install-dir/share/doc/wolfssl/example'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   src/libwolfssl.la '/home/gojimmypi/wolfssl-install-dir/lib'
+ /usr/bin/install -c -m 644 support/wolfssl.pc '/home/gojimmypi/wolfssl-install-dir/lib/pkgconfig'
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/wolfcrypt'
+ /usr/bin/install -c -m 644  wolfssl/wolfcrypt/aes.h wolfssl/wolfcrypt/arc4.h wolfssl/wolfcrypt/asn.h wolfssl/wolfcrypt/asn_public.h wolfssl/wolfcrypt/poly1305.h wolfssl/wolfcrypt/camellia.h wolfssl/wolfcrypt/cmac.h wolfssl/wolfcrypt/coding.h wolfssl/wolfcrypt/compress.h wolfssl/wolfcrypt/des3.h wolfssl/wolfcrypt/dh.h wolfssl/wolfcrypt/dsa.h wolfssl/wolfcrypt/ecc.h wolfssl/wolfcrypt/curve25519.h wolfssl/wolfcrypt/ed25519.h wolfssl/wolfcrypt/fe_operations.h wolfssl/wolfcrypt/ge_operations.h wolfssl/wolfcrypt/curve448.h wolfssl/wolfcrypt/ed448.h wolfssl/wolfcrypt/falcon.h wolfssl/wolfcrypt/dilithium.h wolfssl/wolfcrypt/sphincs.h wolfssl/wolfcrypt/fe_448.h wolfssl/wolfcrypt/ge_448.h wolfssl/wolfcrypt/eccsi.h wolfssl/wolfcrypt/sakke.h wolfssl/wolfcrypt/error-crypt.h wolfssl/wolfcrypt/fips_test.h wolfssl/wolfcrypt/hash.h wolfssl/wolfcrypt/hmac.h wolfssl/wolfcrypt/hpke.h wolfssl/wolfcrypt/kdf.h wolfssl/wolfcrypt/integer.h wolfssl/wolfcrypt/md2.h wolfssl/wolfcrypt/md4.h wolfssl/wolfcrypt/md5.h wolfssl/wolfcrypt/misc.h wolfssl/wolfcrypt/pkcs7.h wolfssl/wolfcrypt/wc_encrypt.h wolfssl/wolfcrypt/wc_port.h '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/wolfcrypt'
+libtool: install: /usr/bin/install -c src/.libs/libwolfssl.so.42.2.0 /home/gojimmypi/wolfssl-install-dir/lib/libwolfssl.so.42.2.0
+libtool: install: (cd /home/gojimmypi/wolfssl-install-dir/lib && { cp -pR -f libwolfssl.so.42.2.0 libwolfssl.so.42 || { rm -f libwolfssl.so.42 && cp -pR libwolfssl.so.42.2.0 libwolfssl.so.42; }; })
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/wolfcrypt'
+ /usr/bin/install -c -m 644  wolfssl/wolfcrypt/pwdbased.h wolfssl/wolfcrypt/chacha.h wolfssl/wolfcrypt/chacha20_poly1305.h wolfssl/wolfcrypt/random.h wolfssl/wolfcrypt/ripemd.h wolfssl/wolfcrypt/rsa.h wolfssl/wolfcrypt/rc2.h wolfssl/wolfcrypt/settings.h wolfssl/wolfcrypt/sha256.h wolfssl/wolfcrypt/sha512.h wolfssl/wolfcrypt/sha.h wolfssl/wolfcrypt/signature.h wolfssl/wolfcrypt/blake2.h wolfssl/wolfcrypt/blake2-int.h wolfssl/wolfcrypt/blake2-impl.h wolfssl/wolfcrypt/tfm.h wolfssl/wolfcrypt/srp.h wolfssl/wolfcrypt/types.h wolfssl/wolfcrypt/visibility.h wolfssl/wolfcrypt/logging.h wolfssl/wolfcrypt/memory.h wolfssl/wolfcrypt/mpi_class.h wolfssl/wolfcrypt/mpi_superclass.h wolfssl/wolfcrypt/mem_track.h wolfssl/wolfcrypt/wolfevent.h wolfssl/wolfcrypt/pkcs12.h wolfssl/wolfcrypt/wolfmath.h wolfssl/wolfcrypt/sha3.h wolfssl/wolfcrypt/siphash.h wolfssl/wolfcrypt/cpuid.h wolfssl/wolfcrypt/cryptocb.h wolfssl/wolfcrypt/kyber.h wolfssl/wolfcrypt/wc_kyber.h wolfssl/wolfcrypt/ext_kyber.h wolfssl/wolfcrypt/sm2.h wolfssl/wolfcrypt/sm3.h wolfssl/wolfcrypt/sm4.h wolfssl/wolfcrypt/lms.h wolfssl/wolfcrypt/wc_lms.h wolfssl/wolfcrypt/ext_lms.h '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/wolfcrypt'
+libtool: install: (cd /home/gojimmypi/wolfssl-install-dir/lib && { cp -pR -f libwolfssl.so.42.2.0 libwolfssl.so || { rm -f libwolfssl.so && cp -pR libwolfssl.so.42.2.0 libwolfssl.so; }; })
+libtool: install: /usr/bin/install -c src/.libs/libwolfssl.lai /home/gojimmypi/wolfssl-install-dir/lib/libwolfssl.la
+libtool: install: /usr/bin/install -c src/.libs/libwolfssl.a /home/gojimmypi/wolfssl-install-dir/lib/libwolfssl.a
+libtool: install: chmod 644 /home/gojimmypi/wolfssl-install-dir/lib/libwolfssl.a
+libtool: install: ranlib /home/gojimmypi/wolfssl-install-dir/lib/libwolfssl.a
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/openssl'
+ /usr/bin/install -c -m 644  wolfssl/openssl/asn1.h wolfssl/openssl/asn1t.h wolfssl/openssl/aes.h wolfssl/openssl/bio.h wolfssl/openssl/bn.h wolfssl/openssl/buffer.h wolfssl/openssl/camellia.h wolfssl/openssl/cmac.h wolfssl/openssl/cms.h wolfssl/openssl/compat_types.h wolfssl/openssl/conf.h wolfssl/openssl/crypto.h wolfssl/openssl/des.h wolfssl/openssl/dh.h wolfssl/openssl/dsa.h wolfssl/openssl/ecdsa.h wolfssl/openssl/ecdh.h wolfssl/openssl/ec.h wolfssl/openssl/ec25519.h wolfssl/openssl/ed25519.h wolfssl/openssl/ec448.h wolfssl/openssl/ed448.h wolfssl/openssl/engine.h wolfssl/openssl/err.h wolfssl/openssl/evp.h wolfssl/openssl/fips_rand.h wolfssl/openssl/hmac.h wolfssl/openssl/kdf.h wolfssl/openssl/lhash.h wolfssl/openssl/md4.h wolfssl/openssl/md5.h wolfssl/openssl/modes.h wolfssl/openssl/ripemd.h wolfssl/openssl/obj_mac.h wolfssl/openssl/objects.h wolfssl/openssl/ocsp.h wolfssl/openssl/opensslconf.h wolfssl/openssl/opensslv.h wolfssl/openssl/ossl_typ.h wolfssl/openssl/pem.h '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/openssl'
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/wolfcrypt'
+ /usr/bin/install -c -m 644  wolfssl/wolfcrypt/xmss.h wolfssl/wolfcrypt/wc_xmss.h wolfssl/wolfcrypt/ext_xmss.h wolfssl/wolfcrypt/sp_int.h '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/wolfcrypt'
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/include/wolfssl'
+ /usr/bin/install -c -m 644  wolfssl/error-ssl.h wolfssl/ssl.h wolfssl/sniffer_error.h wolfssl/sniffer.h wolfssl/callbacks.h wolfssl/certs_test.h wolfssl/test.h wolfssl/version.h wolfssl/ocsp.h wolfssl/quic.h wolfssl/crl.h wolfssl/wolfio.h wolfssl/options.h '/home/gojimmypi/wolfssl-install-dir/include/wolfssl'
+ /usr/bin/mkdir -p '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/openssl'
+ /usr/bin/install -c -m 644  wolfssl/openssl/pkcs12.h wolfssl/openssl/pkcs7.h wolfssl/openssl/rand.h wolfssl/openssl/rsa.h wolfssl/openssl/safestack.h wolfssl/openssl/sha.h wolfssl/openssl/sha3.h wolfssl/openssl/srp.h wolfssl/openssl/ssl23.h wolfssl/openssl/ssl.h wolfssl/openssl/stack.h wolfssl/openssl/tls1.h wolfssl/openssl/txt_db.h wolfssl/openssl/ui.h wolfssl/openssl/x509.h wolfssl/openssl/x509_vfy.h wolfssl/openssl/x509v3.h wolfssl/openssl/rc4.h '/home/gojimmypi/wolfssl-install-dir/include/wolfssl/openssl'
+libtool: finish: PATH="/home/gojimmypi/.local/bin:/home/gojimmypi/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/gojimmypi/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/gojimmypi/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.1.100.202311100844/tools/bin:/mnt/c/Program Files/Git/usr/bin/:/mnt/c/Users/gojimmypi/.dotnet/tools:/snap/bin:/sbin" ldconfig -n /home/gojimmypi/wolfssl-install-dir/lib
+/sbin/ldconfig.real: /home/gojimmypi/wolfssl-install-dir/lib/libwolfssl.so.42 is not a symbolic link
+
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/gojimmypi/wolfssl-install-dir/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Leaving directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make[2]: Leaving directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+make[1]: Leaving directory '/mnt/c/workspace/osp-gojimmypi/realm/wolfssl'
+Cloning the realm-core repository...
+Cloning into 'realm-core'...
+remote: Enumerating objects: 183306, done.
+remote: Counting objects: 100% (2737/2737), done.
+remote: Compressing objects: 100% (1300/1300), done.
+remote: Total 183306 (delta 2016), reused 1985 (delta 1435), pack-reused 180569 (from 1)
+Receiving objects: 100% (183306/183306), 106.60 MiB | 2.30 MiB/s, done.
+Resolving deltas: 100% (147012/147012), done.
+Updating files: 100% (1679/1679), done.
+HEAD is now at 43a1aac3d New changelog section to prepare for vNext
+Note: switching to 'a5e87a39'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at a5e87a39c core v13.26.0
+Submodule 'external/catch' (https://github.com/catchorg/Catch2.git) registered for path 'external/catch'
+Submodule 'src/external/sha-1' (https://github.com/clibs/sha1.git) registered for path 'src/external/sha-1'
+Submodule 'src/external/sha-2' (https://github.com/kalven/sha-2.git) registered for path 'src/external/sha-2'
+Cloning into '/mnt/c/workspace/osp-gojimmypi/realm/realm-core/external/catch'...
+Cloning into '/mnt/c/workspace/osp-gojimmypi/realm/realm-core/src/external/sha-1'...
+Cloning into '/mnt/c/workspace/osp-gojimmypi/realm/realm-core/src/external/sha-2'...
+Submodule path 'external/catch': checked out '3f0283de7a9c43200033da996ff9093be3ac84dc'
+Submodule path 'src/external/sha-1': checked out 'd9ae30f34095107ece9dceb224839f0dc2f9c1c7'
+Submodule path 'src/external/sha-2': checked out '0e9aebf34101c6aa89355fd76ac9cd886735dee1'
+Configuring realm-core to use local wolfSSL installation from /home/gojimmypi/wolfssl-install-dir...
+-- CMake version: 3.22.1
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Dependencies:  PACKAGE_NAME=realm-core VERSION=13.26.0 OPENSSL_VERSION=3.0.8 ZLIB_VERSION=1.2.13 BAAS_VERSION=5087ffd5a0e4975e625f0fbcceed23107f611055
+-- Performing Test HAVE_-Wno-psabi
+-- Performing Test HAVE_-Wno-psabi - Success
+-- Performing Test HAVE_-Wpartial-availability
+-- Performing Test HAVE_-Wpartial-availability - Failed
+-- Performing Test HAVE_-Wno-redundant-move
+-- Performing Test HAVE_-Wno-redundant-move - Success
+-- Performing Test HAVE_LINKER_lld
+-- Performing Test HAVE_LINKER_lld - Failed
+-- Performing Test HAVE_LINKER_gold
+-- Performing Test HAVE_LINKER_gold - Success
+-- Using linker gold
+-- Looking for readdir64
+-- Looking for readdir64 - found
+-- Looking for posix_fallocate
+-- Looking for posix_fallocate - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Looking for pthread_getname_np
+-- Looking for pthread_getname_np - not found
+-- Looking for pthread_setname_np
+-- Looking for pthread_setname_np - not found
+-- Looking for backtrace
+-- Looking for backtrace - found
+-- backtrace facility detected in default set of libraries
+-- Found Backtrace: /usr/include
+-- Getting https://static.realm.io/downloads/dependencies/openssl/3.0.8/openssl-3.0.8-x64-linux-gnu.tar.gz...
+-- Uncompressing openssl...
+-- Found OpenSSL: /mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/openssl/lib/libcrypto.a (found version "3.0.8")
+
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11")
+-- Found BISON: /usr/bin/bison (found suitable exact version "3.8.2")
+-- Found FLEX: /usr/bin/flex (found suitable exact version "2.6.4")
+-- Performing Test HAVE-Wno-unused-but-set-variable
+-- Performing Test HAVE-Wno-unused-but-set-variable - Success
+-- Performing Test HAVE-Wno-unreachable-code
+-- Performing Test HAVE-Wno-unreachable-code - Success
+-- Performing Test HAVE-Wno-sign-compare
+-- Performing Test HAVE-Wno-sign-compare - Success
+-- Looking for epoll_create
+-- Looking for epoll_create - found
+-- Performing Test HAVE-Wunused-but-set-variable
+-- Performing Test HAVE-Wunused-but-set-variable - Success
+-- Performing Test HAVE_-Wno-unused-but-set-variable
+-- Performing Test HAVE_-Wno-unused-but-set-variable - Success
+-- Performing Test HAVE_FLAG__ffile_prefix_map__mnt_c_workspace_osp_gojimmypi_realm_realm_core_external_catch__
+-- Performing Test HAVE_FLAG__ffile_prefix_map__mnt_c_workspace_osp_gojimmypi_realm_realm_core_external_catch__ - Success
+-- Could NOT find LibUV (missing: LibUV_LIBRARY LibUV_INCLUDE_DIR) (found version "")
+-- LibUV not found, building from source with FetchContent
+-- Performing Test UV_LINT_W4
+-- Performing Test UV_LINT_W4 - Failed
+-- Performing Test UV_LINT_WALL
+-- Performing Test UV_LINT_WALL - Success
+-- Performing Test UV_LINT_NO_UNUSED_PARAMETER
+-- Performing Test UV_LINT_NO_UNUSED_PARAMETER - Success
+-- Performing Test UV_LINT_STRICT_PROTOTYPES
+-- Performing Test UV_LINT_STRICT_PROTOTYPES - Success
+-- Performing Test UV_LINT_EXTRA
+-- Performing Test UV_LINT_EXTRA - Success
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    REALM_USE_WOLFSSL
+    REALM_WOLFSSL_ROOT_DIR
+
+
+-- Build files have been written to: /mnt/c/workspace/osp-gojimmypi/realm/realm-core/build
+Building realm-core...
+[  0%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s1angle.cc.o
+[  0%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2.cc.o
+[  0%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2cellid.cc.o
+[  0%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2latlng.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s1interval.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2cap.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2cell.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2cellunion.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2edgeindex.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2edgeutil.cc.o
+[  1%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2latlngrect.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2loop.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2pointregion.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2polygon.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2polygonbuilder.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2polyline.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2r2rect.cc.o
+[  2%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/s2region.cc.o
+[  3%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/util/math/mathutil.cc.o
+[  3%] Building CXX object src/external/s2/CMakeFiles/s2geometry.dir/util/math/mathlimits.cc.o
+[  3%] Built target s2geometry
+[  3%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128.c.o
+[  3%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_compare.c.o
+[  3%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_mul.c.o
+[  3%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_div.c.o
+[  4%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_add.c.o
+[  4%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_fma.c.o
+[  4%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_string.c.o
+[  4%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_2_str_tables.c.o
+[  4%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid64_to_bid128.c.o
+[  4%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_to_int64.c.o
+[  4%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid128_quantize.c.o
+[  5%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid_convert_data.c.o
+[  5%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid_decimal_data.c.o
+[  5%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid_decimal_globals.c.o
+[  5%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid_from_int.c.o
+[  5%] Building C object src/external/IntelRDFPMathLib20U2/CMakeFiles/Bid.dir/LIBRARY/src/bid_round.c.o
+[  5%] Built target Bid
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/query.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/array.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_with_find.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/alloc.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/alloc_slab.cpp.o
+[  5%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_backlink.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_binary.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_blob.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_blobs_small.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_blobs_big.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_decimal128.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_fixed_bytes.cpp.o
+[  6%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_integer.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_key.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_mixed.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_unsigned.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_string.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_string_short.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/array_timestamp.cpp.o
+[  7%] Building CXX object src/realm/CMakeFiles/Storage.dir/bplustree.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/chunked_binary.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/cluster.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/collection.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/cluster_tree.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/error_codes.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/column_binary.cpp.o
+[  8%] Building CXX object src/realm/CMakeFiles/Storage.dir/decimal128.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/dictionary.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/disable_sync_to_disk.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/exceptions.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/group.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/db.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/group_writer.cpp.o
+[ 10%] Building CXX object src/realm/CMakeFiles/Storage.dir/history.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/impl/copy_replication.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/impl/output_stream.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/impl/simulated_failure.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/impl/transact_log.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/index_string.cpp.o
+[ 11%] Building CXX object src/realm/CMakeFiles/Storage.dir/link_translator.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/list.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/node.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/mixed.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/obj.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/object_converter.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/global_key.cpp.o
+[ 12%] Building CXX object src/realm/CMakeFiles/Storage.dir/query_engine.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/query_expression.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/query_value.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/replication.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/set.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/spec.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/string_data.cpp.o
+[ 13%] Building CXX object src/realm/CMakeFiles/Storage.dir/table.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/table_ref.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/obj_list.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/object_id.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/table_view.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/tokenizer.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/transaction.cpp.o
+[ 14%] Building CXX object src/realm/CMakeFiles/Storage.dir/sort_descriptor.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/status.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/unicode.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/utilities.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/uuid.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/version.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/backup_restore.cpp.o
+[ 15%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/interprocess_mutex.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/geospatial.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/backtrace.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/base64.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/basic_system_errors.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/cli_args.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/compression.cpp.o
+[ 16%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/encrypted_file_mapping.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/fifo_helper.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/file.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/file_mapper.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/interprocess_condvar.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/logger.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/memory_stream.cpp.o
+[ 17%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/platform_info.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/misc_errors.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/serializer.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/sha_crypto.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/terminate.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/time.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/timestamp_formatter.cpp.o
+[ 19%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/timestamp_logger.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/thread.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/to_string.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/demangle.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/enum.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/json_parser.cpp.o
+[ 20%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/load_file.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/misc_ext_errors.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/random.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/resource_limits.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/uri.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/bson/bson.cpp.o
+[ 21%] Building CXX object src/realm/CMakeFiles/Storage.dir/util/bson/regular_expression.cpp.o
+[ 21%] Linking CXX static library librealm-dbg.a
+[ 21%] Built target Storage
+[ 21%] Generating ../../../../src/realm/parser/generated/query_flex.cpp, ../../../../src/realm/parser/generated/query_flex.hpp
+[ 21%] Generating ../../../../src/realm/parser/generated/query_bison.cpp, ../../../../src/realm/parser/generated/query_bison.hpp
+[ 21%] Building CXX object src/realm/parser/CMakeFiles/QueryParser.dir/driver.cpp.o
+[ 21%] Building CXX object src/realm/parser/CMakeFiles/QueryParser.dir/keypath_mapping.cpp.o
+[ 21%] Building CXX object src/realm/parser/CMakeFiles/QueryParser.dir/generated/query_flex.cpp.o
+[ 21%] Building CXX object src/realm/parser/CMakeFiles/QueryParser.dir/generated/query_bison.cpp.o
+[ 22%] Linking CXX static library librealm-parser-dbg.a
+[ 22%] Built target QueryParser
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/config.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/changeset_index.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_history_impl.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_impl_base.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_reset.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_reset_operation.cpp.o
+[ 23%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/client_reset_recovery.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/compact_changesets.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/migration_store.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/pending_bootstrap_store.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/protocol_codec.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/sync_metadata_schema.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/noinst/sync_schema_migration.cpp.o
+[ 24%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/changeset_encoder.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/changeset_parser.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/changeset.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/client.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/history.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/instruction_applier.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/instruction_replication.cpp.o
+[ 25%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/instructions.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/object_id.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/protocol.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/subscriptions.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/transform.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/default_socket.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/http.cpp.o
+[ 26%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/network.cpp.o
+[ 28%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/network_ssl.cpp.o
+[ 28%] Building CXX object src/realm/sync/CMakeFiles/Sync.dir/network/websocket.cpp.o
+[ 28%] Linking CXX static library librealm-sync-dbg.a
+[ 28%] Built target Sync
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/collection.cpp.o
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/collection_notifications.cpp.o
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/dictionary.cpp.o
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/index_set.cpp.o
+[ 28%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/list.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/class.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/object.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/object_changeset.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/object_schema.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/object_store.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/results.cpp.o
+[ 29%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/schema.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sectioned_results.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/set.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/shared_realm.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/thread_safe_reference.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/collection_change_builder.cpp.o
+[ 30%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/collection_notifier.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/deep_change_checker.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/list_notifier.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/object_notifier.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/realm_coordinator.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/results_notifier.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/transact_log_handler.cpp.o
+[ 31%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/weak_realm_notifier.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/util/scheduler.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/util/uuid.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/app.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/app_utils.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/app_credentials.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/generic_network_transport.cpp.o
+[ 32%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/async_open_task.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/sync_manager.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/sync_session.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/sync_user.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/mongo_client.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/mongo_collection.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/mongo_database.cpp.o
+[ 33%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/push_client.cpp.o
+[ 34%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/impl/sync_file.cpp.o
+[ 34%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/sync/impl/sync_metadata.cpp.o
+[ 34%] Building CXX object src/realm/object-store/CMakeFiles/ObjectStore.dir/impl/epoll/external_commit_helper.cpp.o
+[ 34%] Linking CXX static library librealm-object-store-dbg.a
+[ 34%] Built target ObjectStore
+[ 34%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/config.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/dictionary.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/error.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/logging.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/notifications.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/object.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/list.cpp.o
+[ 35%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/query.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/realm.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/scheduler.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/schema.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/set.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/util.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/app.cpp.o
+[ 37%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/http.cpp.o
+[ 38%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/sync.cpp.o
+[ 38%] Building CXX object src/realm/object-store/c_api/CMakeFiles/RealmFFIStatic.dir/socket_provider.cpp.o
+[ 38%] Linking CXX static library librealm-ffi-static-dbg.a
+[ 38%] Built target RealmFFIStatic
+[ 38%] Building CXX object src/realm/sync/tools/CMakeFiles/InspectorInspectClientRealm.dir/inspect_client_realm.cpp.o
+[ 38%] Linking CXX executable realm-inspect-client-realm-dbg
+[ 38%] Built target InspectorInspectClientRealm
+[ 39%] Building CXX object src/realm/sync/tools/CMakeFiles/InspectorPrintChangeset.dir/print_changeset.cpp.o
+[ 39%] Linking CXX executable realm-print-changeset-dbg
+[ 39%] Built target InspectorPrintChangeset
+[ 39%] Building CXX object src/realm/sync/tools/CMakeFiles/ApplyToStateCommand.dir/apply_to_state_command.cpp.o
+[ 39%] Linking CXX executable realm-apply-to-state-dbg
+[ 39%] Built target ApplyToStateCommand
+[ 39%] Building CXX object src/realm/sync/tools/CMakeFiles/HistCommand.dir/hist_command.cpp.o
+[ 39%] Linking CXX executable realm-hist-dbg
+[ 39%] Built target HistCommand
+[ 39%] Building CXX object src/realm/exec/CMakeFiles/RealmImporter.dir/importer_tool.cpp.o
+[ 39%] Building CXX object src/realm/exec/CMakeFiles/RealmImporter.dir/importer.cpp.o
+[ 39%] Linking CXX executable realm-importer-dbg
+[ 39%] Built target RealmImporter
+[ 39%] Building CXX object src/realm/exec/CMakeFiles/RealmDaemon.dir/realmd.cpp.o
+[ 39%] Linking CXX executable realmd-dbg
+[ 39%] Built target RealmDaemon
+[ 39%] Building CXX object src/realm/exec/CMakeFiles/RealmTrawler.dir/realm_trawler.cpp.o
+[ 40%] Linking CXX executable realm-trawler-dbg
+[ 40%] Built target RealmTrawler
+[ 41%] Building CXX object src/realm/exec/CMakeFiles/RealmDecrypt.dir/realm_decrypt.cpp.o
+[ 41%] Linking CXX executable realm-decrypt-dbg
+[ 41%] Built target RealmDecrypt
+[ 41%] Building CXX object src/realm/exec/CMakeFiles/RealmEncrypt.dir/realm_encrypt.cpp.o
+[ 41%] Linking CXX executable realm-encrypt-dbg
+[ 41%] Built target RealmEncrypt
+[ 41%] Building CXX object src/realm/exec/CMakeFiles/RealmBrowser.dir/realm_browser.cpp.o
+[ 41%] Linking CXX executable realm-browser-10-dbg
+[ 41%] Built target RealmBrowser
+[ 41%] Building CXX object src/realm/exec/CMakeFiles/Realm2JSON.dir/realm2json.cpp.o
+[ 41%] Linking CXX executable realm2json-dbg
+[ 41%] Built target Realm2JSON
+[ 41%] Building C object src/realm/exec/CMakeFiles/RealmDump.dir/realm_dump.c.o
+[ 41%] Linking C executable realm-dump-dbg
+[ 41%] Built target RealmDump
+[ 41%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_query.cpp.o
+[ 41%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_query2.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_query_big.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_table.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_lang_bind_helper.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_parser.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_alloc.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array.cpp.o
+[ 42%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_blob.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_blobs_big.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_blobs_small.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_float.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_integer.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_mixed.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_array_string_short.cpp.o
+[ 43%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_binary_data.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_bplus_tree.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_column.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_column_float.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_column_string.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_column_timestamp.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_compaction.cpp.o
+[ 44%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_db.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_decimal128.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_destroy_guard.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_dictionary.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_file.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_file_locks.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_global_key.cpp.o
+[ 46%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_group.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_impl_simulated_failure.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_index_string.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_json.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_link_query_view.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_links.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_mixed_null_assertions.cpp.o
+[ 47%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_object_id.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_optional.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_priority_queue.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_replication.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_safe_int_ops.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_self.cpp.o
+[ 48%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_set.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_shared.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_status.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_string_data.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_table_view.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_thread.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_transactions.cpp.o
+[ 49%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_transactions_lasse.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_typed_links.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_unresolved_links.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_upgrade_database.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_utf8.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_any.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_backtrace.cpp.o
+[ 50%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_base64.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_chunked_binary.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_cli_args.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_compression.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_error.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_file.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_fixed_size_buffer.cpp.o
+[ 51%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_flat_map.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_from_chars.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_functional.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_future.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_logger.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_memory_stream.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_overload.cpp.o
+[ 52%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_scope_exit.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_util_to_string.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_uuid.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_encrypted_file_mapping.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/test_query_geo.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/large_tests/test_column_large.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/large_tests/test_strings.cpp.o
+[ 53%] Building CXX object test/CMakeFiles/CoreTestLib.dir/fuzz_group.cpp.o
+[ 53%] Built target CoreTestLib
+[ 53%] Building CXX object test/util/CMakeFiles/TestUtil.dir/benchmark_results.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/crypt_key.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/demangle.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/misc.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/quote.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/random.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/resource_limits.cpp.o
+[ 55%] Building CXX object test/util/CMakeFiles/TestUtil.dir/spawned_process.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/test_only.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/test_path.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/timer.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/unit_test.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/verified_integer.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/verified_string.cpp.o
+[ 56%] Building CXX object test/util/CMakeFiles/TestUtil.dir/wildcard.cpp.o
+[ 57%] Building CXX object test/util/CMakeFiles/TestUtil.dir/compare_groups.cpp.o
+[ 57%] Building CXX object test/util/CMakeFiles/TestUtil.dir/dump_changesets.cpp.o
+[ 57%] Linking CXX static library libTestUtil-dbg.a
+[ 57%] Built target TestUtil
+[ 58%] Building CXX object test/CMakeFiles/CoreTests.dir/main.cpp.o
+[ 58%] Building CXX object test/CMakeFiles/CoreTests.dir/test_all.cpp.o
+[ 58%] Linking CXX executable realm-tests
+[ 58%] Built target CoreTests
+[ 58%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/access_control.cpp.o
+[ 58%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/access_token.cpp.o
+[ 58%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/server.cpp.o
+[ 58%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/server_dir.cpp.o
+[ 59%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/server_file_access_cache.cpp.o
+[ 59%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/server_history.cpp.o
+[ 59%] Building CXX object src/realm/sync/noinst/server/CMakeFiles/SyncServer.dir/crypto_server_openssl.cpp.o
+[ 59%] Linking CXX static library librealm-server-dbg.a
+[ 59%] Built target SyncServer
+[ 59%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_array_sync.cpp.o
+[ 59%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_changeset_encoding.cpp.o
+[ 59%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_client_reset.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_compact_changesets.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_crypto.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_embedded_objects.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_instruction_replication.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_lang_bind_helper_sync.cpp.o
+[ 60%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_noinst_server_dir.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_stable_ids.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_auth.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_history_migration.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_protocol_codec.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_subscriptions.cpp.o
+[ 61%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_pending_bootstraps.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_sync_error_backoff.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_transform.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_buffer_stream.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_circular_buffer.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_http.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_json_parser.cpp.o
+[ 62%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_network.cpp.o
+[ 64%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_network_ssl.cpp.o
+[ 64%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_uri.cpp.o
+[ 64%] Building CXX object test/CMakeFiles/SyncTestLib.dir/test_util_websocket.cpp.o
+[ 64%] Built target SyncTestLib
+[ 64%] Building CXX object test/CMakeFiles/SyncTests.dir/main.cpp.o
+[ 64%] Building CXX object test/CMakeFiles/SyncTests.dir/test_all.cpp.o
+[ 64%] Linking CXX executable realm-sync-tests
+[ 64%] Built target SyncTests
+[ 64%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/fs-poll.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 64%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/idna.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 65%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/inet.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 65%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/random.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 65%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/strscpy.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 65%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/threadpool.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 65%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/timer.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 65%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/uv-common.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 65%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/uv-data-getter-setters.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 66%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/version.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 66%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/async.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 66%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/core.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 66%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/dl.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 66%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/fs.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 66%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/getaddrinfo.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 66%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/getnameinfo.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 67%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/loop-watcher.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 67%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/loop.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 67%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/pipe.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 67%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/poll.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 67%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/process.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 67%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/random-devurandom.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 67%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/signal.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 68%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/stream.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 68%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/tcp.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 68%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/thread.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+/mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/_deps/libuv-src/src/unix/thread.c: In function ‘thread_stack_size’:
+/mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/_deps/libuv-src/src/unix/thread.c:194:24: warning: comparison of integer expressions of different signedness: ‘rlim_t’ {aka ‘long unsigned int’} and ‘long int’ [-Wsign-compare]
+  194 |       if (lim.rlim_cur >= PTHREAD_STACK_MIN)
+      |                        ^~
+/mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/_deps/libuv-src/src/unix/thread.c: In function ‘uv_thread_create_ex’:
+/mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/_deps/libuv-src/src/unix/thread.c:242:20: warning: comparison of integer expressions of different signedness: ‘size_t’ {aka ‘long unsigned int’} and ‘long int’ [-Wsign-compare]
+  242 |     if (stack_size < PTHREAD_STACK_MIN)
+      |                    ^
+[ 68%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/tty.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 68%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/udp.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 68%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/proctitle.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 68%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/linux-core.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 69%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/linux-inotify.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 69%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/linux-syscalls.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 69%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/procfs-exepath.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 69%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/random-getrandom.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 69%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/random-sysctl-linux.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 69%] Building C object _deps/libuv-build/CMakeFiles/uv_a.dir/src/unix/sysinfo-loadavg.c.o
+<command-line>: warning: "_POSIX_C_SOURCE" redefined
+<command-line>: note: this is the location of the previous definition
+[ 70%] Linking C static library libuv_a-dbg.a
+[ 70%] Built target uv_a
+[ 70%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/benchmark/catch_chronometer.cpp.o
+[ 71%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_benchmark_function.cpp.o
+[ 71%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_run_for_at_least.cpp.o
+[ 71%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_stats.cpp.o
+[ 71%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generator_exception.cpp.o
+[ 71%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators.cpp.o
+[ 71%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators_random.cpp.o
+[ 71%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_automake.cpp.o
+[ 73%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_common_base.cpp.o
+[ 73%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_compact.cpp.o
+[ 73%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_console.cpp.o
+[ 73%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_cumulative_base.cpp.o
+[ 73%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_event_listener.cpp.o
+[ 73%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_helpers.cpp.o
+[ 73%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_junit.cpp.o
+[ 74%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_multi.cpp.o
+[ 74%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_registrars.cpp.o
+[ 74%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_sonarqube.cpp.o
+[ 74%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_streaming_base.cpp.o
+[ 74%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_tap.cpp.o
+[ 74%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_teamcity.cpp.o
+[ 74%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_xml.cpp.o
+[ 75%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_capture.cpp.o
+[ 75%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_config.cpp.o
+[ 75%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_exception.cpp.o
+[ 75%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_generatortracker.cpp.o
+[ 75%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_registry_hub.cpp.o
+[ 75%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter.cpp.o
+[ 75%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter_factory.cpp.o
+[ 76%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter_registry.cpp.o
+[ 76%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_testcase.cpp.o
+[ 76%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_approx.cpp.o
+[ 76%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_assertion_result.cpp.o
+[ 76%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_config.cpp.o
+[ 76%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_get_random_seed.cpp.o
+[ 76%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_message.cpp.o
+[ 77%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_registry_hub.cpp.o
+[ 77%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_session.cpp.o
+[ 77%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_tag_alias_autoregistrar.cpp.o
+[ 77%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_test_case_info.cpp.o
+[ 77%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_test_spec.cpp.o
+[ 77%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_timer.cpp.o
+[ 78%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_tostring.cpp.o
+[ 78%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_totals.cpp.o
+[ 78%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/catch_version.cpp.o
+[ 78%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_assertion_handler.cpp.o
+[ 78%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_case_insensitive_comparisons.cpp.o
+[ 78%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_clara.cpp.o
+[ 78%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_commandline.cpp.o
+[ 79%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_console_colour.cpp.o
+[ 79%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_context.cpp.o
+[ 79%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debug_console.cpp.o
+[ 79%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debugger.cpp.o
+[ 79%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_decomposer.cpp.o
+[ 79%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enforce.cpp.o
+[ 79%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enum_values_registry.cpp.o
+[ 80%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_errno_guard.cpp.o
+[ 80%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_exception_translator_registry.cpp.o
+[ 80%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_fatal_condition_handler.cpp.o
+[ 80%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_floating_point_helpers.cpp.o
+[ 80%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_getenv.cpp.o
+[ 80%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_istream.cpp.o
+[ 80%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_lazy_expr.cpp.o
+[ 82%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_leak_detector.cpp.o
+[ 82%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_list.cpp.o
+[ 82%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_message_info.cpp.o
+[ 82%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_output_redirect.cpp.o
+[ 82%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_parse_numbers.cpp.o
+[ 82%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_polyfills.cpp.o
+[ 82%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_number_generator.cpp.o
+[ 83%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_seed_generation.cpp.o
+[ 83%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_registry.cpp.o
+[ 83%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_spec_parser.cpp.o
+[ 83%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_result_type.cpp.o
+[ 83%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reusable_string_stream.cpp.o
+[ 83%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_run_context.cpp.o
+[ 83%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_section.cpp.o
+[ 84%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_singletons.cpp.o
+[ 84%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_source_line_info.cpp.o
+[ 84%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_startup_exception_registry.cpp.o
+[ 84%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stdstreams.cpp.o
+[ 84%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_string_manip.cpp.o
+[ 84%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stringref.cpp.o
+[ 84%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_tag_alias_registry.cpp.o
+[ 85%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_info_hasher.cpp.o
+[ 85%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_registry_impl.cpp.o
+[ 85%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_tracker.cpp.o
+[ 85%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_failure_exception.cpp.o
+[ 85%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_registry.cpp.o
+[ 85%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_spec_parser.cpp.o
+[ 85%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_textflow.cpp.o
+[ 86%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_uncaught_exceptions.cpp.o
+[ 86%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_wildcard_pattern.cpp.o
+[ 86%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/internal/catch_xmlwriter.cpp.o
+[ 86%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers.cpp.o
+[ 86%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_container_properties.cpp.o
+[ 86%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_exception.cpp.o
+[ 87%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_floating_point.cpp.o
+[ 87%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_predicate.cpp.o
+[ 87%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_quantifiers.cpp.o
+[ 87%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_string.cpp.o
+[ 87%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_templated.cpp.o
+[ 87%] Building CXX object external/catch/src/CMakeFiles/Catch2.dir/catch2/matchers/internal/catch_matchers_impl.cpp.o
+[ 87%] Linking CXX static library libCatch2d.a
+[ 87%] Built target Catch2
+[ 87%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/set.cpp.o
+[ 87%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/backup.cpp.o
+[ 87%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/collection_change_indices.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/dictionary.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/frozen_objects.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/index_set.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/list.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/migrations.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/object.cpp.o
+[ 88%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/object_store.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/primitive_list.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/realm.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/results.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/schema.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sectioned_results.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/test_runner.cpp.o
+[ 89%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/thread_safe_reference.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/transaction_log_parsing.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/uuid.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/c_api/c_api.cpp.o
+[ 91%] Building C object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/c_api/c_api_file_tests.c.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/event_loop.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/test_file.cpp.o
+[ 91%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/test_utils.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/geospatial.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/bson.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/app.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/client_reset.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/file.cpp.o
+[ 92%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/flx_migration.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/flx_schema_migration.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/flx_sync.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/metadata.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/migration_store_test.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/remote_mongo_tests.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/session/connection_change_notifications.cpp.o
+[ 93%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/session/progress_notifications.cpp.o
+[ 94%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/session/session.cpp.o
+[ 94%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/session/wait_for_completion.cpp.o
+[ 94%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/sync_manager.cpp.o
+[ 94%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/sync/user.cpp.o
+[ 94%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/sync/sync_test_utils.cpp.o
+[ 94%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTestLib.dir/util/unit_test_transport.cpp.o
+[ 94%] Built target ObjectStoreTestLib
+[ 94%] Building CXX object test/CMakeFiles/CombinedTests.dir/combined_tests.cpp.o
+[ 94%] Building CXX object test/CMakeFiles/CombinedTests.dir/test_all.cpp.o
+[ 94%] Linking CXX executable realm-combined-tests
+[ 94%] Built target CombinedTests
+[ 94%] Building CXX object test/object-store/CMakeFiles/ObjectStoreTests.dir/main.cpp.o
+[ 95%] Linking CXX executable realm-object-store-tests
+[ 95%] Built target ObjectStoreTests
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/main.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/object.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/results.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/__/util/event_loop.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/__/util/test_file.cpp.o
+[ 96%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/__/util/test_utils.cpp.o
+[ 97%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/__/util/sync/sync_test_utils.cpp.o
+[ 97%] Building CXX object test/object-store/benchmarks/CMakeFiles/object-store-benchmarks.dir/client_reset.cpp.o
+[ 97%] Linking CXX executable object-store-benchmarks
+[ 97%] Built target object-store-benchmarks
+[ 97%] Building CXX object test/fuzzy/CMakeFiles/fuzz-group.dir/afl.cpp.o
+[ 97%] Building CXX object test/fuzzy/CMakeFiles/fuzz-group.dir/__/fuzz_group.cpp.o
+[ 97%] Linking CXX executable fuzz-group
+[ 97%] Built target fuzz-group
+[ 97%] Building CXX object test/realm-fuzzer/CMakeFiles/realm-afl++.dir/afl_runner.cpp.o
+[ 97%] Building CXX object test/realm-fuzzer/CMakeFiles/realm-afl++.dir/fuzz_engine.cpp.o
+[ 97%] Building CXX object test/realm-fuzzer/CMakeFiles/realm-afl++.dir/fuzz_object.cpp.o
+[ 97%] Building CXX object test/realm-fuzzer/CMakeFiles/realm-afl++.dir/fuzz_configurator.cpp.o
+[ 98%] Linking CXX executable realm-afl++
+[ 98%] Built target realm-afl++
+[ 98%] Building CXX object test/benchmark-common-tasks/CMakeFiles/realm-benchmark-common-tasks.dir/main.cpp.o
+[ 98%] Linking CXX executable realm-benchmark-common-tasks
+[ 98%] Built target realm-benchmark-common-tasks
+[ 98%] Building CXX object test/benchmark-crud/CMakeFiles/realm-benchmark-crud.dir/main.cpp.o
+[ 98%] Linking CXX executable realm-benchmark-crud
+[ 98%] Built target realm-benchmark-crud
+[100%] Building CXX object test/benchmark-sync/CMakeFiles/realm-benchmark-sync.dir/bench_transform.cpp.o
+[100%] Building CXX object test/benchmark-sync/CMakeFiles/realm-benchmark-sync.dir/__/test_all.cpp.o
+[100%] Linking CXX executable realm-benchmark-sync
+[100%] Built target realm-benchmark-sync
+Running the test: build/test/realm-tests
+
+Realm version: 13.26.0 with Debug Enabled
+Platform: Linux Linux 4.4.0-22621-Microsoft #3672-Microsoft Fri Jan 01 08:00:00 PST 2016 x86_64
+Encryption: Enabled at compile-time (always encrypt = no)
+
+REALM_MAX_BPNODE_SIZE = 1000
+REALM_MEMDEBUG = Disabled
+
+sizeof (size_t) * 8 = 64
+
+Compiler supported SSE (auto detect):       Yes
+This CPU supports SSE (auto detect):        4.2
+Compiler supported AVX (auto detect):       Yes
+This CPU supports AVX (AVX1) (auto detect): Yes
+
+UNITTEST_RANDOM_SEED:                       691284060
+Test path prefix:                           /mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/test
+Test resource path:                         /mnt/c/workspace/osp-gojimmypi/realm/realm-core/build/test/resources/
+
+Number of test threads: 20 (default)
+(Use UNITTEST_THREADS=1 to serialize testing)
+
+1000 values in dictionary
+    insertion: 1730 ns/val
+    lookup: 1283 ns/val
+   insertion time: 2938 ns/key
+   lookup time: 988 ns/key
+Establishing scenario seq ins/rnd erase
+  compaction time: 5 ms
+Scenario has 100000 rows. Timing....
+   lookup obj    : 518 ns/key
+   lookup field  : 603 ns/key
+   lookup same   : 696 ns/key
+1000 repetitions in Query_IntPerformance
+    time equal: 41947 ns/rep
+    time not_equal: 42509 ns/rep
+    time sum: 27671 ns/rep
+100000 rows - random
+   insertion time: 2521 ns/key
+  compaction time: 4 ms
+   lookup obj    : 556 ns/key
+   lookup field  : 632 ns/key
+   lookup same   : 736 ns/key
+   update time   : 1292 ns/key
+   erase time    : 44765 ns/key
+5000 BPlusTree - sequential
+   insertion time: 232 ns/row
+   lookup time   : 71 ns/row
+Normal: 205312 us
+Compacting: 204243 us
+100000 rows - sequential
+   insertion time: 1692 ns/key
+  compaction time: 5 ms
+   lookup obj    : 279 ns/key
+   lookup field  : 337 ns/key
+   lookup same   : 413 ns/key
+   update time   : 927 ns/key
+   erase time    : 30270 ns/key
+1000 repetitions of find_all
+    time: 9441 ns/rep
+Success: All 1582 tests passed (121196906 checks).
+Test time: 44.73s
+
+Top 5 time usage:
+-------------------------------------------------------------
+Compaction_Large<std::integral_constant<bool,+true>>   22.15s
+LangBindHelper_HandoverBetweenThreads                  16.38s
+Shared_ManyReaders                                     15.36s
+Compaction_Large<std::integral_constant<bool,+false>>  14.37s
+Transactions_Threaded                                  14.11s

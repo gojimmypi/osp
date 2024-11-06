@@ -32,7 +32,7 @@ REALM_CORE_DIR="realm-core"
 BUILD_DIR="build"
 TEST_EXECUTABLE="$BUILD_DIR/test/realm-tests"
 WOLFSSL_INSTALL_DIR="$HOME/wolfssl-install-dir"
-USE_SYSTEM_INSTALL=true  # Change this to true if you want to use system-wide wolfSSL installation
+USE_SYSTEM_INSTALL=false  # Change this to true if you want to use system-wide wolfSSL installation
 USE_GIT=true  # Default method is using git, set this to false to use curl for tarball
 
 # Patch file based on REALM_CORE_COMMIT or REALM_CORE_VERSION
@@ -96,7 +96,7 @@ fi
 
 echo "Building and installing wolfSSL..."
 make -j$(nproc)
-sudo make install
+make install
 
 # Step 4: Download or clone realm-core
 cd ..
