@@ -2,6 +2,9 @@
 
 #bash -x ./build_wolfssl_with_realm.sh
 
+# parameters:
+#   -t use tar ball, not git
+#   -u use $USER name suffix for repository
 
     # While the support to build from a tarball is included,
     # Please note that to successfully build,
@@ -12,46 +15,35 @@
         # https://github.com/catchorg/Catch2/archive/refs/tags/v2.13.9.tar.gz
         # tar -xvf v2.13.9.tar.gz --strip-components=1 -C
         # test/external/generated/catch2
+# Run shell check to ensure this a good script.
+# Specify the executable shell checker you want to use:
+MY_SHELLCHECK="shellcheck"
 
+# Check if the executable is available in the PATH
+if command -v "$MY_SHELLCHECK" >/dev/null 2>&1; then
+    # Run your command here
+    $MY_SHELLCHECK "$0" || exit 1
+else
+    echo "$MY_SHELLCHECK is not installed. Please install it if changes to this script have been made."
+    exit 1
+fi
 
-# Commit hashes for specific versions when using git
-WOLFSSL_COMMIT="e814d1ba"
-#REALM_CORE_COMMIT="c729fc80"
-REALM_CORE_COMMIT="a5e87a39"  # Adjust if necessary
+# Command-line parameters
 
-# Variables
-WOLFSSL_VERSION="v5.7.2-stable"
-REALM_CORE_VERSION="v13.26.0"
-WOLFSSL_TAR="${WOLFSSL_VERSION}.tar.gz"
-REALM_TAR="${REALM_CORE_VERSION}.tar.gz"
-WOLFSSL_URL="https://github.com/wolfSSL/wolfssl/archive/refs/tags/${WOLFSSL_TAR}"
-REALM_URL="https://github.com/realm/realm-core/archive/refs/tags/${REALM_TAR}"
-OSP_REALM_DIR="realm"
-WOLFSSL_DIR="wolfssl"
-REALM_CORE_DIR="realm-core"
-BUILD_DIR="build"
-TEST_EXECUTABLE="$BUILD_DIR/test/realm-tests"
-WOLFSSL_INSTALL_DIR="$HOME/wolfssl-install-dir"
-USE_SYSTEM_INSTALL=false  # Change this to true if you want to use system-wide wolfSSL installation
-USE_GIT=true  # Default method is using git, set this to false to use curl for tarball
-FETCH_WOLFSSL=false
-CONFIGURE_WOLFSSL=false
-INSTALL_WOLFSSL=false
-FETCH_REALM_CORE=true
+# Default method is using git, -t to disable; set this to false to use curl for tarball
+USE_GIT=true
 
-echo "USE_GIT=$USE_GIT"
-echo "FETCH_WOLFSSL=$FETCH_WOLFSSL"
-echo "CONFIGURE_WOLFSSL=$CONFIGURE_WOLFSSL"
-echo "BUILD_WOLFSSL=$BUILD_WOLFSSL"
-
-# Patch file based on REALM_CORE_COMMIT or REALM_CORE_VERSION
-PATCH_FILE=""
+# Default repo names is not to use user name suffix. -u to enable.
+USER_REPO_NAME=false
 
 # Check if user wants to use git
-while getopts ":t" opt; do
+while getopts ":tu" opt; do
   case $opt in
     t)
       USE_GIT=false
+      ;;
+    u)
+      USER_REPO_NAME=true
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -60,12 +52,73 @@ while getopts ":t" opt; do
   esac
 done
 
+# Commit hashes for specific versions when using git
+WOLFSSL_COMMIT="e814d1ba"
+#REALM_CORE_COMMIT="c729fc80"
+REALM_CORE_COMMIT="a5e87a39"  # Adjust if necessary
+
+# Variables
+
+if [ "$USER_REPO_NAME" = true ]; then
+    WOLFSSL_REPO="https://github.com/$USER/wolfssl.git"
+    WOLFSSL_DIR="wolfssl-$USER"
+    WOLFSSL_UPSTREAM="https://github.com/wolfSSL/wolfssl.git"
+
+    REALM_CORE_REPO="https://github.com/$USER/realm-core.git"
+    REALM_CORE_DIR="realm-core-$USER"
+    REALM_CORE_UPSTREAM="https://github.com/realm/realm-core.git"
+else
+    WOLFSSL_REPO="https://github.com/wolfSSL/wolfssl.git"
+    WOLFSSL_DIR="wolfssl"
+    WOLFSSL_UPSTREAM=""
+
+    REALM_CORE_REPO="https://github.com/realm/realm-core.git"
+    REALM_CORE_DIR="realm-core"
+    REALM_CORE_UPSTREAM=""
+fi
+
+WOLFSSL_VERSION="v5.7.2-stable"
+REALM_CORE_VERSION="v13.26.0"
+WOLFSSL_TAR="${WOLFSSL_VERSION}.tar.gz"
+REALM_TAR="${REALM_CORE_VERSION}.tar.gz"
+WOLFSSL_URL="https://github.com/wolfSSL/wolfssl/archive/refs/tags/${WOLFSSL_TAR}"
+REALM_URL="https://github.com/realm/realm-core/archive/refs/tags/${REALM_TAR}"
+# OSP_REALM_DIR="realm"
+
+
+BUILD_DIR="build"
+TEST_EXECUTABLE="$BUILD_DIR/test/realm-tests"
+WOLFSSL_INSTALL_DIR="$HOME/wolfssl-install-dir"
+USE_SYSTEM_INSTALL=false  # Change this to true if you want to use system-wide wolfSSL installation
+FETCH_WOLFSSL=false
+CONFIGURE_WOLFSSL=false
+INSTALL_WOLFSSL=false
+FETCH_REALM_CORE=true
+
+
+echo "USE_GIT:           $USE_GIT"
+
+echo "WOLFSSL_REPO:      $WOLFSSL_REPO"
+echo "WOLFSSL_DIR:       $WOLFSSL_DIR"
+echo "FETCH_WOLFSSL:     $FETCH_WOLFSSL"
+echo "CONFIGURE_WOLFSSL: $CONFIGURE_WOLFSSL"
+echo "BUILD_WOLFSSL:     $BUILD_WOLFSSL"
+
+echo "REALM_CORE_REPO:   $REALM_CORE_REPO"
+echo "REALM_CORE_DIR:    $REALM_CORE_DIR"
+
+
+# Patch file based on REALM_CORE_COMMIT or REALM_CORE_VERSION
+PATCH_FILE=""
+
+exit 1
+
 if [ "$FETCH_WOLFSSL" = true ]; then
     # Step 2: Download or clone wolfSSL
     if [ "$USE_GIT" = true ]; then
         if [ ! -d "$WOLFSSL_DIR" ]; then
             echo "Cloning the wolfSSL repository..."
-            git clone https://github.com/wolfSSL/wolfssl.git "$WOLFSSL_DIR"
+            git clone "$WOLFSSL_REPO" "$WOLFSSL_DIR" || { echo "Failed to clone $WOLFSSL_REPO"; exit 1; }
             cd "$WOLFSSL_DIR" || exit
 
 
@@ -123,7 +176,7 @@ fi
 if [ "$BUILD_WOLFSSL" = true ]; then
     cd "$WOLFSSL_DIR" || exit 1
     echo "Building and installing wolfSSL..."
-    make -j$(nproc)
+    make -j"$(nproc)"
     cd ..
 else
     echo "Skipping wolfSSL build"
@@ -148,7 +201,7 @@ if [ "$FETCH_REALM_CORE" = true ]; then
         if [ ! -d "$REALM_CORE_DIR" ]; then
             echo "Not found: REALM_CORE_DIR=$REALM_CORE_DIR"
             echo "Cloning the realm-core repository..."
-            git clone https://github.com/realm/realm-core.git "$REALM_CORE_DIR"
+            git clone "$REALM_CORE_REPO" "$REALM_CORE_DIR"  || { echo "Failed to clone $REALM_CORE_REPO"; exit 1; }
             if [ -n "$WSL_DISTRO_NAME" ]; then
                 # Ignore file permissions changes in WSL
                 git config core.fileMode false
@@ -197,7 +250,7 @@ else
     echo "Skipping fetch REALM_CORE source"
 fi
 
-cd "$REALM_CORE_DIR"
+cd "$REALM_CORE_DIR" || { echo "Cannot find $REALM_CORE_DIR"; exit 1; }
 echo "Current dir 3: $(pwd)"
 # Step 5: Apply patch if patch file exists for realm-core
 echo "Looking for path file $PATCH_FILE in $(pwd)"
