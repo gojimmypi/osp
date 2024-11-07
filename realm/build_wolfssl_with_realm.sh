@@ -58,6 +58,8 @@ WOLFSSL_COMMIT="e814d1ba"
 REALM_CORE_COMMIT="a5e87a39"  # Adjust if necessary
 
 # Variables
+WOLFSSL_UPSTREAM=""
+REALM_CORE_UPSTREAM=""
 
 if [ "$USER_REPO_NAME" = true ]; then
     WOLFSSL_REPO="https://github.com/$USER/wolfssl.git"
@@ -70,11 +72,9 @@ if [ "$USER_REPO_NAME" = true ]; then
 else
     WOLFSSL_REPO="https://github.com/wolfSSL/wolfssl.git"
     WOLFSSL_DIR="wolfssl"
-    WOLFSSL_UPSTREAM=""
 
     REALM_CORE_REPO="https://github.com/realm/realm-core.git"
     REALM_CORE_DIR="realm-core"
-    REALM_CORE_UPSTREAM=""
 fi
 
 WOLFSSL_VERSION="v5.7.2-stable"
@@ -111,16 +111,20 @@ echo "REALM_CORE_DIR:    $REALM_CORE_DIR"
 # Patch file based on REALM_CORE_COMMIT or REALM_CORE_VERSION
 PATCH_FILE=""
 
-exit 1
-
 if [ "$FETCH_WOLFSSL" = true ]; then
     # Step 2: Download or clone wolfSSL
     if [ "$USE_GIT" = true ]; then
         if [ ! -d "$WOLFSSL_DIR" ]; then
-            echo "Cloning the wolfSSL repository..."
+            echo "Cloning the wolfSSL repository $WOLFSSL_REPO"
             git clone "$WOLFSSL_REPO" "$WOLFSSL_DIR" || { echo "Failed to clone $WOLFSSL_REPO"; exit 1; }
             cd "$WOLFSSL_DIR" || exit
 
+            if [ -z "$WOLFSSL_UPSTREAM" ]; then
+                echo "No git upstream to set for $WOLFSSL_DIR"
+            else
+                echo "Set upstream wolfssl: $WOLFSSL_UPSTREAM"
+                git remote add upstream "$WOLFSSL_UPSTREAM"
+            fi
 
             if [ -n "$WSL_DISTRO_NAME" ]; then
                 # Ignore file permissions changes in WSL
@@ -202,10 +206,19 @@ if [ "$FETCH_REALM_CORE" = true ]; then
             echo "Not found: REALM_CORE_DIR=$REALM_CORE_DIR"
             echo "Cloning the realm-core repository..."
             git clone "$REALM_CORE_REPO" "$REALM_CORE_DIR"  || { echo "Failed to clone $REALM_CORE_REPO"; exit 1; }
+
             if [ -n "$WSL_DISTRO_NAME" ]; then
                 # Ignore file permissions changes in WSL
                 git config core.fileMode false
             fi
+
+            if [ -z "$REALM_CORE_UPSTREAM" ]; then
+                echo "No git upstream to set for $REALM_CORE_DIR."
+            else
+                echo "Set upstream wolfssl: $REALM_CORE_UPSTREAM"
+                git remote add upstream "$REALM_CORE_UPSTREAM"
+            fi
+
 
             cd "$REALM_CORE_DIR" || exit 1
         else
