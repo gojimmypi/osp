@@ -327,7 +327,7 @@ fi
 
 echo "realm-core configuration complete."
 echo "Building realm-core..."
-cmake --build "$BUILD_DIR"
+cmake --build "$BUILD_DIR" || { echo "Build failed"; exit 1; }
 #2>&1 | tee -a output.log
 
 # Step 7: Run the tests
