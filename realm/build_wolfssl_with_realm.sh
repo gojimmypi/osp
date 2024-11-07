@@ -319,10 +319,10 @@ fi
 
 if [ "$USE_SYSTEM_INSTALL" = true ]; then
     echo "Configuring realm-core to use system-wide wolfSSL installation /usr/local/lib"
-    cmake -B "$BUILD_DIR" -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_USE_WOLFSSL=1 -DREALM_WOLFSSL_ROOT_DIR="/usr/local/lib" 2>&1 | tee realm_output.log
+    cmake -B "$BUILD_DIR" -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL=1 -DREALM_WOLFSSL_ROOT_DIR="/usr/local/lib" 2>&1 | tee realm_output.log
 else
     echo "Configuring realm-core to use local wolfSSL installation from $WOLFSSL_INSTALL_DIR"
-    cmake -B "$BUILD_DIR" -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_USE_WOLFSSL=1 -DREALM_WOLFSSL_ROOT_DIR="$WOLFSSL_INSTALL_DIR" 2>&1 | tee realm_output.log
+    cmake -B "$BUILD_DIR" -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL=1 -DREALM_WOLFSSL_ROOT_DIR="$WOLFSSL_INSTALL_DIR" 2>&1 | tee realm_output.log
 fi
 
 echo "realm-core configuration complete."
