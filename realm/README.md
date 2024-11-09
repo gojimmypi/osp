@@ -1,3 +1,53 @@
+# REALM with wolfSSL
+
+The wolfSSL library is enabled in [realm-core](https://github.com/realm/realm-core) with the `-DREALM_HAVE_WOLFSSL=1` parameter.
+
+The upstream `realm-core` does NOT yet support wolfSSL. Please see the enclosed `realm-commit-[hash].patch files`.
+
+The Linux Script Build automatically applies these patches as needed. Modify as desired with the `REALM_CORE_COMMIT` script variable.
+
+## Linux Script Build
+
+The [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) script can be used.
+
+### Script Parameters:
+
+* `-t` use tarball, not git
+* `-u` use $USER name suffix for repository
+
+###
+
+Defaults are to clone [wolfSSL](https://github.com/wolfSSL/wolfssl) and [realm-core](https://github.com/realm/realm-core) to local directory.
+
+If you have forks of each with your GitHub ID the same as your local user name, the `-u` is recommended.
+
+Run directly from the `realm` directory:
+
+```bash
+./build_wolfssl_with_realm.sh -u
+```
+
+This will create these local directories, and add respective `upstream` repository settings:
+
+```text
+./wolfssl-<your username>
+./realm-core-<your username>
+```
+
+Once the desired wolfSSL library has been fetched and installed, the clone / config / build can be skipped by making these changes in the script file:
+
+```
+# Choose to skip parts of wolfSSL build:
+FETCH_WOLFSSL=false
+CONFIGURE_WOLFSSL=false
+BUILD_WOLFSSL=false
+INSTALL_WOLFSSL=false
+```
+
+## Linux manual build: Build wolfSSL
+
+These commands are wrapped in the `build_wolfssl_with_realm.sh` script, mentioned above:
+
 To configure wolfSSL, use the following command:
 
 ```
