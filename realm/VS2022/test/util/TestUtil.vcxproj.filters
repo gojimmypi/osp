@@ -131,7 +131,6 @@
     <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="\workspace\wolfssl-gojimmypi-pr\DLL Release\x64\wolfssl.lib" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
