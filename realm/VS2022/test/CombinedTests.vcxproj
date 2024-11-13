@@ -122,7 +122,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/test/Debug/resources
 if %errorlevel% neq 0 goto :cmEnd
@@ -185,7 +186,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/test/Release/resources
 if %errorlevel% neq 0 goto :cmEnd
@@ -248,7 +250,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/test/MinSizeRel/resources
 if %errorlevel% neq 0 goto :cmEnd
@@ -310,7 +313,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/test/RelWithDebInfo/resources
 if %errorlevel% neq 0 goto :cmEnd
@@ -810,6 +814,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_websocket.obj" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\wolfssl\wolfssl-VS2022.vcxproj">
+      <Project>{12226dbe-7278-4dfa-a119-5a0294cf0b33}</Project>
+    </ProjectReference>
     <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\ZERO_CHECK.vcxproj">
       <Project>{2C88391C-B836-3F71-A9FC-1A8E3EFD9661}</Project>
       <Name>ZERO_CHECK</Name>
