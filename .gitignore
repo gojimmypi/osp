@@ -114,4 +114,4 @@ server_err.log
 **/.vs
 
 # CMake files to exclude
-**/CmakeCache.txt
+**/CMakeCache.txt
