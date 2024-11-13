@@ -121,7 +121,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\util\Debug\TestUtil-dbg.lib;..\..\src\realm\Debug\realm-dbg.lib;Version.lib;psapi.lib;..\..\zlib\debug\lib\zlibd.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\util\Debug\TestUtil-dbg.lib;..\..\src\realm\Debug\realm-dbg.lib;Version.lib;psapi.lib;..\..\zlib\debug\lib\zlibd.lib;\workspace\osp-gojimmypi\realm\VS2022\DLL Debug\x64\wolfssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>/workspace/wolfssl/DLL Release/x64/lib;/workspace/wolfssl/DLL Release/x64/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 /ignore:4099</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -170,7 +170,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\util\Release\TestUtil.lib;..\..\src\realm\Release\realm.lib;Version.lib;psapi.lib;..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\util\Release\TestUtil.lib;..\..\src\realm\Release\realm.lib;Version.lib;psapi.lib;..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\DLL Debug\x64\wolfssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>/workspace/wolfssl/DLL Release/x64/lib;/workspace/wolfssl/DLL Release/x64/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -219,7 +219,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\util\MinSizeRel\TestUtil.lib;..\..\src\realm\MinSizeRel\realm.lib;Version.lib;psapi.lib;..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\util\MinSizeRel\TestUtil.lib;..\..\src\realm\MinSizeRel\realm.lib;Version.lib;psapi.lib;..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\DLL Debug\x64\wolfssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>/workspace/wolfssl/DLL Release/x64/lib;/workspace/wolfssl/DLL Release/x64/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -267,7 +267,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\util\RelWithDebInfo\TestUtil.lib;..\..\src\realm\RelWithDebInfo\realm.lib;Version.lib;psapi.lib;..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\util\RelWithDebInfo\TestUtil.lib;..\..\src\realm\RelWithDebInfo\realm.lib;Version.lib;psapi.lib;..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\DLL Debug\x64\wolfssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>/workspace/wolfssl/DLL Release/x64/lib;/workspace/wolfssl/DLL Release/x64/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>

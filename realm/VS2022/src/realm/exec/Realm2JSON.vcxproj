@@ -121,7 +121,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\Debug\realm-dbg.lib;..\parser\Debug\realm-parser-dbg.lib;..\sync\Debug\realm-sync-dbg.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;..\Debug\realm-dbg.lib;psapi.lib;..\..\..\zlib\debug\lib\zlibd.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\Debug\realm-dbg.lib;..\parser\Debug\realm-parser-dbg.lib;..\sync\Debug\realm-sync-dbg.lib;\workspace\osp-gojimmypi\realm\VS2022\DLL Debug\x64\wolfssl.lib;..\Debug\realm-dbg.lib;psapi.lib;..\..\..\zlib\debug\lib\zlibd.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 /ignore:4099</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -170,7 +170,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\Release\realm.lib;..\parser\Release\realm-parser.lib;..\sync\Release\realm-sync.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;..\Release\realm.lib;psapi.lib;..\..\..\zlib\lib\zlib.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\Release\realm.lib;..\parser\Release\realm-parser.lib;..\sync\Release\realm-sync.lib;\workspace\osp-gojimmypi\realm\VS2022\DLL Debug\x64\wolfssl.lib;..\Release\realm.lib;psapi.lib;..\..\..\zlib\lib\zlib.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -219,7 +219,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\MinSizeRel\realm.lib;..\parser\MinSizeRel\realm-parser.lib;..\sync\MinSizeRel\realm-sync.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;..\MinSizeRel\realm.lib;psapi.lib;..\..\..\zlib\lib\zlib.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\MinSizeRel\realm.lib;..\parser\MinSizeRel\realm-parser.lib;..\sync\MinSizeRel\realm-sync.lib;\workspace\osp-gojimmypi\realm\VS2022\DLL Debug\x64\wolfssl.lib;..\MinSizeRel\realm.lib;psapi.lib;..\..\..\zlib\lib\zlib.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -267,7 +267,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\RelWithDebInfo\realm.lib;..\parser\RelWithDebInfo\realm-parser.lib;..\sync\RelWithDebInfo\realm-sync.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;..\RelWithDebInfo\realm.lib;psapi.lib;..\..\..\zlib\lib\zlib.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\RelWithDebInfo\realm.lib;..\parser\RelWithDebInfo\realm-parser.lib;..\sync\RelWithDebInfo\realm-sync.lib;\workspace\osp-gojimmypi\realm\VS2022\DLL Debug\x64\wolfssl.lib;..\RelWithDebInfo\realm.lib;psapi.lib;..\..\..\zlib\lib\zlib.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
