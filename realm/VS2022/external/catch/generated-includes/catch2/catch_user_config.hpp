@@ -199,7 +199,7 @@
 // ------
 
 #define CATCH_CONFIG_DEFAULT_REPORTER "console"
-#define CATCH_CONFIG_CONSOLE_WIDTH 80
+#define CATCH_CONFIG_CONSOLE_WIDTH 300
 
 // Unlike the macros above, CATCH_CONFIG_FALLBACK_STRINGIFIER does not
 // have a good default value, so we cannot always define it, and cannot
