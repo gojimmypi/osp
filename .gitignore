@@ -112,3 +112,6 @@ stunnel/example/echoserver/echoserver*
 server_err.log
 
 **/.vs
+
+# CMake files to exclude
+**/CmakeCache.txt
