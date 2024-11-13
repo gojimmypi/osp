@@ -63,6 +63,10 @@ WOLFSSL_COMMIT="e814d1ba"
 REALM_CORE_COMMIT="a5e87a39"
 
 # Variables
+
+# To build *without* wolfSSL, set REALM_HAVE_WOLFSSL=0
+REALM_HAVE_WOLFSSL=1
+
 WOLFSSL_UPSTREAM=""
 REALM_CORE_UPSTREAM=""
 
@@ -107,7 +111,7 @@ INSTALL_WOLFSSL=false
 # Choose to skip parts of realm-core build:
 FETCH_REALM_CORE=true
 
-# Show summar of key config settings:
+# Show summary of key config settings:
 echo "USE_GIT:             $USE_GIT"
 
 echo "WOLFSSL_REPO:        $WOLFSSL_REPO"
@@ -217,7 +221,7 @@ else
 fi
 
 # Step 4: Download or clone realm-core
-echo "Current working dir to fetch realm-core: $(pwd)"
+echo "Current working directory to fetch realm-core: $(pwd)"
 
 if [ "$FETCH_REALM_CORE" = true ]; then
     if [ "$USE_GIT" = true ]; then
@@ -298,7 +302,7 @@ cd "$REALM_CORE_DIR" || { echo "Cannot find $REALM_CORE_DIR"; exit 1; }
 if [ -f "REALM_CORE_COMMIT_COMPLETE.log" ]; then
     echo "Found REALM_CORE_COMMIT_COMPLETE.log, skipping patch."
 else
-    echo "Current dir to apply $PATCH_FILE patch: $(pwd)"
+    echo "Current directory to apply $PATCH_FILE patch: $(pwd)"
     # Step 5: Apply patch if patch file exists for realm-core
     echo "Looking for path file $PATCH_FILE in $(pwd)"
     if [ -f "../$PATCH_FILE" ]; then
@@ -319,10 +323,10 @@ fi
 
 if [ "$USE_SYSTEM_INSTALL" = true ]; then
     echo "Configuring realm-core to use system-wide wolfSSL installation /usr/local/lib"
-    cmake -B "$BUILD_DIR" -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL=1 -DREALM_WOLFSSL_ROOT_DIR="/usr/local/lib" 2>&1 | tee realm_output.log
+    cmake -B "$BUILD_DIR"                         -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL="$REALM_HAVE_WOLFSSL" -DREALM_WOLFSSL_ROOT_DIR="/usr/local/lib"        || { echo "cmake failed"; exit 1; }
 else
     echo "Configuring realm-core to use local wolfSSL installation from $WOLFSSL_INSTALL_DIR"
-    cmake -B "$BUILD_DIR" -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL=1 -DREALM_WOLFSSL_ROOT_DIR="$WOLFSSL_INSTALL_DIR" 2>&1 | tee realm_output.log
+    cmake -B "$BUILD_DIR" -DREALM_INCLUDE_CERTS=1 -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL="$REALM_HAVE_WOLFSSL" -DREALM_WOLFSSL_ROOT_DIR="$WOLFSSL_INSTALL_DIR"  || { echo "cmake failed"; exit 1; }
 fi
 
 echo "realm-core configuration complete."

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\benchmark_results.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\crypt_key.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\demangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\quote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\random.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\resource_limits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\spawned_process.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_only.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_path.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\unit_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_integer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_string.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\wildcard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\compare_groups.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\dump_changesets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\benchmark_results.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\check_logic_error.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\check_system_error.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\compare_groups.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\crypt_key.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\demangle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\dump_changesets.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\misc.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\number_names.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\quote.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\random.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\resource_limits.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\semaphore.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\spawned_process.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\super_int.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_only.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_path.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_types.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\thread_wrapper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\timer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\unit_test.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_integer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_string.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\wildcard.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="\workspace\wolfssl-gojimmypi-pr\DLL Release\x64\wolfssl.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{020EF7E9-D766-3BFD-9F90-448849F20D38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{40E47C88-ED84-3184-A68A-28B0B3C66756}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

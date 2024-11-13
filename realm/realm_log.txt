@@ -1,0 +1,65 @@
+USE_GIT:             true
+WOLFSSL_REPO:        https://github.com/gojimmypi/wolfssl.git
+WOLFSSL_DIR:         wolfssl-gojimmypi
+FETCH_WOLFSSL:       false
+CONFIGURE_WOLFSSL:   false
+BUILD_WOLFSSL:       false
+WOLFSSL_INSTALL_DIR: /home/gojimmypi/wolfssl-install-dir
+REALM_CORE_REPO:     https://github.com/gojimmypi/realm-core.git
+REALM_CORE_DIR:      realm-core-gojimmypi
+Skipping wolfSSL source fetch
+Warning: wolfSSL fetch skipped, but directory not found: wolfssl-gojimmypi
+Warning: wolfSSL fetch skipped, using prior install found in: /home/gojimmypi/wolfssl-install-dir
+Skipping wolfSSL configure
+Skipping wolfSSL build
+Skipping wolfSSL install
+Current working dir to fetch realm-core: /mnt/c/workspace/osp-gojimmypi/realm
+Skipping git clone, found existing REALM_CORE_DIR=realm-core-gojimmypi
+Found WSL distro, setting core.fileMode
+Current directory: /mnt/c/workspace/osp-gojimmypi/realm/realm-core-gojimmypi
+Skipping git reset; REALM_CORE_COMMIT_COMPLETE.log found
+On branch dev
+Your branch is ahead of 'origin/dev' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   CMakeLists.txt
+	modified:   src/realm/CMakeLists.txt
+	modified:   src/realm/exec/CMakeLists.txt
+	modified:   src/realm/sync/CMakeLists.txt
+	modified:   src/realm/sync/network/network_ssl.hpp
+	modified:   src/realm/sync/tools/CMakeLists.txt
+	modified:   test/CMakeLists.txt
+	modified:   test/benchmark-common-tasks/CMakeLists.txt
+	modified:   test/util/CMakeLists.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	realm_output.log
+
+Found REALM_CORE_COMMIT_COMPLETE.log, skipping patch.
+Found BUILD_DIR: build
+Configuring realm-core to use local wolfSSL installation from /home/gojimmypi/wolfssl-install-dir
+-- CMake version: 3.22.1
+Dependencies:  PACKAGE_NAME=realm-core VERSION=13.26.0 OPENSSL_VERSION=3.0.8 ZLIB_VERSION=1.2.13 BAAS_VERSION=5087ffd5a0e4975e625f0fbcceed23107f611055
+-- Using linker gold
+-- Main cmake: WOLFSSL_ROOT=/home/gojimmypi/wolfssl-install-dir
+-- Found REALM_HAVE_WOLFSSL
+CMake Error at src/realm/CMakeLists.txt:1 (if):
+  Flow control statements are not properly nested.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/mnt/c/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/build/CMakeFiles/CMakeOutput.log".
+See also "/mnt/c/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/build/CMakeFiles/CMakeError.log".
+realm-core configuration complete.
+Building realm-core...
+-- CMake version: 3.22.1
+-- Using linker gold
+-- Main cmake: WOLFSSL_ROOT=/home/gojimmypi/wolfssl-install-dir
+-- Found REALM_HAVE_WOLFSSL
+-- Configuring incomplete, errors occurred!
+See also "/mnt/c/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/build/CMakeFiles/CMakeOutput.log".
+See also "/mnt/c/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/build/CMakeFiles/CMakeError.log".
+Build failed
