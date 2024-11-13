@@ -331,7 +331,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_integer.hpp" />
     <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_string.hpp" />
     <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\wildcard.hpp" />
-    <None Include="\workspace\wolfssl\DLL Release\x64\wolfssl.lib">
+    <None Include="\workspace\wolfssl\DLL Debug\x64\wolfssl.lib">
     </None>
   </ItemGroup>
   <ItemGroup>
