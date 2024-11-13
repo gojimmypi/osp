@@ -115,3 +115,6 @@ server_err.log
 
 # CMake files to exclude
 **/CMakeCache.txt
+
+*.bak
+**/install_manifest_devel.txt
