@@ -71,6 +71,7 @@ WOLFSSL_UPSTREAM=""
 REALM_CORE_UPSTREAM=""
 
 if [ "$USER_REPO_NAME" = true ]; then
+    echo "Found user-suffix for repository clones: -$USER"
     WOLFSSL_REPO="https://github.com/$USER/wolfssl.git"
     WOLFSSL_DIR="wolfssl-$USER"
     WOLFSSL_UPSTREAM="https://github.com/wolfSSL/wolfssl.git"
@@ -79,6 +80,7 @@ if [ "$USER_REPO_NAME" = true ]; then
     REALM_CORE_DIR="realm-core-$USER"
     REALM_CORE_UPSTREAM="https://github.com/realm/realm-core.git"
 else
+    echo "User-suffix for repository clones: no"
     WOLFSSL_REPO="https://github.com/wolfSSL/wolfssl.git"
     WOLFSSL_DIR="wolfssl"
 
@@ -266,14 +268,14 @@ if [ "$FETCH_REALM_CORE" = true ]; then
             git checkout "$REALM_CORE_COMMIT" || { echo "Failed to checkout commit $REALM_CORE_COMMIT"; exit 1; }
 
             echo "git submodule update --init --recursive"
-            git submodule update --init --recursive
+            git submodule update --init --recursive || { echo "Failed git submodule update"; exit 1; }
         fi
         cd ..
     else
         PATCH_FILE="../realm-${REALM_CORE_VERSION}.patch"
         if [ ! -d "$REALM_CORE_DIR" ]; then
             echo "Downloading realm-core..."
-            curl -L -O "$REALM_URL"
+            curl -L -O "$REALM_URL" || { echo "Failed curl for $REALM_URL"; exit 1; }
             echo "Extracting realm-core..."
             tar -xvf "$REALM_TAR"
 
@@ -304,12 +306,14 @@ else
     # Step 5: Apply patch if patch file exists for realm-core
     echo "Looking for path file $PATCH_FILE in $(pwd)"
     if [ -f "../$PATCH_FILE" ]; then
-        echo "Applying patch to realm-core: ../$PATCH_FILE" || { echo "Failed to apply patch."; exit 1; }
+        echo "Applying patch to realm-core: ../$PATCH_FILE"
 
-        git apply "../$PATCH_FILE"
+        git apply "../$PATCH_FILE" || { echo "Failed to apply patch: ../$PATCH_FILE"; git status; exit 1; }
 
         echo "breadcrumb" > "REALM_CORE_COMMIT_COMPLETE.log"
     else
+        # The current build systems expect no upstream support. Patch is required.
+        # See also: https://github.com/realm/realm-core/pull/6535
         echo "No patch applied, abort"
         exit 1
     fi
