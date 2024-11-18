@@ -267,8 +267,6 @@ if [ "$FETCH_REALM_CORE" = true ]; then
 
             echo "git submodule update --init --recursive"
             git submodule update --init --recursive
-
-            echo "breadcrumb" > "REALM_CORE_COMMIT_COMPLETE.log"
         fi
         cd ..
     else
@@ -307,7 +305,10 @@ else
     echo "Looking for path file $PATCH_FILE in $(pwd)"
     if [ -f "../$PATCH_FILE" ]; then
         echo "Applying patch to realm-core: ../$PATCH_FILE" || { echo "Failed to apply patch."; exit 1; }
+
         git apply "../$PATCH_FILE"
+
+        echo "breadcrumb" > "REALM_CORE_COMMIT_COMPLETE.log"
     else
         echo "No patch applied, abort"
         exit 1
