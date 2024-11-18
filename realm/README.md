@@ -79,3 +79,20 @@ cmake --build build
 
 You can also use the build_wolfssl_with_realm.sh script after adjusting the global variables as needed.
 
+## Troubleshooting
+
+### Cannot find OpenSSL
+
+```
+Cannot open include file: 'openssl/sha.h': No such file or directory	Storage	C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\util\aes_cryptor.hpp
+```
+
+Check the `osp\realm\VS2022\src\realm\util` directory. The generated `config.h` should have
+openSSL disabled `0` and wolfSSL enabled `1` like this:
+
+```
+#define REALM_HAVE_OPENSSL 0
+#define REALM_HAVE_WOLFSSL 1
+```
+
+###
