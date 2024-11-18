@@ -6,6 +6,14 @@ The upstream `realm-core` does NOT yet support wolfSSL. Please see the enclosed 
 
 The Linux Script Build automatically applies these patches as needed. Modify as desired with the `REALM_CORE_COMMIT` script variable.
 
+THe generate a new patch compare a particular commit (a5e87a39) to your fork/branch (`dev`):
+
+```
+https://github.com/gojimmypi/realm-core/compare/a5e87a39...dev.patch
+```
+
+Do *not* edit the patch file for tailing spaces, etc. It must be saved exactly as generated.
+
 ## Linux Script Build
 
 The [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) script can be used.
