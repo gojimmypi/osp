@@ -383,6 +383,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uv_a", "_deps\libuv-build\u
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wolfssl", "..\..\..\wolfssl\wolfssl-VS2022.vcxproj", "{12226DBE-7278-4DFA-A119-5A0294CF0B33}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{034DFF4E-F032-4FE9-96D2-DF6FE1F9598E}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
