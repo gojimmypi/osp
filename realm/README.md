@@ -6,14 +6,6 @@ The upstream `realm-core` does NOT yet support wolfSSL. Please see the enclosed 
 
 The Linux Script Build automatically applies these patches as needed. Modify as desired with the `REALM_CORE_COMMIT` script variable.
 
-THe generate a new patch compare a particular commit (a5e87a39) to your fork/branch (`dev`):
-
-```
-https://github.com/gojimmypi/realm-core/compare/a5e87a39...dev.patch
-```
-
-Do *not* edit the patch file for tailing spaces, etc. It must be saved exactly as generated.
-
 ## Linux Script Build
 
 The [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) script can be used.
@@ -87,7 +79,40 @@ cmake --build build
 
 You can also use the build_wolfssl_with_realm.sh script after adjusting the global variables as needed.
 
+## Generating a new Realm-core patch file:
+
+To generate a new patch compare a particular commit (a5e87a39) to your fork/branch (`dev`):
+
+Save the generated file from this link to the `realm-commit-a5e87a39.patch` file:
+
+
+
+```
+https://github.com/gojimmypi/realm-core/compare/a5e87a39...dev.patch
+
+or
+
+https://github.com/gojimmypi/realm-core/compare/a5e87a39...gojimmypi:realm-core:dev-consolidated.patch
+```
+
+Do *not* edit the patch file for tailing spaces, etc. It must be saved exactly as generated.
+
 ## Troubleshooting
+
+### Confirming build with wolfSSL
+
+See generated `config.h` files:
+
+For Linux compile: `build` directory:
+```
+[wolfssl osp root]\realm\realm-core\build\src\realm\util
+```
+
+For Visual Studio compile: `out` directory, plus build configuration (e.g. `build\x64-Debug`):
+
+```
+[wolfssl osp root]\realm\realm-core\out\build\x64-Debug\src\realm\util
+```
 
 ### Cannot find OpenSSL
 
