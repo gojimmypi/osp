@@ -83,7 +83,7 @@ add_library(Realm::RealmFFIStatic STATIC IMPORTED)
 set_target_properties(Realm::RealmFFIStatic PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "RLM_NO_DLLIMPORT"
   INTERFACE_INCLUDE_DIRECTORIES "C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/src"
-  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:Realm::Storage>;\$<LINK_ONLY:Realm::ObjectStore>;\$<LINK_ONLY:Realm::QueryParser>;\$<LINK_ONLY:Realm::Sync>"
+  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:Realm::Storage>;\$<LINK_ONLY:Realm::ObjectStore>;\$<LINK_ONLY:Realm::QueryParser>;/workspace/wolfssl/DLL Debug/x64/wolfssl.lib;\$<LINK_ONLY:Realm::Sync>"
 )
 
 # Create imported target Realm::Sync

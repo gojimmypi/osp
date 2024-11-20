@@ -4,16 +4,16 @@ include("${CMAKE_CURRENT_LIST_DIR}/AcquireRealmDependency.cmake")
 # Find dependencies
 include(CMakeFindDependencyMacro)
 
-if(ON)
+if(0)
     if(NOT REALM_USE_SYSTEM_OPENSSL AND (ANDROID OR WIN32 OR CMAKE_SYSTEM_NAME STREQUAL "Linux"))
         # Use our own prebuilt OpenSSL
-        realm_acquire_dependency(openssl 3.0.8 OPENSSL_CMAKE_INCLUDE_FILE)
+        realm_acquire_dependency(openssl  OPENSSL_CMAKE_INCLUDE_FILE)
 
         include(${OPENSSL_CMAKE_INCLUDE_FILE})
     endif()
 
     set(OPENSSL_USE_STATIC_LIBS ON)
-    find_dependency(OpenSSL 3.0.8)
+    find_dependency(OpenSSL )
 endif()
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)

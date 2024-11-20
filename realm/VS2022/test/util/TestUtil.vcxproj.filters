@@ -131,8 +131,6 @@
     <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Header Files">
       <UniqueIdentifier>{020EF7E9-D766-3BFD-9F90-448849F20D38}</UniqueIdentifier>
     </Filter>
