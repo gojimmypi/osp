@@ -118,3 +118,4 @@ server_err.log
 
 *.bak
 **/install_manifest_devel.txt
+**/build/wolfssl

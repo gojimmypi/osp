@@ -90,7 +90,7 @@ set_target_properties(Realm::RealmFFIStatic PROPERTIES
 add_library(Realm::Sync STATIC IMPORTED)
 
 set_target_properties(Realm::Sync PROPERTIES
-  INTERFACE_LINK_LIBRARIES "Realm::Storage;Version.lib"
+  INTERFACE_LINK_LIBRARIES "Realm::Storage;/workspace/wolfssl/DLL Debug/x64/wolfssl.lib;Version.lib"
 )
 
 # Import target "Realm::Storage" for configuration "Debug"
