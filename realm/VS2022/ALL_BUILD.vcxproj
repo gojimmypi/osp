@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="AddAdditionalReferences" BeforeTargets="ResolveAssemblyReferences">
+    <PropertyGroup Condition="'$(DesignTimeBuild)' == 'true' OR '$(BuildingProject)' != 'true'">
+        <_AvoidExpensiveCalculation>true</_AvoidExpensiveCalculation>
+        <Message>Design Time Build!</Message>
+    </PropertyGroup>
+  </Target>
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
