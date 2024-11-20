@@ -105,13 +105,13 @@ See generated `config.h` files:
 
 For Linux compile: `build` directory:
 ```
-[wolfssl osp root]\realm\realm-core\build\src\realm\util
+[wolfssl osp root]\realm\realm-core[-username]\build\src\realm\util
 ```
 
 For Visual Studio compile: `out` directory, plus build configuration (e.g. `build\x64-Debug`):
 
 ```
-[wolfssl osp root]\realm\realm-core\out\build\x64-Debug\src\realm\util
+[wolfssl osp root]\realm\realm-core[-username]\out\build\x64-Debug\src\realm\util
 ```
 
 ### Cannot find OpenSSL
