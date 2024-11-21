@@ -1,10 +1,15 @@
-#ifndef _WIN_USER_SETTINGS_H_
-#define _WIN_USER_SETTINGS_H_
+#ifndef _WIN_USER_SETTINGS_IDE_H_
+#define _WIN_USER_SETTINGS_IDE_H_
 
 /* Verify this is Windows */
-#ifndef _WIN32
-#error This user_settings.h header is only designed for Windows
+#ifdef _WIN32
+    #pragma message("include Ws2_32")
+    #pragma comment(lib, "Ws2_32.lib")
+#else
+    #error This user_settings.h header is only designed for Windows
 #endif
+
+#pragma message("YAY! The realm user_settings.h")
 
 #define USE_WOLFSSL_IO
 #define HAVE_AESGCM
@@ -62,7 +67,7 @@
     #define HAVE_CURVE25519
     #define FP_ECC
     #define HAVE_ECC_ENCRYPT
-    #define WOLFCRYPT_HAVE_ECCSI
+    // #define WOLFCRYPT_HAVE_ECCSI /* benchmark disabled */
     #define WOLFSSL_CUSTOM_CURVES
 #endif
 

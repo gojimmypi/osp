@@ -2,6 +2,7 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <WOLFSSL_ROOT>c:/workspace/wolfssl</WOLFSSL_ROOT>
+    <WOLFSSL_USER_SETTINGS_DIRECTORY>./include</WOLFSSL_USER_SETTINGS_DIRECTORY>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -341,4 +342,10 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <Target Name="PrintVariables" BeforeTargets="Build">
+    <Message Text="VS wolfSSL Project Variables:" Importance="High" />
+    <Message Text="VS_ROOT is: $(VS_ROOT)" Importance="High" />
+    <Message Text="WOLFSSL_ROOT is: $(WOLFSSL_ROOT)" Importance="High" />
+    <Message Text="WOLFSSL_USER_SETTINGS_DIRECTORY is: $(WOLFSSL_USER_SETTINGS_DIRECTORY)" Importance="High" />
+  </Target>  
 </Project>
