@@ -128,7 +128,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(WOLFSSL_ROOT);$(WOLFSSL_ROOT)/IDE/WIN;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>MY_WOLFSSL_BREADCRUMB;WOLFSSL_LIB;BUILDING_WOLFSSL;WOLFSSL_DLL;WOLFSSL_USER_SETTINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MY_WOLFSSL_BREADCRUMB;WOLFSSL_LIB;BUILDING_WOLFSSL;WOLFSSL_USER_SETTINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
@@ -347,5 +347,5 @@
     <Message Text="VS_ROOT is: $(VS_ROOT)" Importance="High" />
     <Message Text="WOLFSSL_ROOT is: $(WOLFSSL_ROOT)" Importance="High" />
     <Message Text="WOLFSSL_USER_SETTINGS_DIRECTORY is: $(WOLFSSL_USER_SETTINGS_DIRECTORY)" Importance="High" />
-  </Target>  
+  </Target>
 </Project>
