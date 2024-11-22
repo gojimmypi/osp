@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <WOLFSSL_ROOT>c:/workspace/wolfssl</WOLFSSL_ROOT>
-    <WOLFSSL_USER_SETTINGS_DIRECTORY>./include</WOLFSSL_USER_SETTINGS_DIRECTORY>
+    <WOLFSSL_USER_SETTINGS_DIRECTORY>$(SolutionDir)/include</WOLFSSL_USER_SETTINGS_DIRECTORY>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -174,7 +174,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory);./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_ROOT);./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -327,7 +327,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ml64.exe /c /Zi /Fo"$(OutDir)%(Filename).obj" %(Identity)</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)%(Filename).obj</Outputs>
     </CustomBuild>
-    <ClInclude Include="$(WOLFSSL_ROOT)\IDE\WIN\user_settings.h" />
+    <ClInclude Include="$(SolutionDir)\include\user_settings.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(WOLFSSL_ROOT)\wolfssl.rc">
