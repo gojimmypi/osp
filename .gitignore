@@ -124,3 +124,7 @@ server_err.log
 /realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_AddTable_Full_EncryptionOff.realm
 /realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_AddTable_Full_EncryptionOff.realm.lock
 /realm/VS2022/**/generate.stamp
+/realm/VS2022/external/catch/src/Catch2.dir/**/objects.txt
+
+# Download by build process:
+/realm/VS2022/zlib/**
