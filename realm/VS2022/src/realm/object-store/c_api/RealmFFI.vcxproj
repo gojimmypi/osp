@@ -122,8 +122,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\Debug\realm-dbg.lib;..\Debug\realm-object-store-dbg.lib;..\..\parser\Debug\realm-parser-dbg.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;..\..\sync\Debug\realm-sync-dbg.lib;..\..\Debug\realm-dbg.lib;psapi.lib;..\..\..\..\zlib\debug\lib\zlibd.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>/workspace/osp-gojimmypi/realm/VS2022/Debug/x64;/workspace/osp-gojimmypi/realm/VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\Debug\realm-dbg.lib;..\Debug\realm-object-store-dbg.lib;..\..\parser\Debug\realm-parser-dbg.lib;..\..\..\..\Debug\x64\wolfssl.lib;..\..\sync\Debug\realm-sync-dbg.lib;..\..\Debug\realm-dbg.lib;psapi.lib;..\..\..\..\zlib\debug\lib\zlibd.lib;..\..\..\..\Debug\x64\wolfssl.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/workspace/osp-gojimmypi/realm/VS2022/Debug/x64;C:/workspace/osp-gojimmypi/realm/VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 /ignore:4099</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -171,8 +171,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\Release\realm.lib;..\Release\realm-object-store.lib;..\..\parser\Release\realm-parser.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;..\..\sync\Release\realm-sync.lib;..\..\Release\realm.lib;psapi.lib;..\..\..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>/workspace/osp-gojimmypi/realm/VS2022/Debug/x64;/workspace/osp-gojimmypi/realm/VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\Release\realm.lib;..\Release\realm-object-store.lib;..\..\parser\Release\realm-parser.lib;..\..\..\..\Debug\x64\wolfssl.lib;..\..\sync\Release\realm-sync.lib;..\..\Release\realm.lib;psapi.lib;..\..\..\..\zlib\lib\zlib.lib;..\..\..\..\Debug\x64\wolfssl.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/workspace/osp-gojimmypi/realm/VS2022/Debug/x64;C:/workspace/osp-gojimmypi/realm/VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -220,8 +220,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\MinSizeRel\realm.lib;..\MinSizeRel\realm-object-store.lib;..\..\parser\MinSizeRel\realm-parser.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;..\..\sync\MinSizeRel\realm-sync.lib;..\..\MinSizeRel\realm.lib;psapi.lib;..\..\..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>/workspace/osp-gojimmypi/realm/VS2022/Debug/x64;/workspace/osp-gojimmypi/realm/VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\MinSizeRel\realm.lib;..\MinSizeRel\realm-object-store.lib;..\..\parser\MinSizeRel\realm-parser.lib;..\..\..\..\Debug\x64\wolfssl.lib;..\..\sync\MinSizeRel\realm-sync.lib;..\..\MinSizeRel\realm.lib;psapi.lib;..\..\..\..\zlib\lib\zlib.lib;..\..\..\..\Debug\x64\wolfssl.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/workspace/osp-gojimmypi/realm/VS2022/Debug/x64;C:/workspace/osp-gojimmypi/realm/VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -268,8 +268,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\RelWithDebInfo\realm.lib;..\RelWithDebInfo\realm-object-store.lib;..\..\parser\RelWithDebInfo\realm-parser.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;..\..\sync\RelWithDebInfo\realm-sync.lib;..\..\RelWithDebInfo\realm.lib;psapi.lib;..\..\..\..\zlib\lib\zlib.lib;\workspace\osp-gojimmypi\realm\VS2022\Debug\x64\wolfssl.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>/workspace/osp-gojimmypi/realm/VS2022/Debug/x64;/workspace/osp-gojimmypi/realm/VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\RelWithDebInfo\realm.lib;..\RelWithDebInfo\realm-object-store.lib;..\..\parser\RelWithDebInfo\realm-parser.lib;..\..\..\..\Debug\x64\wolfssl.lib;..\..\sync\RelWithDebInfo\realm-sync.lib;..\..\RelWithDebInfo\realm.lib;psapi.lib;..\..\..\..\zlib\lib\zlib.lib;..\..\..\..\Debug\x64\wolfssl.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/workspace/osp-gojimmypi/realm/VS2022/Debug/x64;C:/workspace/osp-gojimmypi/realm/VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
