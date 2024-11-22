@@ -128,4 +128,19 @@ openSSL disabled `0` and wolfSSL enabled `1` like this:
 #define REALM_HAVE_WOLFSSL 1
 ```
 
-###
+### CMake error Not a file: VerifyGlobs.cmake
+
+```
+1>Checking File Globs
+1>EXEC : CMake error : Not a file: C:/workspace/osp-gojimmypi/realm/VS2022/CMakeFiles/VerifyGlobs.cmake
+1>EXEC : CMake error : Error processing file: C:/workspace/osp-gojimmypi/realm/VS2022/CMakeFiles/VerifyGlobs.cmake
+```
+
+### Missing LibUV
+
+Open the cloned `realm-core` in Visual Studio and let cmake download and setup LibUV.
+
+```
+1> [CMake] -- Could NOT find LibUV (missing: LibUV_LIBRARY LibUV_INCLUDE_DIR) (found version "")
+1> [CMake] -- LibUV not found, building from source with FetchContent
+```
