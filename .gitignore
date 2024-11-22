@@ -120,5 +120,7 @@ server_err.log
 *.bak
 **/install_manifest_devel.txt
 **/build/wolfssl
+
 /realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_AddTable_Full_EncryptionOff.realm
 /realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_AddTable_Full_EncryptionOff.realm.lock
+/realm/VS2022/**/generate.stamp
