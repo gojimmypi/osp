@@ -127,8 +127,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>MY_WOLFSSL_BREADCRUMB;WOLFSSL_LIB;BUILDING_WOLFSSL;WOLFSSL_USER_SETTINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(WOLFSSL_ROOT)/wolfssl;$(WOLFSSL_ROOT)/wolfssl/wolfcrypt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WOLFSSL_LIB;BUILDING_WOLFSSL;WOLFSSL_USER_SETTINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
@@ -182,6 +182,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalHeaderUnitDependencies>$(WOLFSSL_ROOT)/wolfssl;$(WOLFSSL_ROOT)/wolfssl/wolfcrypt</AdditionalHeaderUnitDependencies>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
