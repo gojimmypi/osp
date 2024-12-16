@@ -81,6 +81,10 @@ You can also use the `build_wolfssl_with_realm.sh [-u]` script after adjusting t
 
 ## Visual Studio
 
+The main Ream-Core solution file is located in `VS2022\RealmCore.sln`.
+
+There's also a stand-along wolfSSH solution that contains only the wolfSSL project in `VS2022\wolfssl-VS2022-cmake.sln`
+
 The platform and machine independent settings such as `$(CurrentVsInstallRoot)` will likely be reset to fully-qualified paths at build time.
 
 See the `vs_clean.sh` to reset variables such as Visual Studio Edition paths to `$(CurrentVsInstallRoot)`.
