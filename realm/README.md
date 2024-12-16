@@ -104,6 +104,13 @@ C:\workspace\osp[-%USERNAME%]
 C:\workspace\realm-core[-%USERNAME%]
 ```
 
+The patch must be applied:
+
+```
+cd C:\workspace\realm-core
+git apply ../osp-gojimmypi/realm/realm-commit-a5e87a39.patch
+```
+
 There's an enclosed WSL script called [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) that automates installation.
 
 ## Generating a new Realm-core patch file:
