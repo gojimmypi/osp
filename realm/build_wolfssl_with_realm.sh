@@ -4,7 +4,7 @@
 
 # parameters:
 #   -t use tarball, not git
-#   -u use $USER name suffix for repository
+#   -u use $USER name suffix for repository (automatically sets upstream configuration values)
 
     # While the support to build from a tarball is included,
     # Please note that to successfully build,
