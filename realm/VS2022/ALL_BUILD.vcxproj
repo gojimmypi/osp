@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <REALM_CORE_ROOT>C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi</WOLFSSL_ROOT>
+    <REALM_CORE_ROOT>C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi</REALM_CORE_ROOT>
   </PropertyGroup>
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
