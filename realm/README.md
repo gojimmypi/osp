@@ -95,8 +95,10 @@ The project files assume there are already source code directories available. Fo
 
 ```
 cd \workspace
-git clone https://github.com/wolfSSL/osp.git       [osp-%USERNAME%]
 git clone https://github.com/wolfSSL/wolfssl.git   [wolfssl-%USERNAME%]
+git clone https://github.com/wolfSSL/osp.git       [osp-%USERNAME%]
+
+cd [osp-%USERNAME%]
 git clone https://github.com/realm/realm-core.git  [realm-core-%USERNAME%]
 ```
 
@@ -105,7 +107,7 @@ Resulting in directories like this (user suffixes optional, but must be consiste
 ```
 C:\workspace\wolfssl[-%USERNAME%]
 C:\workspace\osp[-%USERNAME%]
-C:\workspace\realm-core[-%USERNAME%]
+C:\workspace\osp[-%USERNAME%]\realm-core[-%USERNAME%]
 ```
 
 The patch must be applied:
