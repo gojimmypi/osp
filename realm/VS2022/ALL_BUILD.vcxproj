@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <REALM_CORE_ROOT>C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi</WOLFSSL_ROOT>
+  </PropertyGroup>
+  <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
   <PropertyGroup>
@@ -291,4 +294,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <Target Name="PrintVariables" BeforeTargets="Build">
+    <Message Text="VS wolfSSL Project Variables:" Importance="High" />
+    <Message Text="VS_ROOT is: $(VS_ROOT)" Importance="High" />
+    <Message Text="WOLFSSL_ROOT is: $(WOLFSSL_ROOT)" Importance="High" />
+    <Message Text="REALM_CORE_ROOT is: $(REALM_CORE_ROOT)" Importance="High" />
+    <Message Text="WOLFSSL_USER_SETTINGS_DIRECTORY is: $(WOLFSSL_USER_SETTINGS_DIRECTORY)" Importance="High" />
+  </Target>
 </Project>
