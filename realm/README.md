@@ -15,7 +15,7 @@ The [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) script can be u
 * `-t` use tarball, not git
 * `-u` use $USER name suffix for repository
 
-###
+### Notes
 
 Defaults are to clone [wolfSSL](https://github.com/wolfSSL/wolfssl) and [realm-core](https://github.com/realm/realm-core) to local directory.
 
@@ -77,7 +77,15 @@ cmake --build build
 ./build/test/realm-tests
 ```
 
-You can also use the build_wolfssl_with_realm.sh script after adjusting the global variables as needed.
+You can also use the `build_wolfssl_with_realm.sh` script after adjusting the global variables as needed.
+
+## Visual Studio
+
+The platform and machine independent settings such as `$(CurrentVsInstallRoot)` will likely be reset to fully-qualified paths at build time.
+
+See the `vs_clean.sh` to reset variables such as Visual Studio Edition paths to `$(CurrentVsInstallRoot)`.
+
+If no other changes have made, the project `*.vcxproj` changes can also be reverted. Builds should be successful with either full paths or VS macros.
 
 ## Generating a new Realm-core patch file:
 
