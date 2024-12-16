@@ -77,7 +77,7 @@ cmake --build build
 ./build/test/realm-tests
 ```
 
-You can also use the `build_wolfssl_with_realm.sh` script after adjusting the global variables as needed.
+You can also use the `build_wolfssl_with_realm.sh [-u]` script after adjusting the global variables as needed.
 
 ## Visual Studio
 
@@ -86,6 +86,25 @@ The platform and machine independent settings such as `$(CurrentVsInstallRoot)` 
 See the `vs_clean.sh` to reset variables such as Visual Studio Edition paths to `$(CurrentVsInstallRoot)`.
 
 If no other changes have made, the project `*.vcxproj` changes can also be reverted. Builds should be successful with either full paths or VS macros.
+
+The project files assume there are already source code directories available. For instance:
+
+```
+cd \workspace
+git clone https://github.com/wolfSSL/osp.git       [osp-%USERNAME%]
+git clone https://github.com/wolfSSL/wolfssl.git   [wolfssl-%USERNAME%]
+git clone https://github.com/realm/realm-core.git  [realm-core-%USERNAME%]
+```
+
+Resulting in directories like this (user suffixes optional, but must be consistent):
+
+```
+C:\workspace\wolfssl[-%USERNAME%]
+C:\workspace\osp[-%USERNAME%]
+C:\workspace\realm-core[-%USERNAME%]
+```
+
+There's an enclosed WSL script called [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) that automates installation.
 
 ## Generating a new Realm-core patch file:
 
