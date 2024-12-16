@@ -386,6 +386,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wolfssl", "wolfssl-VS2022-c
 		{2C88391C-B836-3F71-A9FC-1A8E3EFD9661} = {2C88391C-B836-3F71-A9FC-1A8E3EFD9661}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{345B24BD-852B-4645-B7E2-9107A2AA7D7A}"
+	ProjectSection(SolutionItems) = preProject
+		..\build_wolfssl_with_realm.sh = ..\build_wolfssl_with_realm.sh
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
