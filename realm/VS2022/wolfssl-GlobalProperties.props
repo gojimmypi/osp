@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <WOLFSSL_ROOT>c:/workspace/wolfssl</WOLFSSL_ROOT>
+    <WOLFSSL_USER_SETTINGS_DIRECTORY>$(MSBuildThisFileDirectory)/include</WOLFSSL_USER_SETTINGS_DIRECTORY>
+  </PropertyGroup>
+</Project>
