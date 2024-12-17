@@ -1,8 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Target that initializes before Build -->
+  <Target Name="init" BeforeTargets="CustomBuild;Compile">
+    <Message Text="SolutionDir: $(SolutionDir)" Importance="High" />    
+    <Message Text="Project Directory: $(MSBuildProjectDirectory)" Importance="High" />
+  </Target>
+
+  <!-- Build target that depends on init -->
+  <Target Name="Build" DependsOnTargets="init;CustomBuild;Compile">
+    <Message Text="Executing build target..." Importance="High" />    
+  </Target> 
+
   <PropertyGroup>
     <WOLFSSL_ROOT>c:/workspace/wolfssl</WOLFSSL_ROOT>
-    <WOLFSSL_USER_SETTINGS_DIRECTORY>$(SolutionDir)/include</WOLFSSL_USER_SETTINGS_DIRECTORY>
+    <WOLFSSL_USER_SETTINGS_DIRECTORY>$(MSBuildProjectDirectory)/include</WOLFSSL_USER_SETTINGS_DIRECTORY>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
