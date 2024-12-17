@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="../../realm-core-GlobalProperties.props" />
   <Import Project="../../wolfssl-GlobalProperties.props" />
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
@@ -87,7 +88,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -111,10 +112,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_ENABLE_SYNC=1;REALM_DEBUG=1;RLM_NO_DLLIMPORT;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -151,7 +152,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -174,10 +175,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_ENABLE_SYNC=1;RLM_NO_DLLIMPORT;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -214,7 +215,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -237,10 +238,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_ENABLE_SYNC=1;RLM_NO_DLLIMPORT;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -277,7 +278,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -299,10 +300,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_ENABLE_SYNC=1;RLM_NO_DLLIMPORT;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -338,7 +339,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\CMakeLists.txt">
+    <CustomBuild Include="$(REALM_CORE_ROOT)\test\object-store\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
@@ -350,7 +351,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
@@ -363,7 +364,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
@@ -376,7 +377,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
@@ -389,38 +390,38 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\main.cpp" />
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\stitch_private.pem">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\main.cpp" />
+    <None Include="$(REALM_CORE_ROOT)\test\stitch_private.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\stitch_public.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\stitch_public.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_pubkey.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_pubkey.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_pubkey2.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_pubkey2.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_sync_ca.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_sync_ca.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_sync_key.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_sync_key.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_network_ssl_ca.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_util_network_ssl_ca.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_network_ssl_key.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_util_network_ssl_key.pem">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\sync-metadata-v4.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\object-store\sync-metadata-v4.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\sync-metadata-v5.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\object-store\sync-metadata-v5.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\sync-metadata-v6.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\object-store\sync-metadata-v6.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\test_backup-olden-and-golden.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\object-store\test_backup-olden-and-golden.realm">
     </None>
     <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\set.obj" />
     <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\backup.obj" />

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="../../realm-core-GlobalProperties.props" />
   <Import Project="../../wolfssl-GlobalProperties.props" />
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
@@ -79,7 +80,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -103,10 +104,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_DEBUG=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -119,7 +120,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -142,10 +143,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -158,7 +159,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -181,10 +182,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -197,7 +198,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -219,10 +220,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -234,7 +235,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\CMakeLists.txt">
+    <CustomBuild Include="$(REALM_CORE_ROOT)\test\util\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/util/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
@@ -291,47 +292,47 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\benchmark_results.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\crypt_key.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\demangle.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\misc.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\quote.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\random.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\resource_limits.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\spawned_process.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_only.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_path.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\timer.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\unit_test.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_integer.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_string.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\wildcard.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\compare_groups.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\dump_changesets.cpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\benchmark_results.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\check_logic_error.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\check_system_error.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\compare_groups.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\crypt_key.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\demangle.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\dump_changesets.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\misc.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\number_names.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\quote.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\random.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\resource_limits.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\semaphore.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\spawned_process.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\super_int.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_only.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_path.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_types.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\thread_wrapper.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\timer.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\unit_test.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_integer.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_string.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\wildcard.hpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\benchmark_results.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\crypt_key.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\demangle.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\misc.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\quote.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\random.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\resource_limits.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\spawned_process.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\test_only.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\test_path.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\timer.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\unit_test.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\verified_integer.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\verified_string.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\wildcard.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\compare_groups.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\dump_changesets.cpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\benchmark_results.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\check_logic_error.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\check_system_error.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\compare_groups.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\crypt_key.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\demangle.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\dump_changesets.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\misc.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\number_names.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\quote.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\random.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\resource_limits.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\semaphore.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\spawned_process.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\super_int.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\test_only.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\test_path.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\test_types.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\thread_wrapper.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\timer.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\unit_test.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\verified_integer.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\verified_string.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\wildcard.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\ZERO_CHECK.vcxproj">

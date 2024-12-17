@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="../../../wolfssl-GlobalProperties.props" />
+	<Import Project="../../../realm-core-GlobalProperties.props" />
+	<Import Project="../../../wolfssl-GlobalProperties.props" />
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
@@ -79,7 +80,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -101,10 +102,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -117,7 +118,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146;4068;4244;4267;4305</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -138,10 +139,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -154,7 +155,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146;4068;4244;4267;4305</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -175,10 +176,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -191,7 +192,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4146;4068;4244;4267;4305</DisableSpecificWarnings>
@@ -211,10 +212,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\.;C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\src\external\s2\.;$(REALM_CORE_ROOT)\src\external\s2\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -226,7 +227,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\CMakeLists.txt">
+    <CustomBuild Include="$(REALM_CORE_ROOT)\src\external\s2\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/src/external/s2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
@@ -283,70 +284,70 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s1angle.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2cellid.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2latlng.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s1interval.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2cap.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2cell.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2cellunion.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2edgeindex.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2edgeutil.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2latlngrect.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2loop.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2pointregion.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2polygon.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2polygonbuilder.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2polyline.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2r2rect.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2region.cc" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\basictypes.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\casts.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\commandlineflags.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\definer.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\integral_types.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\logging.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\macros.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\stl_decl.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\stl_decl_msvc.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\stl_decl_osx.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\base\template_util.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\hash.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\r1interval.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s1angle.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s1interval.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2cap.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2cell.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2cellid.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2cellunion.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2edgeindex.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2edgeutil.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2latlng.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2latlngrect.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2loop.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2pointregion.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2polygon.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2polygonbuilder.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2polyline.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2r2rect.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2region.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2regioncoverer.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2regionintersection.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\s2regionunion.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\mathlimits.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\mathutil.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\matrix3x3-inl.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\matrix3x3.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\vector2-inl.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\vector2.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\vector3-inl.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\vector3.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\vector4-inl.h" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\vector4.h" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\mathutil.cc" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external\s2\util\math\mathlimits.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s1angle.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2cellid.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2latlng.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s1interval.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2cap.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2cell.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2cellunion.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2edgeindex.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2edgeutil.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2latlngrect.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2loop.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2pointregion.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2polygon.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2polygonbuilder.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2polyline.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2r2rect.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\s2region.cc" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\basictypes.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\casts.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\commandlineflags.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\definer.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\integral_types.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\logging.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\macros.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\stl_decl.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\stl_decl_msvc.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\stl_decl_osx.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\base\template_util.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\hash.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\r1interval.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s1angle.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s1interval.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2cap.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2cell.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2cellid.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2cellunion.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2edgeindex.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2edgeutil.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2latlng.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2latlngrect.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2loop.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2pointregion.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2polygon.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2polygonbuilder.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2polyline.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2r2rect.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2region.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2regioncoverer.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2regionintersection.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\s2regionunion.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\mathlimits.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\mathutil.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\matrix3x3-inl.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\matrix3x3.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\vector2-inl.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\vector2.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\vector3-inl.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\vector3.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\vector4-inl.h" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\vector4.h" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\mathutil.cc" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\external\s2\util\math\mathlimits.cc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\ZERO_CHECK.vcxproj">

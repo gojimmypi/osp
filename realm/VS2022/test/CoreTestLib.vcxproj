@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="../realm-core-GlobalProperties.props" />
   <Import Project="../wolfssl-GlobalProperties.props" />
   <ItemGroup>
     <ProjectReference Include="..\wolfssl-VS2022-cmake.vcxproj">
@@ -8,7 +9,7 @@
   </ItemGroup>
   <!-- Target that initializes before Build -->
   <Target Name="init" BeforeTargets="CustomBuild;Compile">
-    <Message Text="SolutionDir: $(SolutionDir)" Importance="High" />    
+    <Message Text="SolutionDir: $(SolutionDir)" Importance="High" />
     <Message Text="Project Directory: $(MSBuildProjectDirectory)" Importance="High" />
     <Message Text="WOLFSSL_USER_SETTINGS_DIRECTORY: $(WOLFSSL_USER_SETTINGS_DIRECTORY)" Importance="High" />
     <Message Text="WOLFSSL_ROOT: $(WOLFSSL_ROOT)" Importance="High" />
@@ -16,8 +17,8 @@
 
   <!-- Build target that depends on init -->
   <Target Name="Build" DependsOnTargets="init;CustomBuild;Compile">
-    <Message Text="Executing build target..." Importance="High" />    
-  </Target> 
+    <Message Text="Executing build target..." Importance="High" />
+  </Target>
 
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
@@ -97,7 +98,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -121,10 +122,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_DEBUG=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -137,7 +138,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -160,10 +161,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -176,7 +177,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -199,10 +200,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -215,7 +216,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -237,10 +238,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -252,7 +253,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\CMakeLists.txt">
+    <CustomBuild Include="$(REALM_CORE_ROOT)\test\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
@@ -309,307 +310,307 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_query.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_query.cpp">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_query2.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_query_big.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_query2.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_query_big.cpp">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_table.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_table.cpp">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_lang_bind_helper.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_parser.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_lang_bind_helper.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_parser.cpp">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_alloc.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_array.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_array_blob.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_array_blobs_big.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_array_blobs_small.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_array_float.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_array_integer.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_array_mixed.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_array_string_short.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_binary_data.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_bplus_tree.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_column.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_column_float.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_column_string.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_column_timestamp.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_compaction.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_db.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_decimal128.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_destroy_guard.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_dictionary.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_file.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_file_locks.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_global_key.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_group.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_impl_simulated_failure.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_index_string.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_json.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_link_query_view.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_links.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_mixed_null_assertions.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_object_id.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_optional.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_priority_queue.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_replication.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_safe_int_ops.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_self.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_set.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_shared.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_status.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_string_data.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_table_view.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_thread.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_transactions.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_transactions_lasse.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_typed_links.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_unresolved_links.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_utf8.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_any.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_backtrace.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_base64.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_chunked_binary.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_cli_args.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_compression.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_error.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_file.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_fixed_size_buffer.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_flat_map.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_from_chars.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_functional.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_future.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_logger.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_memory_stream.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_overload.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_scope_exit.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_to_string.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_uuid.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_encrypted_file_mapping.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_query_geo.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_alloc.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_array.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_array_blob.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_array_blobs_big.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_array_blobs_small.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_array_float.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_array_integer.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_array_mixed.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_array_string_short.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_binary_data.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_bplus_tree.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_column.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_column_float.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_column_string.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_column_timestamp.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_compaction.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_db.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_decimal128.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_destroy_guard.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_dictionary.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_file.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_file_locks.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_global_key.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_group.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_impl_simulated_failure.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_index_string.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_json.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_link_query_view.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_links.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_mixed_null_assertions.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_object_id.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_optional.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_priority_queue.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_replication.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_safe_int_ops.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_self.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_set.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_shared.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_status.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_string_data.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_table_view.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_thread.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_transactions.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_transactions_lasse.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_typed_links.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_unresolved_links.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_upgrade_database.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_utf8.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_any.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_backtrace.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_base64.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_chunked_binary.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_cli_args.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_compression.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_error.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_file.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_fixed_size_buffer.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_flat_map.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_from_chars.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_functional.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_future.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_logger.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_memory_stream.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_overload.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_scope_exit.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_util_to_string.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_uuid.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_encrypted_file_mapping.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\test_query_geo.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_CORE_ROOT)\src\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_CORE_ROOT)\src\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_CORE_ROOT)\src\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(REALM_CORE_ROOT)\src\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\large_tests\test_column_large.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\large_tests\test_strings.cpp" />
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\fuzz_group.cpp" />
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\downgrade_asymmetric.realm">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\large_tests\test_column_large.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\large_tests\test_strings.cpp" />
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\fuzz_group.cpp" />
+    <None Include="$(REALM_CORE_ROOT)\test\downgrade_asymmetric.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expect_json.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expect_json.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expect_string.txt">
+    <None Include="$(REALM_CORE_ROOT)\test\expect_string.txt">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expect_test_upgrade_database_9_to_10.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expect_test_upgrade_database_9_to_10.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expect_xjson.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expect_xjson.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expect_xjson_plus.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expect_xjson_plus.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_embeddeddict1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_embeddeddict1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_link_cycles1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_link_cycles1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_link_cycles2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_link_cycles2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_link_cycles3.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_link_cycles3.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_link_cycles4.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_link_cycles4.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_link_cycles5.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_link_cycles5.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linkdict1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linkdict1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linkdict2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linkdict2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist1_1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist1_1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist1_2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist1_2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist1_3.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist1_3.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist1_4.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist1_4.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist1_5.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist1_5.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist1_6.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist1_6.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist_cycle1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist_cycle1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist_cycle2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist_cycle2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist_cycle4.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist_cycle4.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist_cycle5.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist_cycle5.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist_cycle6.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist_cycle6.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist_long1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist_long1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist_long2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist_long2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_linklist_long3.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_linklist_long3.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_mixed1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_mixed1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_mixed2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_mixed2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_json_nulls.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_json_nulls.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_embeddeddict1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_embeddeddict1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_link.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_link.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_linkdict1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_linkdict1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_linkdict2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_linkdict2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_linklist1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_linklist1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_linklist2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_linklist2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_linkset1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_linkset1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_linkset2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_linkset2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_mixed1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_mixed1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_embeddeddict1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_embeddeddict1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_link.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_link.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_linkdict1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_linkdict1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_linkdict2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_linkdict2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_linklist1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_linklist1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_linklist2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_linklist2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_linkset1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_linkset1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_linkset2.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_linkset2.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\expected_xjson_plus_mixed1.json">
+    <None Include="$(REALM_CORE_ROOT)\test\expected_xjson_plus_mixed1.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_flx_metadata_tables_v1.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_flx_metadata_tables_v1.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_shared_decrypt_4k_page.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_shared_decrypt_4k_page.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_shared_decrypt_64k_page.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_shared_decrypt_64k_page.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_token.json">
+    <None Include="$(REALM_CORE_ROOT)\test\test_token.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_token_expiration_null.json">
+    <None Include="$(REALM_CORE_ROOT)\test\test_token_expiration_null.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_token_expiration_specified.json">
+    <None Include="$(REALM_CORE_ROOT)\test\test_token_expiration_specified.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_token_expiration_unspecified.json">
+    <None Include="$(REALM_CORE_ROOT)\test\test_token_expiration_unspecified.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_token_for_path.json">
+    <None Include="$(REALM_CORE_ROOT)\test\test_token_for_path.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_token_readonly.json">
+    <None Include="$(REALM_CORE_ROOT)\test\test_token_readonly.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_token_sync_label_custom.json">
+    <None Include="$(REALM_CORE_ROOT)\test\test_token_sync_label_custom.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_token_sync_label_default.json">
+    <None Include="$(REALM_CORE_ROOT)\test\test_token_sync_label_default.json">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_colkey_error.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_colkey_error.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_1.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_1.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_10_to_11.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_10_to_11.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_2.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_2.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_22.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_22.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_3.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_3.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_4.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_4.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_4_to_5_datetime1.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_4_to_5_datetime1.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_5_to_6_stringindex.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_5_to_6_stringindex.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_6_to_7.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_6_to_7.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_7_to_8.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_7_to_8.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_8_to_9.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_8_to_9.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_1000_9_to_10.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_1000_9_to_10.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_11.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_11.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_20.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_20.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_1.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_1.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_10_to_11.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_10_to_11.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_2.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_2.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_22.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_22.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_3.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_3.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_4.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_4.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_4_to_5_datetime1.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_4_to_5_datetime1.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_6_to_7.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_6_to_7.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_7_to_8.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_7_to_8.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_8_to_9.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_8_to_9.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_4_9_to_10.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_4_9_to_10.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_6.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_6.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_database_9_to_10_pk_table.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_database_9_to_10_pk_table.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_progress_1.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_progress_1.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_progress_2.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_progress_2.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_progress_3.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_progress_3.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_progress_4.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_progress_4.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_progress_5.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_progress_5.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_progress_6.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_progress_6.realm">
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_upgrade_progress_7.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\test_upgrade_progress_7.realm">
     </None>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\fuzz_group.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\pthread_test.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_all.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_string_types.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_table_helper.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_types_helper.hpp" />
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\testsettings.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\fuzz_group.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\pthread_test.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\test.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\test_all.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\test_string_types.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\test_table_helper.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\test_types_helper.hpp" />
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\testsettings.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\ZERO_CHECK.vcxproj">
