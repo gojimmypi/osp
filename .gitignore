@@ -128,3 +128,13 @@ server_err.log
 
 # Download by build process:
 /realm/VS2022/zlib/**
+
+# Build-time cache
+/realm/VS2022/test/DebugSync_**
+/realm/VS2022/test/*.lock
+/realm/VS2022/test/*.realm
+/realm/VS2022/test/*.backup-log
+
+*.log
+/realm/VS2022/Testing/Temporary/CTestCheckpoint.txt
+/realm/VS2022/Testing/Temporary/LastTest.log.tmp

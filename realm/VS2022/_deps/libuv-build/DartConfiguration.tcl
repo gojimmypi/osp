@@ -29,7 +29,7 @@ NightlyStartTime: 00:00:00 EDT
 # Commands for the build/test/submit cycle
 ConfigureCommand: "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" "C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-src"
 MakeCommand: "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --build . --config "${CTEST_CONFIGURATION_TYPE}"
-DefaultCTestConfigurationType: Release
+DefaultCTestConfigurationType: Debug
 
 # version control
 UpdateVersionOnly: 
@@ -63,8 +63,8 @@ UpdateOptions:
 UpdateType: git
 
 # Compiler info
-Compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe
-CompilerVersion: 19.41.34123.0
+Compiler: 
+CompilerVersion: 
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

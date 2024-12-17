@@ -2,5 +2,6 @@
 <Project>
   <PropertyGroup>
     <REALM_CORE_ROOT>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi</REALM_CORE_ROOT>
-  </PropertyGroup>
+	  <REALM_VS2022_ROOT>C:/workspace/osp-gojimmypi/realm/VS2022</REALM_VS2022_ROOT>
+</PropertyGroup>
 </Project>

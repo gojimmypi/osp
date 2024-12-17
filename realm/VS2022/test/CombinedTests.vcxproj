@@ -62,25 +62,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_VS2022_ROOT)\test\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CombinedTests.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">realm-combined-tests</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_VS2022_ROOT)\test\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CombinedTests.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">realm-combined-tests</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_VS2022_ROOT)\test\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CombinedTests.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">realm-combined-tests</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(REALM_VS2022_ROOT)\test\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CombinedTests.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">realm-combined-tests</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -89,7 +89,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -113,10 +113,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_ENABLE_SYNC=1;REALM_DEBUG=1;RLM_NO_DLLIMPORT;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;$(REALM_VS2022_ROOT)\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;$(REALM_VS2022_ROOT)\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -153,7 +153,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -176,10 +176,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_ENABLE_SYNC=1;RLM_NO_DLLIMPORT;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;$(REALM_VS2022_ROOT)\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;$(REALM_VS2022_ROOT)\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -216,7 +216,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -239,10 +239,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_ENABLE_SYNC=1;RLM_NO_DLLIMPORT;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;$(REALM_VS2022_ROOT)\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;$(REALM_VS2022_ROOT)\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -279,7 +279,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -301,10 +301,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX20_OLD_SHARED_PTR_ATOMIC_SUPPORT_DEPRECATION_WARNING;WOLFSSL_LIB;WOLFSSL_USER_SETTINGS;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;_WIN32_WINNT=0x0603;WINVER=0x603;NTDDI_VERSION=0x06030000;REALM_ENABLE_SYNC=1;RLM_NO_DLLIMPORT;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;$(REALM_VS2022_ROOT)\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;C:\workspace\osp-gojimmypi\realm\VS2022\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes;C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-src\include;C:\workspace\osp-gojimmypi\realm\VS2022\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\test;$(REALM_CORE_ROOT)\test\object-store;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;$(REALM_VS2022_ROOT)\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -352,8 +352,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_VS2022_ROOT)\test\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
@@ -365,8 +365,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_VS2022_ROOT)\test\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
@@ -378,8 +378,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_VS2022_ROOT)\test\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
@@ -391,8 +391,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\workspace\osp-gojimmypi\realm\VS2022\test\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(REALM_VS2022_ROOT)\test\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
@@ -663,212 +663,212 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </None>
     <None Include="$(REALM_CORE_ROOT)\test\object-store\test_backup-olden-and-golden.realm">
     </None>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\set.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\backup.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\collection_change_indices.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\dictionary.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\frozen_objects.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\index_set.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\list.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\migrations.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\object.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\object_store.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\primitive_list.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\realm.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\results.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\schema.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\sectioned_results.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\test_runner.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\thread_safe_reference.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\transaction_log_parsing.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\uuid.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\c_api.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\c_api_file_tests.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\event_loop.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\test_file.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\test_utils.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\geospatial.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\bson.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\app.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\client_reset.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\file.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\flx_migration.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\flx_schema_migration.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\flx_sync.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\metadata.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\migration_store_test.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\remote_mongo_tests.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\connection_change_notifications.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\progress_notifications.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\session.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\wait_for_completion.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\sync_manager.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\user.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\sync_test_utils.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\unit_test_transport.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_query.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_query2.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_query_big.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_table.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_lang_bind_helper.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_parser.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_alloc.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_array.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_array_blob.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_array_blobs_big.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_array_blobs_small.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_array_float.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_array_integer.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_array_mixed.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_array_string_short.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_binary_data.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_bplus_tree.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_column.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_column_float.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_column_string.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_column_timestamp.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_compaction.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_db.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_decimal128.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_destroy_guard.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_dictionary.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_file.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_file_locks.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_global_key.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_group.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_impl_simulated_failure.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_index_string.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_json.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_link_query_view.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_links.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_mixed_null_assertions.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_object_id.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_optional.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_priority_queue.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_replication.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_safe_int_ops.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_self.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_set.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_shared.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_status.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_string_data.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_table_view.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_thread.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_transactions.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_transactions_lasse.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_typed_links.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_unresolved_links.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_upgrade_database.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_utf8.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_any.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_backtrace.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_base64.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_chunked_binary.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_cli_args.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_compression.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_error.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_file.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_fixed_size_buffer.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_flat_map.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_from_chars.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_functional.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_future.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_logger.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_memory_stream.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_overload.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_scope_exit.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_util_to_string.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_uuid.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_encrypted_file_mapping.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_query_geo.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_column_large.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\test_strings.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.dir\$(Configuration)\fuzz_group.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_array_sync.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_changeset_encoding.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_client_reset.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_compact_changesets.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_crypto.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_embedded_objects.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_instruction_replication.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_lang_bind_helper_sync.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_noinst_server_dir.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_stable_ids.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_auth.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_history_migration.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_protocol_codec.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_subscriptions.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_pending_bootstraps.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_error_backoff.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_transform.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_buffer_stream.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_circular_buffer.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_http.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_json_parser.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_network.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_network_ssl.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_uri.obj" />
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_websocket.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\set.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\backup.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\collection_change_indices.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\dictionary.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\frozen_objects.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\index_set.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\list.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\migrations.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\object.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\object_store.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\primitive_list.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\realm.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\results.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\schema.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\sectioned_results.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\test_runner.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\thread_safe_reference.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\transaction_log_parsing.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\uuid.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\c_api.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\c_api_file_tests.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\event_loop.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\test_file.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\test_utils.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\geospatial.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\bson.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\app.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\client_reset.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\file.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\flx_migration.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\flx_schema_migration.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\flx_sync.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\metadata.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\migration_store_test.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\remote_mongo_tests.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\connection_change_notifications.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\progress_notifications.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\session.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\wait_for_completion.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\sync_manager.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\user.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\sync_test_utils.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.dir\$(Configuration)\unit_test_transport.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_query.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_query2.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_query_big.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_table.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_lang_bind_helper.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_parser.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_alloc.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_array.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_array_blob.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_array_blobs_big.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_array_blobs_small.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_array_float.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_array_integer.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_array_mixed.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_array_string_short.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_binary_data.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_bplus_tree.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_column.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_column_float.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_column_string.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_column_timestamp.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_compaction.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_db.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_decimal128.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_destroy_guard.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_dictionary.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_file.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_file_locks.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_global_key.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_group.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_impl_simulated_failure.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_index_string.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_json.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_link_query_view.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_links.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_mixed_null_assertions.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_object_id.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_optional.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_priority_queue.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_replication.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_safe_int_ops.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_self.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_set.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_shared.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_status.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_string_data.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_table_view.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_thread.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_transactions.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_transactions_lasse.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_typed_links.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_unresolved_links.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_upgrade_database.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_utf8.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_any.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_backtrace.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_base64.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_chunked_binary.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_cli_args.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_compression.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_error.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_file.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_fixed_size_buffer.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_flat_map.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_from_chars.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_functional.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_future.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_logger.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_memory_stream.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_overload.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_scope_exit.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_util_to_string.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_uuid.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_encrypted_file_mapping.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_query_geo.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_column_large.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\test_strings.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.dir\$(Configuration)\fuzz_group.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_array_sync.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_changeset_encoding.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_client_reset.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_compact_changesets.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_crypto.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_embedded_objects.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_instruction_replication.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_lang_bind_helper_sync.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_noinst_server_dir.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_stable_ids.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_auth.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_history_migration.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_protocol_codec.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_subscriptions.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_pending_bootstraps.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_error_backoff.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_transform.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_buffer_stream.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_circular_buffer.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_http.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_json_parser.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_network.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_network_ssl.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_uri.obj" />
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_websocket.obj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\ZERO_CHECK.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\ZERO_CHECK.vcxproj">
       <Project>{2C88391C-B836-3F71-A9FC-1A8E3EFD9661}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\src\Catch2.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\external\catch\src\Catch2.vcxproj">
       <Project>{8d538cbe-01bf-4a2e-a98a-6c368fdf13d7}</Project>
       <Name>Catch2</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\CoreTestLib.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\test\CoreTestLib.vcxproj">
       <Project>{6B332EC9-8038-3528-AD59-E90FA322DE18}</Project>
       <Name>CoreTestLib</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\realm\object-store\ObjectStore.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\src\realm\object-store\ObjectStore.vcxproj">
       <Project>{9D58D3C7-5D77-3B7B-ACFE-AAEB56E1116D}</Project>
       <Name>ObjectStore</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\object-store\ObjectStoreTestLib.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\test\object-store\ObjectStoreTestLib.vcxproj">
       <Project>{AD9863A9-0151-3172-B9ED-CF6720E46FC9}</Project>
       <Name>ObjectStoreTestLib</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\realm\parser\QueryParser.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\src\realm\parser\QueryParser.vcxproj">
       <Project>{E679C3B0-ADCC-323A-BA5D-D55D894BF4D8}</Project>
       <Name>QueryParser</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\realm\object-store\c_api\RealmFFIStatic.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\src\realm\object-store\c_api\RealmFFIStatic.vcxproj">
       <Project>{BBA3D891-BAF3-3CDF-BA47-1FB4F543C630}</Project>
       <Name>RealmFFIStatic</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\realm\Storage.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\src\realm\Storage.vcxproj">
       <Project>{294B6277-5BE5-3100-BF9A-CEA035037813}</Project>
       <Name>Storage</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\realm\sync\Sync.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\src\realm\sync\Sync.vcxproj">
       <Project>{1C09954E-ECC3-3454-BA4D-9D6D3F9326BE}</Project>
       <Name>Sync</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\realm\sync\noinst\server\SyncServer.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\src\realm\sync\noinst\server\SyncServer.vcxproj">
       <Project>{9F1946D1-8BE9-3760-9CA0-9DEA52ADF2B6}</Project>
       <Name>SyncServer</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.vcxproj">
       <Project>{DF937D4C-1477-3CA0-8856-A53F0EF835ED}</Project>
       <Name>SyncTestLib</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\util\TestUtil.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\test\util\TestUtil.vcxproj">
       <Project>{B12800CB-A114-31E8-9852-A677E59EB602}</Project>
       <Name>TestUtil</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-build\uv_a.vcxproj">
+    <ProjectReference Include="$(REALM_VS2022_ROOT)\_deps\libuv-build\uv_a.vcxproj">
       <Project>{43EC51FD-5383-3134-8B2C-3CCA1CCF4033}</Project>
       <Name>uv_a</Name>
     </ProjectReference>
