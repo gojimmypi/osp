@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Import Project="../../../wolfssl-GlobalProperties.props" />
-	<PropertyGroup>
+  <Import Project="../../../realm-core-GlobalProperties.props" />
+  <Import Project="../../../wolfssl-GlobalProperties.props" />
+  <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
