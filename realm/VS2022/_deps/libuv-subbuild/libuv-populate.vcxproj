@@ -50,9 +50,9 @@
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating directories for 'libuv-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/tmp/libuv-populate-mkdirs.cmake
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/tmp/libuv-populate-mkdirs.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-mkdir
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-mkdir
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -73,9 +73,9 @@ cd $(REALM_VS2022_ROOT)\_deps
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/tmp/libuv-populate-gitclone.cmake
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/tmp/libuv-populate-gitclone.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-download
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-download
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -96,7 +96,7 @@ cd $(REALM_VS2022_ROOT)\_deps\libuv-src
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcan_fetch=YES -P C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/tmp/libuv-populate-gitupdate.cmake
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcan_fetch=YES -P $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/tmp/libuv-populate-gitupdate.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -116,7 +116,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 "$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-patch
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-patch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -141,7 +141,7 @@ C:
 if %errorlevel% neq 0 goto :cmEnd
 "$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-configure
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-configure
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -165,7 +165,7 @@ C:
 if %errorlevel% neq 0 goto :cmEnd
 "$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-build
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-build
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -189,7 +189,7 @@ C:
 if %errorlevel% neq 0 goto :cmEnd
 "$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-install
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-install
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -213,7 +213,7 @@ C:
 if %errorlevel% neq 0 goto :cmEnd
 "$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-test
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-test
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -231,11 +231,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Completed 'libuv-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/CMakeFiles/Debug
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/CMakeFiles/Debug
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/CMakeFiles/Debug/libuv-populate-complete
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/CMakeFiles/Debug/libuv-populate-complete
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-done
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/Debug/libuv-populate-done
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -269,9 +269,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild -BC:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_VS2022_ROOT)/_deps/libuv-subbuild -B$(REALM_VS2022_ROOT)/_deps/libuv-subbuild --check-stamp-file $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

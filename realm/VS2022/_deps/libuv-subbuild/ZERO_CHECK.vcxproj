@@ -54,7 +54,7 @@
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Checking Build System</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild -BC:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/libuv-populate.sln
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_VS2022_ROOT)/_deps/libuv-subbuild -B$(REALM_VS2022_ROOT)/_deps/libuv-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/libuv-populate.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

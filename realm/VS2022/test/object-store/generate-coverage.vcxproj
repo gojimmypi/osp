@@ -169,9 +169,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <CustomBuild Include="$(REALM_CORE_ROOT)\test\object-store\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule $(REALM_CORE_ROOT)/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/test/object-store/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -182,9 +182,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_VS2022_ROOT)\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule $(REALM_CORE_ROOT)/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/test/object-store/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -195,9 +195,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_VS2022_ROOT)\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule $(REALM_CORE_ROOT)/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/test/object-store/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -208,9 +208,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_VS2022_ROOT)\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule $(REALM_CORE_ROOT)/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/test/object-store/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

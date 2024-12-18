@@ -89,7 +89,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "$(REALM_VS2022_ROOT)/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -125,9 +125,9 @@
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/Debug/resources
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory $(REALM_VS2022_ROOT)/test/object-store/Debug/resources
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../stitch_private.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../stitch_public.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_pubkey.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_pubkey2.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_sync_ca.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_sync_key.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_util_network_ssl_ca.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_util_network_ssl_key.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v4.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v5.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v6.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/test_backup-olden-and-golden.realm C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/Debug/resources
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different $(REALM_CORE_ROOT)/test/object-store/../stitch_private.pem $(REALM_CORE_ROOT)/test/object-store/../stitch_public.pem $(REALM_CORE_ROOT)/test/object-store/../test.pem $(REALM_CORE_ROOT)/test/object-store/../test_pubkey.pem $(REALM_CORE_ROOT)/test/object-store/../test_pubkey2.pem $(REALM_CORE_ROOT)/test/object-store/../test_sync_ca.pem $(REALM_CORE_ROOT)/test/object-store/../test_sync_key.pem $(REALM_CORE_ROOT)/test/object-store/../test_util_network_ssl_ca.pem $(REALM_CORE_ROOT)/test/object-store/../test_util_network_ssl_key.pem $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v4.realm $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v5.realm $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v6.realm $(REALM_CORE_ROOT)/test/object-store/test_backup-olden-and-golden.realm $(REALM_VS2022_ROOT)/test/object-store/Debug/resources
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -138,12 +138,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>..\util\Debug\TestUtil-dbg.lib;..\..\external\catch\src\Debug\Catch2d.lib;..\..\src\realm\object-store\c_api\Debug\realm-ffi-static-dbg.lib;..\..\src\realm\object-store\Debug\realm-object-store-dbg.lib;..\..\src\realm\sync\noinst\server\Debug\realm-server-dbg.lib;..\..\src\realm\parser\Debug\realm-parser-dbg.lib;..\..\src\realm\sync\Debug\realm-sync-dbg.lib;..\..\src\realm\Debug\realm-dbg.lib;psapi.lib;..\..\zlib\debug\lib\zlibd.lib;../../../../VS2022/Debug/x64/wolfssl.lib;Version.lib;..\..\_deps\libuv-build\Debug\uv_a-dbg.lib;iphlpapi.lib;userenv.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/../VS2022/Debug/x64;C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/../VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(REALM_CORE_ROOT)/../VS2022/Debug/x64;$(REALM_CORE_ROOT)/../VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 /ignore:4099</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/Debug/realm-object-store-tests.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/Debug/realm-object-store-tests.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(REALM_VS2022_ROOT)/test/object-store/Debug/realm-object-store-tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(REALM_VS2022_ROOT)/test/object-store/Debug/realm-object-store-tests.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -153,7 +153,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "$(REALM_VS2022_ROOT)/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -188,9 +188,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/Release/resources
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory $(REALM_VS2022_ROOT)/test/object-store/Release/resources
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../stitch_private.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../stitch_public.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_pubkey.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_pubkey2.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_sync_ca.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_sync_key.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_util_network_ssl_ca.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_util_network_ssl_key.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v4.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v5.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v6.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/test_backup-olden-and-golden.realm C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/Release/resources
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different $(REALM_CORE_ROOT)/test/object-store/../stitch_private.pem $(REALM_CORE_ROOT)/test/object-store/../stitch_public.pem $(REALM_CORE_ROOT)/test/object-store/../test.pem $(REALM_CORE_ROOT)/test/object-store/../test_pubkey.pem $(REALM_CORE_ROOT)/test/object-store/../test_pubkey2.pem $(REALM_CORE_ROOT)/test/object-store/../test_sync_ca.pem $(REALM_CORE_ROOT)/test/object-store/../test_sync_key.pem $(REALM_CORE_ROOT)/test/object-store/../test_util_network_ssl_ca.pem $(REALM_CORE_ROOT)/test/object-store/../test_util_network_ssl_key.pem $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v4.realm $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v5.realm $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v6.realm $(REALM_CORE_ROOT)/test/object-store/test_backup-olden-and-golden.realm $(REALM_VS2022_ROOT)/test/object-store/Release/resources
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -201,12 +201,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>..\util\Release\TestUtil.lib;..\..\external\catch\src\Release\Catch2.lib;..\..\src\realm\object-store\c_api\Release\realm-ffi-static.lib;..\..\src\realm\object-store\Release\realm-object-store.lib;..\..\src\realm\sync\noinst\server\Release\realm-server.lib;..\..\src\realm\parser\Release\realm-parser.lib;..\..\src\realm\sync\Release\realm-sync.lib;..\..\src\realm\Release\realm.lib;psapi.lib;..\..\zlib\lib\zlib.lib;../../../../VS2022/Debug/x64/wolfssl.lib;Version.lib;..\..\_deps\libuv-build\Release\uv_a.lib;iphlpapi.lib;userenv.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/../VS2022/Debug/x64;C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/../VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(REALM_CORE_ROOT)/../VS2022/Debug/x64;$(REALM_CORE_ROOT)/../VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/Release/realm-object-store-tests.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/Release/realm-object-store-tests.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(REALM_VS2022_ROOT)/test/object-store/Release/realm-object-store-tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(REALM_VS2022_ROOT)/test/object-store/Release/realm-object-store-tests.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -216,7 +216,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "$(REALM_VS2022_ROOT)/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -251,9 +251,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/MinSizeRel/resources
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory $(REALM_VS2022_ROOT)/test/object-store/MinSizeRel/resources
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../stitch_private.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../stitch_public.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_pubkey.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_pubkey2.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_sync_ca.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_sync_key.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_util_network_ssl_ca.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_util_network_ssl_key.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v4.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v5.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v6.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/test_backup-olden-and-golden.realm C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/MinSizeRel/resources
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different $(REALM_CORE_ROOT)/test/object-store/../stitch_private.pem $(REALM_CORE_ROOT)/test/object-store/../stitch_public.pem $(REALM_CORE_ROOT)/test/object-store/../test.pem $(REALM_CORE_ROOT)/test/object-store/../test_pubkey.pem $(REALM_CORE_ROOT)/test/object-store/../test_pubkey2.pem $(REALM_CORE_ROOT)/test/object-store/../test_sync_ca.pem $(REALM_CORE_ROOT)/test/object-store/../test_sync_key.pem $(REALM_CORE_ROOT)/test/object-store/../test_util_network_ssl_ca.pem $(REALM_CORE_ROOT)/test/object-store/../test_util_network_ssl_key.pem $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v4.realm $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v5.realm $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v6.realm $(REALM_CORE_ROOT)/test/object-store/test_backup-olden-and-golden.realm $(REALM_VS2022_ROOT)/test/object-store/MinSizeRel/resources
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -264,12 +264,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>..\util\MinSizeRel\TestUtil.lib;..\..\external\catch\src\MinSizeRel\Catch2.lib;..\..\src\realm\object-store\c_api\MinSizeRel\realm-ffi-static.lib;..\..\src\realm\object-store\MinSizeRel\realm-object-store.lib;..\..\src\realm\sync\noinst\server\MinSizeRel\realm-server.lib;..\..\src\realm\parser\MinSizeRel\realm-parser.lib;..\..\src\realm\sync\MinSizeRel\realm-sync.lib;..\..\src\realm\MinSizeRel\realm.lib;psapi.lib;..\..\zlib\lib\zlib.lib;../../../../VS2022/Debug/x64/wolfssl.lib;Version.lib;..\..\_deps\libuv-build\MinSizeRel\uv_a.lib;iphlpapi.lib;userenv.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/../VS2022/Debug/x64;C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/../VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(REALM_CORE_ROOT)/../VS2022/Debug/x64;$(REALM_CORE_ROOT)/../VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/MinSizeRel/realm-object-store-tests.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/MinSizeRel/realm-object-store-tests.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(REALM_VS2022_ROOT)/test/object-store/MinSizeRel/realm-object-store-tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(REALM_VS2022_ROOT)/test/object-store/MinSizeRel/realm-object-store-tests.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -279,7 +279,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;$(REALM_CORE_ROOT)\external\catch\src\catch2\..;$(REALM_VS2022_ROOT)\external\catch\generated-includes;$(REALM_VS2022_ROOT)\_deps\libuv-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/workspace/osp-gojimmypi/realm/VS2022/zlib/include"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "$(REALM_VS2022_ROOT)/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4146</DisableSpecificWarnings>
@@ -313,9 +313,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/RelWithDebInfo/resources
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory $(REALM_VS2022_ROOT)/test/object-store/RelWithDebInfo/resources
 if %errorlevel% neq 0 goto :cmEnd
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../stitch_private.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../stitch_public.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_pubkey.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_pubkey2.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_sync_ca.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_sync_key.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_util_network_ssl_ca.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/../test_util_network_ssl_key.pem C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v4.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v5.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/sync-metadata-v6.realm C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/test_backup-olden-and-golden.realm C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/RelWithDebInfo/resources
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different $(REALM_CORE_ROOT)/test/object-store/../stitch_private.pem $(REALM_CORE_ROOT)/test/object-store/../stitch_public.pem $(REALM_CORE_ROOT)/test/object-store/../test.pem $(REALM_CORE_ROOT)/test/object-store/../test_pubkey.pem $(REALM_CORE_ROOT)/test/object-store/../test_pubkey2.pem $(REALM_CORE_ROOT)/test/object-store/../test_sync_ca.pem $(REALM_CORE_ROOT)/test/object-store/../test_sync_key.pem $(REALM_CORE_ROOT)/test/object-store/../test_util_network_ssl_ca.pem $(REALM_CORE_ROOT)/test/object-store/../test_util_network_ssl_key.pem $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v4.realm $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v5.realm $(REALM_CORE_ROOT)/test/object-store/sync-metadata-v6.realm $(REALM_CORE_ROOT)/test/object-store/test_backup-olden-and-golden.realm $(REALM_VS2022_ROOT)/test/object-store/RelWithDebInfo/resources
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -326,12 +326,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>..\util\RelWithDebInfo\TestUtil.lib;..\..\external\catch\src\RelWithDebInfo\Catch2.lib;..\..\src\realm\object-store\c_api\RelWithDebInfo\realm-ffi-static.lib;..\..\src\realm\object-store\RelWithDebInfo\realm-object-store.lib;..\..\src\realm\sync\noinst\server\RelWithDebInfo\realm-server.lib;..\..\src\realm\parser\RelWithDebInfo\realm-parser.lib;..\..\src\realm\sync\RelWithDebInfo\realm-sync.lib;..\..\src\realm\RelWithDebInfo\realm.lib;psapi.lib;..\..\zlib\lib\zlib.lib;../../../../VS2022/Debug/x64/wolfssl.lib;Version.lib;..\..\_deps\libuv-build\RelWithDebInfo\uv_a.lib;iphlpapi.lib;userenv.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/../VS2022/Debug/x64;C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/../VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(REALM_CORE_ROOT)/../VS2022/Debug/x64;$(REALM_CORE_ROOT)/../VS2022/Debug/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/RelWithDebInfo/realm-object-store-tests.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/RelWithDebInfo/realm-object-store-tests.pdb</ProgramDataBaseFile>
+      <ImportLibrary>$(REALM_VS2022_ROOT)/test/object-store/RelWithDebInfo/realm-object-store-tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(REALM_VS2022_ROOT)/test/object-store/RelWithDebInfo/realm-object-store-tests.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -341,9 +341,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <CustomBuild Include="$(REALM_CORE_ROOT)\test\object-store\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule $(REALM_CORE_ROOT)/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/test/object-store/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -354,9 +354,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_VS2022_ROOT)\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule $(REALM_CORE_ROOT)/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/test/object-store/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -367,9 +367,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_VS2022_ROOT)\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule $(REALM_CORE_ROOT)/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/test/object-store/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -380,9 +380,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake;$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;$(REALM_CORE_ROOT)\tools\cmake\FindLibUV.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_VS2022_ROOT)\test\object-store\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/test/object-store/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule $(REALM_CORE_ROOT)/test/object-store/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/test/object-store/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/test/object-store/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

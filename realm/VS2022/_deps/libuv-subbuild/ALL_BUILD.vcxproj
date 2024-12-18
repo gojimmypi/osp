@@ -51,9 +51,9 @@
   <ItemGroup>
     <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild -BC:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/_deps/libuv-subbuild/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_VS2022_ROOT)/_deps/libuv-subbuild -B$(REALM_VS2022_ROOT)/_deps/libuv-subbuild --check-stamp-file $(REALM_VS2022_ROOT)/_deps/libuv-subbuild/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

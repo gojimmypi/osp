@@ -83,7 +83,7 @@
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message>Checking File Globs</Message>
       <Command>setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/workspace/osp-gojimmypi/realm/VS2022/CMakeFiles/VerifyGlobs.cmake
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P $(REALM_VS2022_ROOT)/CMakeFiles/VerifyGlobs.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -106,7 +106,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message>Checking File Globs</Message>
       <Command>setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/workspace/osp-gojimmypi/realm/VS2022/CMakeFiles/VerifyGlobs.cmake
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P $(REALM_VS2022_ROOT)/CMakeFiles/VerifyGlobs.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -129,7 +129,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message>Checking File Globs</Message>
       <Command>setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/workspace/osp-gojimmypi/realm/VS2022/CMakeFiles/VerifyGlobs.cmake
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P $(REALM_VS2022_ROOT)/CMakeFiles/VerifyGlobs.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -152,7 +152,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message>Checking File Globs</Message>
       <Command>setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/workspace/osp-gojimmypi/realm/VS2022/CMakeFiles/VerifyGlobs.cmake
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P $(REALM_VS2022_ROOT)/CMakeFiles/VerifyGlobs.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -168,7 +168,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Checking Build System</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/workspace/osp-gojimmypi/realm/VS2022/RealmCore.sln
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file $(REALM_VS2022_ROOT)/RealmCore.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -182,7 +182,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Checking Build System</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/workspace/osp-gojimmypi/realm/VS2022/RealmCore.sln
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file $(REALM_VS2022_ROOT)/RealmCore.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -196,7 +196,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Checking Build System</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/workspace/osp-gojimmypi/realm/VS2022/RealmCore.sln
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file $(REALM_VS2022_ROOT)/RealmCore.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -210,7 +210,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Checking Build System</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/workspace/osp-gojimmypi/realm/VS2022/RealmCore.sln
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file $(REALM_VS2022_ROOT)/RealmCore.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

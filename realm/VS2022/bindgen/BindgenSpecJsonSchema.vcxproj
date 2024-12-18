@@ -108,13 +108,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="$(REALM_CORE_ROOT)\bindgen\src\spec\relaxed-model.ts">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/generated/spec.schema.json</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating $(REALM_CORE_ROOT)/bindgen/generated/spec.schema.json</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd $(REALM_CORE_ROOT)\bindgen
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-npx --prefix . typescript-json-schema C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/tsconfig.json RelaxedSpec --include C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/src/spec/relaxed-model.ts --out C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/generated/spec.schema.json --required --noExtraProps --aliasRefs
+npx --prefix . typescript-json-schema $(REALM_CORE_ROOT)/bindgen/tsconfig.json RelaxedSpec --include $(REALM_CORE_ROOT)/bindgen/src/spec/relaxed-model.ts --out $(REALM_CORE_ROOT)/bindgen/generated/spec.schema.json --required --noExtraProps --aliasRefs
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -125,13 +125,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_CORE_ROOT)\bindgen\generated\spec.schema.json</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/generated/spec.schema.json</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating $(REALM_CORE_ROOT)/bindgen/generated/spec.schema.json</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd $(REALM_CORE_ROOT)\bindgen
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-npx --prefix . typescript-json-schema C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/tsconfig.json RelaxedSpec --include C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/src/spec/relaxed-model.ts --out C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/generated/spec.schema.json --required --noExtraProps --aliasRefs
+npx --prefix . typescript-json-schema $(REALM_CORE_ROOT)/bindgen/tsconfig.json RelaxedSpec --include $(REALM_CORE_ROOT)/bindgen/src/spec/relaxed-model.ts --out $(REALM_CORE_ROOT)/bindgen/generated/spec.schema.json --required --noExtraProps --aliasRefs
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -142,13 +142,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_CORE_ROOT)\bindgen\generated\spec.schema.json</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/generated/spec.schema.json</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating $(REALM_CORE_ROOT)/bindgen/generated/spec.schema.json</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
 cd $(REALM_CORE_ROOT)\bindgen
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-npx --prefix . typescript-json-schema C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/tsconfig.json RelaxedSpec --include C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/src/spec/relaxed-model.ts --out C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/generated/spec.schema.json --required --noExtraProps --aliasRefs
+npx --prefix . typescript-json-schema $(REALM_CORE_ROOT)/bindgen/tsconfig.json RelaxedSpec --include $(REALM_CORE_ROOT)/bindgen/src/spec/relaxed-model.ts --out $(REALM_CORE_ROOT)/bindgen/generated/spec.schema.json --required --noExtraProps --aliasRefs
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,13 +159,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_CORE_ROOT)\bindgen\generated\spec.schema.json</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/generated/spec.schema.json</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating $(REALM_CORE_ROOT)/bindgen/generated/spec.schema.json</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
 cd $(REALM_CORE_ROOT)\bindgen
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-npx --prefix . typescript-json-schema C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/tsconfig.json RelaxedSpec --include C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/src/spec/relaxed-model.ts --out C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/generated/spec.schema.json --required --noExtraProps --aliasRefs
+npx --prefix . typescript-json-schema $(REALM_CORE_ROOT)/bindgen/tsconfig.json RelaxedSpec --include $(REALM_CORE_ROOT)/bindgen/src/spec/relaxed-model.ts --out $(REALM_CORE_ROOT)/bindgen/generated/spec.schema.json --required --noExtraProps --aliasRefs
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -233,9 +233,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <CustomBuild Include="$(REALM_CORE_ROOT)\bindgen\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule $(REALM_CORE_ROOT)/bindgen/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/bindgen/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/bindgen/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -246,9 +246,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(REALM_VS2022_ROOT)\bindgen\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule $(REALM_CORE_ROOT)/bindgen/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/bindgen/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/bindgen/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -259,9 +259,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(REALM_VS2022_ROOT)\bindgen\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule $(REALM_CORE_ROOT)/bindgen/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/bindgen/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/bindgen/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -272,9 +272,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_VS2022_ROOT)\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(REALM_VS2022_ROOT)\bindgen\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/bindgen/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule $(REALM_CORE_ROOT)/bindgen/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi -BC:/workspace/osp-gojimmypi/realm/VS2022 --check-stamp-file C:/workspace/osp-gojimmypi/realm/VS2022/bindgen/CMakeFiles/generate.stamp
+"$(CurrentVsInstallRoot)\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S$(REALM_CORE_ROOT) -B$(REALM_VS2022_ROOT) --check-stamp-file $(REALM_VS2022_ROOT)/bindgen/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

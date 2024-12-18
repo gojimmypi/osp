@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\04376979cedce30ce7ab3a87e4b69076\INSTALL_force.rule">
+    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-build\CMakeFiles\04376979cedce30ce7ab3a87e4b69076\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{C4AD600B-F6C1-38C0-A081-F083BC21FA9A}</UniqueIdentifier>
+      <UniqueIdentifier>{27C25236-67E9-3A63-AB98-EC68F8801F88}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
