@@ -560,7 +560,7 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)%(Filename).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
-    <ClInclude Include="IDE\WIN\user_settings.h" />
+    <ClInclude Include="./include/user_settings.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="wolfssl.rc">
