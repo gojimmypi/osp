@@ -74,7 +74,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>\workspace\wolfssl\wolfssl;\workspace\wolfssl;./include;$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -84,7 +84,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>\workspace\wolfssl\wolfssl;\workspace\wolfssl;./include;$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -94,7 +94,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>\workspace\wolfssl\wolfssl;\workspace\wolfssl;./include;$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -104,7 +104,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>\workspace\wolfssl\wolfssl;\workspace\wolfssl;./include;$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WOLFSSL_USER_SETTINGS_DIRECTORY);$(WOLFSSL_ROOT);$(REALM_CORE_ROOT)\src;$(REALM_VS2022_ROOT)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
