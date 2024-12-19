@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <PropertyGroup>
-    <WOLFSSL_ROOT>c:/workspace/wolfssl</WOLFSSL_ROOT>
-    <WOLFSSL_USER_SETTINGS_DIRECTORY>$(MSBuildThisFileDirectory)/include</WOLFSSL_USER_SETTINGS_DIRECTORY>
-  </PropertyGroup>
+    <PropertyGroup Label="wolfsslProjectSettings">
+        <!-- Enter Windows paths, no trailing slash: -->
+        <!-- Ensure wolfSSL is configured properly! (double-dash example ./configure not allowed here. See README.md) -->
+
+        <WOLFSSL_ROOT>c:\workspace\wolfssl</WOLFSSL_ROOT>
+
+        <!-- Optional path based on current username
+        <WOLFSSL_USER_PATH>c:\workspace\wolfssl-$(USERNAME)</WOLFSSL_USER_PATH>
+        <WOLFSSL_ROOT Condition="Exists('$(WOLFSSL_USER_PATH)')">$(WOLFSSL_USER_PATH)</WOLFSSL_ROOT>
+        -->
+
+        <!-- cleaned value for $(MSBuildThisFileDirectory)/include for user_settings.h file to use -->
+        <WOLFSSL_USER_SETTINGS_DIR_TEMP>$([System.String]::Copy('$(MSBuildThisFileDirectory)/include').Replace('/', '\'))</WOLFSSL_USER_SETTINGS_DIR_TEMP>
+        <WOLFSSL_USER_SETTINGS_DIRECTORY>$([System.String]::Copy('$(WOLFSSL_USER_SETTINGS_DIR_TEMP)').Replace('\\', '\'))</WOLFSSL_USER_SETTINGS_DIRECTORY>
+        <WOLFSSL_USER_SETTINGS_FILE>$(WOLFSSL_USER_SETTINGS_DIRECTORY)\user_settings.h</WOLFSSL_USER_SETTINGS_FILE>
+    </PropertyGroup>
+
+    <Target Name="ValidateDirectories" BeforeTargets="init;CustomBuild;Compile;Build">
+        <!-- Error for WOLFSSL_ROOT (typically something like "c:\workspace\wolfssl" )-->
+        <Error Condition="!Exists('$(WOLFSSL_ROOT)')"
+               Text="Error: WOLFSSL_ROOT directory not found: $(WOLFSSL_ROOT)" />
+
+        <!-- Error for WOLFSSL_USER_SETTINGS_DIRECTORY (typically something like "C:\workspace\osp-[usernme]\realm\VS2022\include"  -->
+        <Error Condition="!Exists('$(WOLFSSL_USER_SETTINGS_DIRECTORY)')"
+               Text="Error: WOLFSSL_USER_SETTINGS_DIRECTORY directory not found: $(WOLFSSL_USER_SETTINGS_DIRECTORY)" />
+
+        <!-- Ensure there's actually a user_setting.h -->
+        <Error Condition="!Exists('$(WOLFSSL_USER_SETTINGS_FILE)')"
+               Text="Error: wolfSSL user_settings.h not found: $(WOLFSSL_USER_SETTINGS_FILE)" />
+    </Target>
+
+    <!-- optional alternative backup values:
+    <PropertyGroup Condition="!Exists('$(WOLFSSL_ROOT)')">
+        <WOLFSSL_ROOT>NOT_FOUND</WOLFSSL_ROOT>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="!Exists('$(WOLFSSL_USER_SETTINGS_DIRECTORY)')">
+        <WOLFSSL_USER_SETTINGS_DIRECTORY>NOT_FOUND</WOLFSSL_USER_SETTINGS_DIRECTORY>
+    </PropertyGroup>
+    -->
+
+    <Target Name="wolfsslShowProjectMessages" BeforeTargets="Build">
+        <Message Text="*******************************************" Importance="high" />
+        <Message Text="wolfssl-GlobalProperties.props settings" Importance="high "/>
+        <Message Text="*******************************************" Importance="high" />
+        <Message Condition="$(WOLFSSL_ROOT) == 'NOT_FOUND'"
+                 Text="Error: WOLFSSL_ROOT directory does not exist!  $(WOLFSSL_ROOT) " Importance="high" />
+        <Message Condition="$(WOLFSSL_ROOT) != 'NOT_FOUND'"
+                 Text="Success: WOLFSSL_ROOT directory found: $(WOLFSSL_ROOT)" Importance="high" />
+
+        <Message Condition="$(WOLFSSL_USER_SETTINGS_DIRECTORY) == 'NOT_FOUND'"
+                 Text="Error: WOLFSSL_USER_SETTINGS_DIRECTORY directory does not exist! $(WOLFSSL_USER_SETTINGS_DIRECTORY)" Importance="high" />
+        <Message Condition="$(WOLFSSL_USER_SETTINGS_DIRECTORY) != 'NOT_FOUND'"
+                 Text="Success: WOLFSSL_USER_SETTINGS_DIRECTORY directory found: $(WOLFSSL_USER_SETTINGS_DIRECTORY)" Importance="high" />
+
+        <Message Text="This VS_ROOT=$(VS_ROOT)" />
+        <Message Text="This MSBuildProjectDirectory=$(MSBuildProjectDirectory)" />
+        <Message Text="*******************************************" Importance="high" />
+        <Message Text="**  end wolfssl-GlobalProperties.props   **" Importance="high" />
+        <Message Text="*******************************************" Importance="high" />
+    </Target>
 </Project>

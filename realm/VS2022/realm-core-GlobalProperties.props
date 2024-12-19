@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <PropertyGroup>
-    <REALM_CORE_ROOT>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi</REALM_CORE_ROOT>
-    <REALM_VS2022_ROOT>C:/workspace/osp-gojimmypi/realm/VS2022</REALM_VS2022_ROOT>
-  </PropertyGroup>
+    <PropertyGroup Label="realmProjectSettings">
+        <REALM_CORE_ROOT>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi</REALM_CORE_ROOT>
+        <REALM_VS2022_ROOT>C:/workspace/osp-gojimmypi/realm/VS2022</REALM_VS2022_ROOT>
+    </PropertyGroup>
+
+    <!-- Validate directory existence -->
+    <PropertyGroup Condition="!Exists('$(REALM_CORE_ROOT)')">
+        <REALM_CORE_ROOT>NOT_FOUND</REALM_CORE_ROOT>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="!Exists('$(REALM_VS2022_ROOT)')">
+        <REALM_VS2022_ROOT>NOT_FOUND</REALM_VS2022_ROOT>
+    </PropertyGroup>
+
+    <Target Name="ValidateDirectories" BeforeTargets="Build">
+        <!-- Error for REALM_CORE_ROOT -->
+        <Error Condition="$(REALM_CORE_ROOT) == 'NOT_FOUND'"
+               Text="Error: REALM_CORE_ROOT directory not found: $(REALM_CORE_ROOT)" />
+
+        <!-- Error for REALM_VS2022_ROOT -->
+        <Error Condition="$(REALM_VS2022_ROOT) == 'NOT_FOUND'"
+               Text="Error: REALM_VS2022_ROOT directory not found: $(REALM_VS2022_ROOT)" />
+    </Target>
+
+    <Target Name="realmShowProjectMessages" BeforeTargets="Build">
+        <Message Text="*******************************************" Importance="high" />
+        <Message Text="realm-core-GlobalProperties.props settings"  Importance="high" />
+        <Message Text="*******************************************" Importance="high" />
+        <Message Condition="$(REALM_CORE_ROOT) == 'NOT_FOUND'"
+                 Text="ERROR: REALM_CORE_ROOT directory does not exist! value='$(REALM_CORE_ROOT)'" Importance="high" />
+        <Message Condition="$(REALM_CORE_ROOT) != 'NOT_FOUND'"
+                 Text="Success: REALM_CORE_ROOT directory found: $(REALM_CORE_ROOT)" Importance="high" />
+
+        <Message Condition="$(REALM_VS2022_ROOT) == 'NOT_FOUND'"
+                 Text="ERROR: REALM_VS2022_ROOT directory  does not exist! value='$(REALM_VS2022_ROOT)'" Importance="high" />
+        <Message Condition="$(REALM_VS2022_ROOT) != 'NOT_FOUND'"
+                 Text="Success: REALM_VS2022_ROOT directory found: $(REALM_VS2022_ROOT)" Importance="high" />
+
+        <Message Text="*******************************************" Importance="high" />
+        <Message Text="** end realm-core-GlobalProperties.props **" Importance="high" />
+        <Message Text="*******************************************" Importance="high" />
+    </Target>
 </Project>

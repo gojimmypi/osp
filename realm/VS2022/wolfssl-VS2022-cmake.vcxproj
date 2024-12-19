@@ -3,14 +3,14 @@
   <Import Project="./wolfssl-GlobalProperties.props" />
   <!-- Target that initializes before Build -->
   <Target Name="init" BeforeTargets="CustomBuild;Compile">
-    <Message Text="SolutionDir: $(SolutionDir)" Importance="High" />    
+    <Message Text="SolutionDir: $(SolutionDir)" Importance="High" />
     <Message Text="Project Directory: $(MSBuildProjectDirectory)" Importance="High" />
   </Target>
 
   <!-- Build target that depends on init -->
   <Target Name="Build" DependsOnTargets="init;CustomBuild;Compile">
-    <Message Text="Executing build target..." Importance="High" />    
-  </Target> 
+    <Message Text="Executing build target..." Importance="High" />
+  </Target>
 
   <!--  <PropertyGroup>
     <WOLFSSL_ROOT>c:/workspace/wolfssl</WOLFSSL_ROOT>

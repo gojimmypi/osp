@@ -392,6 +392,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E7DE8F4D-CB79-49A7-9518-A9C72D527C46}"
+	ProjectSection(SolutionItems) = preProject
+		realm-core-GlobalProperties.props = realm-core-GlobalProperties.props
+		wolfssl-GlobalProperties.props = wolfssl-GlobalProperties.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
