@@ -1,6 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/Program Files/Microsoft Visual Studio/2022/Enterprise/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake
-C:/workspace/osp-gojimmypi/realm/VS2022/CMakeFiles/cmake.verify_globs
-C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/external/catch/CMake/CatchMiscFunctions.cmake
-C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/external/catch/src/CMakeLists.txt
-C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi/external/catch/src/catch2/catch_user_config.hpp.in
