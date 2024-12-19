@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
     <PropertyGroup Label="realmProjectSettings">
+        <!-- If the Realm paths and other settings are not desired in build output, set WOLFSSL_VERBOSE_MSBUILD to a value other than `True` -->
+        <REALM_VERBOSE_MSBUILD>True</REALM_VERBOSE_MSBUILD>
+
+        <!-- Enter Windows paths, no trailing slash: -->
         <REALM_CORE_ROOT>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi</REALM_CORE_ROOT>
         <REALM_VS2022_ROOT>C:/workspace/osp-gojimmypi/realm/VS2022</REALM_VS2022_ROOT>
     </PropertyGroup>
@@ -24,7 +28,7 @@
                Text="Error: REALM_VS2022_ROOT directory not found: $(REALM_VS2022_ROOT)" />
     </Target>
 
-    <Target Name="realmShowProjectMessages" BeforeTargets="Build">
+    <Target Name="realmShowProjectMessages" BeforeTargets="Build" Condition="'$(REALM_VERBOSE_MSBUILD)' == 'True'">
         <Message Text="*******************************************" Importance="high" />
         <Message Text="realm-core-GlobalProperties.props settings"  Importance="high" />
         <Message Text="*******************************************" Importance="high" />

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
     <PropertyGroup Label="wolfsslProjectSettings">
+        <!-- If the wolfSSL paths and other settings are not desired in build output, set WOLFSSL_VERBOSE_MSBUILD to a value other than `True` -->
+        <WOLFSSL_VERBOSE_MSBUILD>True</WOLFSSL_VERBOSE_MSBUILD>
+
         <!-- Enter Windows paths, no trailing slash: -->
         <!-- Ensure wolfSSL is configured properly! (double-dash example ./configure not allowed here. See README.md) -->
-
         <WOLFSSL_ROOT>c:\workspace\wolfssl</WOLFSSL_ROOT>
 
         <!-- Optional path based on current username
@@ -41,7 +43,7 @@
     </PropertyGroup>
     -->
 
-    <Target Name="wolfsslShowProjectMessages" BeforeTargets="Build">
+    <Target Name="wolfsslShowProjectMessages" BeforeTargets="Build" Condition="'$(WOLFSSL_VERBOSE_MSBUILD)' == 'True'">
         <Message Text="*******************************************" Importance="high" />
         <Message Text="wolfssl-GlobalProperties.props settings" Importance="high "/>
         <Message Text="*******************************************" Importance="high" />
