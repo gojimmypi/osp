@@ -398,6 +398,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		wolfssl-GlobalProperties.props = wolfssl-GlobalProperties.props
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wolfSSL", "wolfSSL", "{C2FE9041-4804-4250-ADE1-1553FFD946A3}"
+	ProjectSection(SolutionItems) = preProject
+		include\user_settings.h = include\user_settings.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -1497,6 +1502,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C2FE9041-4804-4250-ADE1-1553FFD946A3} = {345B24BD-852B-4645-B7E2-9107A2AA7D7A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EA75830-A99A-3382-9B5A-1ECAD35448EE}
