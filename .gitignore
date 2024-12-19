@@ -121,20 +121,33 @@ server_err.log
 **/install_manifest_devel.txt
 **/build/wolfssl
 
-/realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_AddTable_Full_EncryptionOff.realm
-/realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_AddTable_Full_EncryptionOff.realm.lock
-/realm/VS2022/**/generate.stamp
-/realm/VS2022/external/catch/src/Catch2.dir/**/objects.txt
 
 # Download by build process:
 /realm/VS2022/zlib/**
 
+/realm/VS2022/**/*.log
+
 # Build-time cache
+/realm/VS2022/CMakeFiles
 /realm/VS2022/test/DebugSync_**
 /realm/VS2022/test/*.lock
 /realm/VS2022/test/*.realm
 /realm/VS2022/test/*.backup-log
+/realm/VS2022/**/*.realm.lock
+/realm/VS2022/**/generate.stamp
+/realm/VS2022/**/generate.stamp.depend
+/realm/VS2022/external/catch/src/Catch2.dir/**/objects.txt
 
-*.log
-/realm/VS2022/Testing/Temporary/CTestCheckpoint.txt
-/realm/VS2022/Testing/Temporary/LastTest.log.tmp
+# Realm build-time generated test files
+/realm/VS2022/Testing/**/CTestCheckpoint.txt
+/realm/VS2022/Testing/**/LastTest.log.tmp
+/realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_EmptyCommit_Full_EncryptionOff.realm
+/realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_AddTable_Full_EncryptionOff.realm
+/realm/VS2022/test/benchmark-common-tasks/Debugbenchmark_common_tasks_AddTable_Full_EncryptionOff.realm.lock
+/realm/VS2022/test/DebugLangBindHelper_CompactLargeEncryptedFile.1.path.realm.tmp_compaction_space
+/realm/VS2022/test/DebugShared_CompactEmpty.1.path.realm.tmp_compaction_space
+/realm/VS2022/test/DebugFile_Offset.*
+
+# Realm auto-generated dependency files
+/realm/VS2022/_deps/libuv-build/CMakeFiles
+/realm/VS2022/_deps/libuv-build/Testing
