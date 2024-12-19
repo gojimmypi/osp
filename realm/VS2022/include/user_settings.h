@@ -3,13 +3,19 @@
 
 /* Verify this is Windows */
 #ifdef _WIN32
-    #pragma message("include Ws2_32")
+    #ifdef WOLFSSL_VERBOSE_MSBUILD
+        #pragma message("include Ws2_32")
+    #endif
+    /* Microsoft-specific pragma to link Ws2_32.lib */
     #pragma comment(lib, "Ws2_32.lib")
 #else
     #error This user_settings.h header is only designed for Windows
 #endif
 
-#pragma message("YAY! The realm user_settings.h")
+#ifdef WOLFSSL_VERBOSE_MSBUILD
+    /* See the wolfssl-GlobalProperties.props for build verbosity setting */
+    #pragma message("Confirmed using realm/VS2022/include/user_settings.h")
+#endif
 
 #define USE_WOLFSSL_IO
 #define HAVE_AESGCM

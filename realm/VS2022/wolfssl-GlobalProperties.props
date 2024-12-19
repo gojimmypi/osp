@@ -44,6 +44,12 @@
     -->
 
     <Target Name="wolfsslShowProjectMessages" BeforeTargets="Build" Condition="'$(WOLFSSL_VERBOSE_MSBUILD)' == 'True'">
+        <!-- Add WOLFSSL_VERBOSE_MSBUILD to preprocessor definitions if set to True -->
+        <PropertyGroup Condition="'$(DefineConstants.Contains(WOLFSSL_VERBOSE_MSBUILD))' == 'false'">
+            <!-- Add WOLFSSL_VERBOSE_MSBUILD to preprocessor definitions only if it hasn't been added -->
+            <DefineConstants>$(DefineConstants);WOLFSSL_VERBOSE_MSBUILD</DefineConstants>
+        </PropertyGroup>
+
         <Message Text="*******************************************" Importance="high" />
         <Message Text="wolfssl-GlobalProperties.props settings" Importance="high "/>
         <Message Text="*******************************************" Importance="high" />
