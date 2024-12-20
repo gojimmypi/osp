@@ -1,4 +1,4 @@
-goto ONE
+goto TWO
 
 notepad C:\workspace\osp-gojimmypi\realm\VS2022\ALL_BUILD.vcxproj.filters
 notepad C:\workspace\osp-gojimmypi\realm\VS2022\INSTALL.vcxproj.filters
