@@ -3,13 +3,13 @@
   <Import Project="../realm-core-GlobalProperties.props" />
   <ItemGroup>
     <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\bindgen\src\spec\relaxed-model.ts" />
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\e33e1c7f27d1c1a1e7a531a62db0c9c2\BindgenSpecJsonSchema.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\CMakeFiles\e33e1c7f27d1c1a1e7a531a62db0c9c2\BindgenSpecJsonSchema.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
     <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\bindgen\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\workspace\osp-gojimmypi\realm\VS2022\bindgen\CMakeFiles\BindgenSpecJsonSchema" />
+    <None Include="$(REALM_VS2022_ROOT)\bindgen\CMakeFiles\BindgenSpecJsonSchema" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">

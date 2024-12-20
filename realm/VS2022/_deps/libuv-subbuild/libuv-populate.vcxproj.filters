@@ -2,40 +2,40 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-mkdir.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-mkdir.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-download.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-download.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-update.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-update.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-patch.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-patch.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-configure.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-configure.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-build.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-build.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-install.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-install.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-test.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\ae6a85cf595c6fda03b03fd6d49d30a2\libuv-populate-test.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\4df762fbfb804502ffe75486e3c4fdb9\libuv-populate-complete.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\4df762fbfb804502ffe75486e3c4fdb9\libuv-populate-complete.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\26acefe5d327e127c8a0e6f24d48e16d\libuv-populate.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\26acefe5d327e127c8a0e6f24d48e16d\libuv-populate.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\workspace\osp-gojimmypi\realm\VS2022\_deps\libuv-subbuild\CMakeFiles\libuv-populate" />
+    <None Include="$(REALM_VS2022_ROOT)\_deps\libuv-subbuild\CMakeFiles\libuv-populate" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">

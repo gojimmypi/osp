@@ -2,7 +2,7 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\3167a9293321a2c9588eebb738673461\RUN_TESTS_force.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\CMakeFiles\3167a9293321a2c9588eebb738673461\RUN_TESTS_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>

@@ -475,7 +475,7 @@
     <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\interfaces\catch_interfaces_testcase.hpp">
       <Filter>sources\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\VS2022\external\catch\generated-includes\catch2\catch_user_config.hpp">
+    <ClInclude Include="$(REALM_VS2022_ROOT)\external\catch\generated-includes\catch2\catch_user_config.hpp">
       <Filter>generated headers</Filter>
     </ClInclude>
     <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\external\catch\src\catch2\catch_user_config.hpp.in">

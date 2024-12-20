@@ -282,82 +282,82 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_array_sync.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_array_sync.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_changeset_encoding.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_changeset_encoding.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_client_reset.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_client_reset.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_compact_changesets.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_compact_changesets.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_crypto.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_crypto.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_embedded_objects.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_embedded_objects.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_instruction_replication.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_instruction_replication.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_lang_bind_helper_sync.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_lang_bind_helper_sync.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_noinst_server_dir.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_noinst_server_dir.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_stable_ids.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_stable_ids.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_auth.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_auth.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_history_migration.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_history_migration.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_protocol_codec.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_protocol_codec.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_subscriptions.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_subscriptions.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_pending_bootstraps.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_pending_bootstraps.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_sync_error_backoff.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_sync_error_backoff.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_transform.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_transform.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_buffer_stream.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_buffer_stream.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_circular_buffer.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_circular_buffer.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_http.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_http.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_json_parser.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_json_parser.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_network.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_network.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_network_ssl.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_network_ssl.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_uri.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_uri.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\test\SyncTestLib.dir\$(Configuration)\test_util_websocket.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\test\SyncTestLib.dir\$(Configuration)\test_util_websocket.obj">
       <Filter>Object Libraries</Filter>
     </Object>
   </ItemGroup>

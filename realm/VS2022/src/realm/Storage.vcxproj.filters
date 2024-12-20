@@ -816,112 +816,112 @@
     <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s1angle.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s1angle.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2cellid.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2cellid.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2latlng.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2latlng.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s1interval.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s1interval.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2cap.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2cap.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2cell.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2cell.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2cellunion.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2cellunion.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2edgeindex.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2edgeindex.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2edgeutil.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2edgeutil.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2latlngrect.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2latlngrect.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2loop.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2loop.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2pointregion.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2pointregion.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2polygon.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2polygon.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2polygonbuilder.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2polygonbuilder.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2polyline.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2polyline.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2r2rect.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2r2rect.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\s2region.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\s2region.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\mathutil.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\mathutil.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\s2\s2geometry.dir\$(Configuration)\mathlimits.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\s2\s2geometry.dir\$(Configuration)\mathlimits.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_compare.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_compare.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_mul.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_mul.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_div.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_div.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_add.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_add.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_fma.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_fma.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_string.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_string.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_2_str_tables.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_2_str_tables.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid64_to_bid128.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid64_to_bid128.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_to_int64.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_to_int64.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_quantize.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid128_quantize.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_convert_data.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_convert_data.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_decimal_data.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_decimal_data.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_decimal_globals.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_decimal_globals.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_from_int.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_from_int.obj">
       <Filter>Object Libraries</Filter>
     </Object>
-    <Object Include="C:\workspace\osp-gojimmypi\realm\VS2022\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_round.obj">
+    <Object Include="$(REALM_VS2022_ROOT)\src\external\IntelRDFPMathLib20U2\Bid.dir\$(Configuration)\bid_round.obj">
       <Filter>Object Libraries</Filter>
     </Object>
   </ItemGroup>

@@ -2,7 +2,7 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\VS2022\CMakeFiles\2fb00c7d04d0c10a71b7b578f05726b0\INSTALL_force.rule">
+    <CustomBuild Include="$(REALM_VS2022_ROOT)\CMakeFiles\2fb00c7d04d0c10a71b7b578f05726b0\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
