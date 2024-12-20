@@ -2,74 +2,74 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\config.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\dictionary.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\dictionary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\error.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\logging.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\logging.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\notifications.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\notifications.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\object.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\list.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\query.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\query.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\realm.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\realm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\scheduler.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\scheduler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\schema.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\schema.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\set.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\set.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\util.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\app.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\app.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\http.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\http.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\sync.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\sync.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\socket_provider.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\socket_provider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm.h">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\conversion.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\conversion.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\types.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\types.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\util.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\object-store\c_api\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\src\realm\object-store\c_api\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

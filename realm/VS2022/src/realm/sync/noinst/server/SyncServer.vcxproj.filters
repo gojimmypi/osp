@@ -2,62 +2,62 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../../../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\access_control.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\access_control.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\access_token.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\access_token.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server_dir.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server_dir.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server_file_access_cache.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server_file_access_cache.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server_history.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server_history.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\crypto_server_openssl.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\crypto_server_openssl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\access_control.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\access_control.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\access_token.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\access_token.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\clock.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\clock.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\crypto_server.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\crypto_server.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\permissions.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\permissions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server_dir.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server_dir.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server_file_access_cache.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server_file_access_cache.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server_history.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server_history.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\server_impl_base.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\server_impl_base.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\server\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\server\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

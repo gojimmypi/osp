@@ -2,20 +2,20 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\exec\importer_tool.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\exec\importer_tool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\exec\importer.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\exec\importer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\exec\importer.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\exec\importer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\exec\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\src\realm\exec\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

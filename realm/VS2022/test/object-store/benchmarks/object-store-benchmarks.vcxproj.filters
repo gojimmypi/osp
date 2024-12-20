@@ -2,53 +2,53 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\benchmarks\main.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\benchmarks\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\benchmarks\object.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\benchmarks\object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\benchmarks\results.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\benchmarks\results.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\event_loop.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\util\event_loop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\test_file.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\util\test_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\test_utils.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\util\test_utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\sync\sync_test_utils.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\util\sync\sync_test_utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\benchmarks\client_reset.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\benchmarks\client_reset.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\event_loop.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\object-store\util\event_loop.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\index_helpers.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\object-store\util\index_helpers.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\test_file.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\object-store\util\test_file.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\test_utils.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\object-store\util\test_utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\sync\sync_test_utils.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\object-store\util\sync\sync_test_utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\util\sync\session_util.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\object-store\util\sync\session_util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\benchmarks\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\test\object-store\benchmarks\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

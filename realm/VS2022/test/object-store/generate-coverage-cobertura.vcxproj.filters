@@ -5,7 +5,7 @@
     <CustomBuild Include="$(REALM_VS2022_ROOT)\CMakeFiles\04817728dc904bb0fe734e6bb7282ed5\generate-coverage-cobertura.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\test\object-store\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(REALM_VS2022_ROOT)\test\object-store\CMakeFiles\generate-coverage-cobertura" />

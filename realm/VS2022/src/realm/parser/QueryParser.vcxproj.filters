@@ -2,42 +2,42 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\driver.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\parser\driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\keypath_mapping.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\parser\keypath_mapping.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\generated\query_flex.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\parser\generated\query_flex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\generated\query_bison.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\parser\generated\query_bison.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\driver.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\parser\driver.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\keypath_mapping.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\parser\keypath_mapping.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\query_parser.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\parser\query_parser.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\generated\query_bison.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\parser\generated\query_bison.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\generated\query_flex.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\parser\generated\query_flex.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\src\realm\parser\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\query_bison.yy" />
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\parser\query_flex.ll" />
+    <None Include="$(REALM_CORE_ROOT)\src\realm\parser\query_bison.yy" />
+    <None Include="$(REALM_CORE_ROOT)\src\realm\parser\query_flex.ll" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

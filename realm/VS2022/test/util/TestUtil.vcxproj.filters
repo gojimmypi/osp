@@ -2,134 +2,134 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\benchmark_results.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\benchmark_results.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\crypt_key.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\crypt_key.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\demangle.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\demangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\misc.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\misc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\quote.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\quote.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\random.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\random.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\resource_limits.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\resource_limits.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\spawned_process.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\spawned_process.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_only.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\test_only.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_path.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\test_path.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\timer.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\unit_test.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\unit_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_integer.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\verified_integer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_string.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\verified_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\wildcard.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\wildcard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\compare_groups.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\compare_groups.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\dump_changesets.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\util\dump_changesets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\benchmark_results.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\benchmark_results.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\check_logic_error.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\check_logic_error.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\check_system_error.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\check_system_error.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\compare_groups.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\compare_groups.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\crypt_key.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\crypt_key.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\demangle.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\demangle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\dump_changesets.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\dump_changesets.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\misc.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\misc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\number_names.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\number_names.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\quote.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\quote.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\random.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\random.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\resource_limits.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\resource_limits.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\semaphore.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\semaphore.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\spawned_process.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\spawned_process.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\super_int.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\super_int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_only.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\test_only.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_path.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\test_path.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\test_types.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\test_types.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\thread_wrapper.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\thread_wrapper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\timer.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\unit_test.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\unit_test.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_integer.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\verified_integer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\verified_string.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\verified_string.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\wildcard.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\util\wildcard.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\util\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\test\util\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

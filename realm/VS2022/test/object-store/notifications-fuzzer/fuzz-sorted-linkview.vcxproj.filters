@@ -2,20 +2,20 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\notifications-fuzzer\command_file.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\notifications-fuzzer\command_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\notifications-fuzzer\fuzz-sorted-linkview.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\notifications-fuzzer\fuzz-sorted-linkview.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\notifications-fuzzer\command_file.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\test\object-store\notifications-fuzzer\command_file.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\notifications-fuzzer\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\test\object-store\notifications-fuzzer\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

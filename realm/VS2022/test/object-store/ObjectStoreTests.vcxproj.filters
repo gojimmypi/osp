@@ -2,51 +2,51 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\main.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\test\object-store\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\test\object-store\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\stitch_private.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\stitch_private.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\stitch_public.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\stitch_public.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_pubkey.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_pubkey.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_pubkey2.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_pubkey2.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_sync_ca.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_sync_ca.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_sync_key.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_sync_key.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_network_ssl_ca.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_util_network_ssl_ca.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\test_util_network_ssl_key.pem">
+    <None Include="$(REALM_CORE_ROOT)\test\test_util_network_ssl_key.pem">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\sync-metadata-v4.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\object-store\sync-metadata-v4.realm">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\sync-metadata-v5.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\object-store\sync-metadata-v5.realm">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\sync-metadata-v6.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\object-store\sync-metadata-v6.realm">
       <Filter>Resources</Filter>
     </None>
-    <None Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\test\object-store\test_backup-olden-and-golden.realm">
+    <None Include="$(REALM_CORE_ROOT)\test\object-store\test_backup-olden-and-golden.realm">
       <Filter>Resources</Filter>
     </None>
   </ItemGroup>

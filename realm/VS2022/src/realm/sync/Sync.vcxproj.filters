@@ -2,212 +2,212 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../../../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\config.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\changeset_index.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\changeset_index.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_history_impl.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_history_impl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_impl_base.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_impl_base.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_reset.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_reset.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_reset_operation.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_reset_operation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_reset_recovery.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_reset_recovery.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\compact_changesets.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\compact_changesets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\migration_store.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\migration_store.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\pending_bootstrap_store.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\pending_bootstrap_store.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\protocol_codec.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\protocol_codec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\sync_metadata_schema.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\sync_metadata_schema.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\sync_schema_migration.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\sync_schema_migration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\changeset_encoder.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\changeset_encoder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\changeset_parser.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\changeset_parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\changeset.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\changeset.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\client.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\history.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\history.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\instruction_applier.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\instruction_applier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\instruction_replication.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\instruction_replication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\instructions.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\instructions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\object_id.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\object_id.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\protocol.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\protocol.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\subscriptions.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\subscriptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\transform.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\default_socket.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\network\default_socket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\http.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\network\http.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\network.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\network\network.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\network_ssl.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\network\network_ssl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\websocket.cpp">
+    <ClCompile Include="$(REALM_CORE_ROOT)\src\realm\sync\network\websocket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\binding_callback_thread_observer.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\binding_callback_thread_observer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\config.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\config.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\changeset_encoder.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\changeset_encoder.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\changeset_parser.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\changeset_parser.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\changeset.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\changeset.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\client.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\client.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\client_base.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\client_base.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\socket_provider.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\socket_provider.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\history.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\history.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\instruction_applier.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\instruction_applier.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\instruction_replication.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\instruction_replication.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\instructions.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\instructions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\object_id.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\object_id.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\protocol.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\protocol.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\subscriptions.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\subscriptions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\transform.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\transform.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\default_socket.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\network\default_socket.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\http.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\network\http.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\network.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\network\network.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\network_ssl.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\network\network_ssl.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\websocket.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\network\websocket.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\network\websocket_error.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\network\websocket_error.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\trigger.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\trigger.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\changeset_index.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\changeset_index.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_history_impl.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_history_impl.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_impl_base.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_impl_base.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_reset.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_reset.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_reset_operation.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_reset_operation.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\client_reset_recovery.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\client_reset_recovery.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\compact_changesets.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\compact_changesets.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\integer_codec.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\integer_codec.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\migration_store.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\migration_store.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\pending_bootstrap_store.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\pending_bootstrap_store.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\protocol_codec.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\protocol_codec.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\root_certs.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\root_certs.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\sync_metadata_schema.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\sync_metadata_schema.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\noinst\sync_schema_migration.hpp">
+    <ClInclude Include="$(REALM_CORE_ROOT)\src\realm\sync\noinst\sync_schema_migration.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\src\realm\sync\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\src\realm\sync\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

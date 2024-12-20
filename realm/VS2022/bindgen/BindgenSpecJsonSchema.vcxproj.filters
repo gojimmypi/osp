@@ -2,11 +2,11 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="../realm-core-GlobalProperties.props" />
   <ItemGroup>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\bindgen\src\spec\relaxed-model.ts" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\bindgen\src\spec\relaxed-model.ts" />
     <CustomBuild Include="$(REALM_VS2022_ROOT)\CMakeFiles\e33e1c7f27d1c1a1e7a531a62db0c9c2\BindgenSpecJsonSchema.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\workspace\osp-gojimmypi\realm\realm-core-gojimmypi\bindgen\CMakeLists.txt" />
+    <CustomBuild Include="$(REALM_CORE_ROOT)\bindgen\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(REALM_VS2022_ROOT)\bindgen\CMakeFiles\BindgenSpecJsonSchema" />
