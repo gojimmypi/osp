@@ -5,8 +5,8 @@
         <REALM_VERBOSE_MSBUILD>True</REALM_VERBOSE_MSBUILD>
 
         <!-- Enter Windows paths, no trailing slash: -->
-        <REALM_CORE_ROOT>C:/workspace/osp-gojimmypi/realm/realm-core-gojimmypi</REALM_CORE_ROOT>
-        <REALM_VS2022_ROOT>C:/workspace/osp-gojimmypi/realm/VS2022</REALM_VS2022_ROOT>
+        <REALM_CORE_ROOT>C:/test/osp/realm/realm-core</REALM_CORE_ROOT>
+        <REALM_VS2022_ROOT>C:/test/osp/realm/VS2022</REALM_VS2022_ROOT>
     </PropertyGroup>
 
     <!-- Validate directory existence -->

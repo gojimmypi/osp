@@ -81,6 +81,25 @@ You can also use the `build_wolfssl_with_realm.sh [-u]` script after adjusting t
 
 ## Visual Studio
 
+To fetch files for a Visual Studio build:
+
+```
+#!/bin/bash
+
+# wolfSSL OSP
+git clone https://github.com/gojimmypi/osp.git
+cd osp
+git checkout dev
+git submodule update --init --recursive
+
+# realm-core is part of wolfssl osp/realm
+cd realm
+git clone https://github.com/gojimmypi/realm-core.git
+cd realm-core
+git checkout dev
+git submodule update --init --recursive
+```
+
 The main Ream-Core solution file is located in `VS2022\RealmCore.sln`.
 
 There's also a stand-along wolfSSH solution that contains only the wolfSSL project in `VS2022\wolfssl-VS2022-cmake.sln`
