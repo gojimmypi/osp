@@ -81,6 +81,8 @@ You can also use the `build_wolfssl_with_realm.sh [-u]` script after adjusting t
 
 ## Visual Studio
 
+Developed with the latest version of Visual Studio 2022: 17.11.5
+
 The main Ream-Core solution file is located in `VS2022\RealmCore.sln`.
 
 There's also a stand-along wolfSSH solution that contains only the wolfSSL project in `VS2022\wolfssl-VS2022-cmake.sln`
@@ -118,6 +120,16 @@ git apply ../osp-gojimmypi/realm/realm-commit-a5e87a39.patch
 ```
 
 There's an enclosed WSL script called [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) that automates installation.
+
+## Build from Visual Studio Developer Command Prompt
+
+Start a Developer Command Prompt for VS 2022
+
+```
+cd C:\workspace\osp-%USERNAME%\realm\VS2022
+msbuild .\wolfssl-VS2022-cmake.vcxproj /p:Configuration=Debug /p:Platform=x64
+msbuild .\ALL_BUILD.vcxproj /p:Configuration=Debug /p:Platform=x64
+```
 
 ## Generating a new Realm-core patch file:
 
