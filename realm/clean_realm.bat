@@ -20,32 +20,12 @@ if "%1" == "" (
 SET REALM_DIR=realm-core
 echo Using REALM_DIR=%REALM_DIR%
 
-if "%PARAM%" == "/Q" (
-    :: echo "Delete %REALM_DIR%\CMakeCache.txt"
-    del  /Q     "%REALM_DIR%\CMakeCache.txt"
-
-    :: echo "Delete VS2022\CMakeCache.txt"
-    del  /Q     "VS2022\CMakeCache.txt"
-
-    :: echo "Delete VS2022\*.cmake"
-    del  /Q     "VS2022\*.cmake"
-    del  /Q     "VS2022\_deps\libuv-subbuild\CMakeCache.txt"
-    del  /Q     "VS2022\_deps\libuv-subbuild\CMakeLists.txt"
-    del  /Q     "VS2022\_deps\libuv-build\DartConfiguration.tcl"
-
-) else (
-    :: echo "Delete %REALM_DIR%\CMakeCache.txt"
-    del         "%REALM_DIR%\CMakeCache.txt"
-
-    :: echo "Delete VS2022\CMakeCache.txt"
-    del         "VS2022\CMakeCache.txt"
-
-    :: echo "Delete VS2022\*.cmake"
-    del         "VS2022\*.cmake"
-    del         "VS2022\_deps\libuv-subbuild\CMakeCache.txt"
-    del         "VS2022\_deps\libuv-subbuild\CMakeLists.txt"
-    del         "VS2022\_deps\libuv-build\DartConfiguration.tcl"
-)
+call :DEL_FILE "%REALM_DIR%\CMakeCache.txt"
+call :DEL_FILE "VS2022\CMakeCache.txt"
+call :DEL_FILE "VS2022\*.cmake"
+call :DEL_FILE "VS2022\_deps\libuv-subbuild\CMakeCache.txt"
+call :DEL_FILE "VS2022\_deps\libuv-subbuild\CMakeLists.txt"
+call :DEL_FILE "VS2022\_deps\libuv-build\DartConfiguration.tcl"
 
 
 call :DEL_TREE "%REALM_DIR%\out"
@@ -167,14 +147,36 @@ goto :DONE
     :: echo Calling DEL_TREE: %~1
 
     if exist "%~1\" (
-        echo Deleting %PARAM% directory: "%~1"
         if "%PARAM%" == "/Q" (
             rd /S /Q "%~1"
         ) else (
+            echo Deleting %PARAM% directory: "%~1"
             rd /S "%~1"
         )
     ) else (
-        echo Could Not Find "%~1"
+        if NOT "%PARAM%" == "/Q" (
+            echo Could Not Find "%~1"
+        )
+    )
+:: Return to the caller
+goto :EOF
+
+
+:: Function DEL_FILE [file name]
+:DEL_FILE
+    :: echo Calling DEL_FILE: %~1
+
+    if exist "%~1\" (
+        echo Deleting %PARAM% file: "%~1"
+        if "%PARAM%" == "/Q" (
+            del /Q "%~1"
+        ) else (
+            del "%~1"
+        )
+    ) else (
+        if NOT "%PARAM%" == "/Q" (
+            echo Could Not Find "%~1"
+        )
     )
 :: Return to the caller
 goto :EOF
