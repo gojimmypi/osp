@@ -50,9 +50,9 @@
             <DefineConstants>$(DefineConstants);WOLFSSL_VERBOSE_MSBUILD</DefineConstants>
         </PropertyGroup>
 
-        <Message Text="*******************************************" Importance="high" />
-        <Message Text="wolfssl-GlobalProperties.props settings" Importance="high "/>
-        <Message Text="*******************************************" Importance="high" />
+        <Message Text="***********************************************************************************************" Importance="high" />
+        <Message Text="**************************  wolfssl-GlobalProperties.props settings  **************************" Importance="high "/>
+        <Message Text="***********************************************************************************************" Importance="high" />
         <Message Condition="$(WOLFSSL_ROOT) == 'NOT_FOUND'"
                  Text="Error: WOLFSSL_ROOT directory does not exist!  $(WOLFSSL_ROOT) " Importance="high" />
         <Message Condition="$(WOLFSSL_ROOT) != 'NOT_FOUND'"
@@ -65,8 +65,8 @@
 
         <Message Text="This VS_ROOT=$(VS_ROOT)" />
         <Message Text="This MSBuildProjectDirectory=$(MSBuildProjectDirectory)" />
-        <Message Text="*******************************************" Importance="high" />
-        <Message Text="**  end wolfssl-GlobalProperties.props   **" Importance="high" />
-        <Message Text="*******************************************" Importance="high" />
+        <Message Text="***********************************************************************************************" Importance="high" />
+        <Message Text="****************************  end wolfssl-GlobalProperties.props   ****************************" Importance="high" />
+        <Message Text="***********************************************************************************************" Importance="high" />
     </Target>
 </Project>
