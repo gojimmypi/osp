@@ -78,6 +78,7 @@
         <Message Text="realm-core-GlobalProperties.props settings"  Importance="high" />
         <Message Text="*******************************************" Importance="high" />
 
+        <Message Text="GlobalPropertiesRootPath:         $(GlobalPropertiesRootPath)" Importance="high" />
         <Message Text="MSBuildThisFileDirectory:         $(MSBuildThisFileDirectory)" Importance="high" />
         <Message Text="REALM_DIR_TEMP    directory found: $(REALM_DIR_TEMP)" Importance="high" />
         <Message Text="REALM_CORE_ROOT   directory found: $(REALM_CORE_ROOT)" Importance="high" />
