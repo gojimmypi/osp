@@ -150,7 +150,7 @@ goto :DONE
         if "%PARAM%" == "/Q" (
             rd /S /Q "%~1"
         ) else (
-            echo Deleting %PARAM% directory: "%~1"
+            echo Deleting directory: "%~1"
             rd /S "%~1"
         )
     ) else (
@@ -167,7 +167,7 @@ goto :EOF
     :: echo Calling DEL_FILE: %~1
 
     if exist "%~1\" (
-        echo Deleting %PARAM% file: "%~1"
+        echo Deleting file: "%~1"
         if "%PARAM%" == "/Q" (
             del /Q "%~1"
         ) else (
