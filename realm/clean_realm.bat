@@ -6,13 +6,15 @@
 
 if "%1" == "" (
     echo Verbose confirnmation mode. Use /Q to suppress
+    SET PARAM=""
 ) else if "%1" == "/Q" (
     echo Quiet mode: removing directories....
+    SET PARAM=/Q
 ) else (
     echo ERROR: The only supported option is: /Q
     goto DONE
 )
-
+echo "Param=%PARAM%"
 SET REALM_DIR="realm-core-gojimmypi"
 
 echo "Delete %REALM_DIR%\CMakeCache.txt"
@@ -144,10 +146,16 @@ goto :DONE
 
 :: Function DEL_TREE [directory name]
 :DEL_TREE
-	echo Calling DEL_TREE: %~1
+	:: echo Calling DEL_TREE: %~1
+
 	if exist "%~1\" (
-		echo Deleting directory: "%~1"
-		rd /S %1 "%~1"
+		echo Deleting %PARAM% directory: "%~1"
+        if "%PARAM%" == "/Q" (
+            echo "Quiet"
+    		rd /S /Q "%~1"
+        ) else (
+    		rd /S "%~1"
+        )
 	) else (
 		echo Could Not Find "%~1"
 	)
