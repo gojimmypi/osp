@@ -1,16 +1,28 @@
 :: todo add feature to detect if install was user-specific (i.e. used -u param)
 @echo off
+::
+:: clean_realm.bat [/Q]
+:: Do not delete zlib\Debug, it is typically not actually a compiled file, rather copied.
+
+if "%1" == "" (
+    echo Verbose confirnmation mode. Use /Q to suppress
+) else if "%1" == "/Q" (
+    echo Quiet mode: removing directories....
+) else (
+    echo ERROR: The only supported option is: /Q
+    goto DONE
+)
 
 SET REALM_DIR="realm-core-gojimmypi"
 
 echo "Delete %REALM_DIR%\CMakeCache.txt"
-del         "%REALM_DIR%\CMakeCache.txt"
+del         "%REALM_DIR%\CMakeCache.txt" %1
 
 echo "Delete VS2022\CMakeCache.txt"
-del          VS2022\CMakeCache.txt"
+del          VS2022\CMakeCache.txt"  %1
 
 echo "Delete VS2022\*.cmake"
-del         "VS2022\*.cmake"
+del         "VS2022\*.cmake"  %1
 
 call :DEL_TREE "%REALM_DIR%\out"
 call :DEL_TREE "VS2022\x64"
@@ -50,7 +62,10 @@ call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\CompilerI
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\CompilerIdCXX\Debug"
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\VCTargetsPath\x64\Debug"
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\x64\Debug"
-call :DEL_TREE "realm-core\out\build\x64-Debug\zlib\Debug"
+
+:: Do not delete zlib\Debug, it is typically not actually a compiled file, rather copied
+:: call :DEL_TREE "realm-core\out\build\x64-Debug\zlib\Debug"
+
 call :DEL_TREE "realm-core\out\build\x64-Debug\_deps\libuv-subbuild\CMakeFiles\Debug"
 call :DEL_TREE "realm-core\out\build\x64-Debug\_deps\libuv-subbuild\CMakeFiles\3.29.5-msvc4\VCTargetsPath\x64\Debug"
 call :DEL_TREE "realm-core\out\build\x64-Debug\_deps\libuv-subbuild\CMakeFiles\3.29.5-msvc4\x64\Debug"
@@ -106,7 +121,10 @@ call :DEL_TREE "VS2022\test\SyncTestLib.dir\Debug"
 call :DEL_TREE "VS2022\test\SyncTests.dir\Debug"
 call :DEL_TREE "VS2022\test\util\Debug"
 call :DEL_TREE "VS2022\test\util\TestUtil.dir\Debug"
-call :DEL_TREE "VS2022\zlib\Debug"
+
+:: Do not delete zlib\Debug, it is typically not actually a compiled file, rather copied
+:: call :DEL_TREE "VS2022\zlib\Debug"
+
 call :DEL_TREE "VS2022\_deps\libuv-build\Debug"
 call :DEL_TREE "VS2022\_deps\libuv-build\uv_a.dir\Debug"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\CMakeFiles\Debug"
@@ -115,7 +133,12 @@ call :DEL_TREE "VS2022\_deps\libuv-subbuild\CMakeFiles\3.29.5-msvc4\x64\Debug"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\libuv-populate-prefix\src\libuv-populate-stamp\Debug"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\x64\Debug"
 
+call :DEL_TREE "VS2022\_deps\libuv-subbuild\libuv-populate-prefix\src\libuv-populate-stamp"
+call :DEL_TREE "VS2022\_deps\libuv-subbuild\CMakeFiles"
 
+del "VS2022\_deps\libuv-subbuild\CMakeCache.txt" %1
+del "VS2022\_deps\libuv-subbuild\CMakeLists.txt"  %1
+del "VS2022\_deps\libuv-build\DartConfiguration.tcl" %1
 
 goto :DONE
 
@@ -124,7 +147,7 @@ goto :DONE
 	echo Calling DEL_TREE: %~1
 	if exist "%~1\" (
 		echo Deleting directory: "%~1"
-		rd /s "%~1"
+		rd /S %1 "%~1"
 	) else (
 		echo Could Not Find "%~1"
 	)
