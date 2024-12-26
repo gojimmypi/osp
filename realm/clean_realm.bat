@@ -2,29 +2,51 @@
 @echo off
 ::
 :: clean_realm.bat [/Q]
+::
 :: Do not delete zlib\Debug, it is typically not actually a compiled file, rather copied.
 
 if "%1" == "" (
-    echo Verbose confirnmation mode. Use /Q to suppress
+    echo Verbose confirmation mode. Use /Q to suppress
     SET PARAM=""
 ) else if "%1" == "/Q" (
-    echo Quiet mode: removing directories....
+    echo Quiet mode: removing build files and directories....
     SET PARAM=/Q
 ) else (
     echo ERROR: The only supported option is: /Q
     goto DONE
 )
-echo "Param=%PARAM%"
-SET REALM_DIR="realm-core-gojimmypi"
 
-echo "Delete %REALM_DIR%\CMakeCache.txt"
-del         "%REALM_DIR%\CMakeCache.txt" %1
+::echo "Param=%PARAM%"
+SET REALM_DIR=realm-core
+echo Using REALM_DIR=%REALM_DIR%
 
-echo "Delete VS2022\CMakeCache.txt"
-del          VS2022\CMakeCache.txt"  %1
+if "%PARAM%" == "/Q" (
+    :: echo "Delete %REALM_DIR%\CMakeCache.txt"
+    del  /Q     "%REALM_DIR%\CMakeCache.txt"
 
-echo "Delete VS2022\*.cmake"
-del         "VS2022\*.cmake"  %1
+    :: echo "Delete VS2022\CMakeCache.txt"
+    del  /Q     "VS2022\CMakeCache.txt"
+
+    :: echo "Delete VS2022\*.cmake"
+    del  /Q     "VS2022\*.cmake"
+    del  /Q     "VS2022\_deps\libuv-subbuild\CMakeCache.txt"
+    del  /Q     "VS2022\_deps\libuv-subbuild\CMakeLists.txt"
+    del  /Q     "VS2022\_deps\libuv-build\DartConfiguration.tcl"
+
+) else (
+    :: echo "Delete %REALM_DIR%\CMakeCache.txt"
+    del         "%REALM_DIR%\CMakeCache.txt"
+
+    :: echo "Delete VS2022\CMakeCache.txt"
+    del         "VS2022\CMakeCache.txt"
+
+    :: echo "Delete VS2022\*.cmake"
+    del         "VS2022\*.cmake"
+    del         "VS2022\_deps\libuv-subbuild\CMakeCache.txt"
+    del         "VS2022\_deps\libuv-subbuild\CMakeLists.txt"
+    del         "VS2022\_deps\libuv-build\DartConfiguration.tcl"
+)
+
 
 call :DEL_TREE "%REALM_DIR%\out"
 call :DEL_TREE "VS2022\x64"
@@ -138,27 +160,22 @@ call :DEL_TREE "VS2022\_deps\libuv-subbuild\x64\Debug"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\libuv-populate-prefix\src\libuv-populate-stamp"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\CMakeFiles"
 
-del "VS2022\_deps\libuv-subbuild\CMakeCache.txt" %1
-del "VS2022\_deps\libuv-subbuild\CMakeLists.txt"  %1
-del "VS2022\_deps\libuv-build\DartConfiguration.tcl" %1
-
 goto :DONE
 
 :: Function DEL_TREE [directory name]
 :DEL_TREE
-	:: echo Calling DEL_TREE: %~1
+    :: echo Calling DEL_TREE: %~1
 
-	if exist "%~1\" (
-		echo Deleting %PARAM% directory: "%~1"
+    if exist "%~1\" (
+        echo Deleting %PARAM% directory: "%~1"
         if "%PARAM%" == "/Q" (
-            echo "Quiet"
-    		rd /S /Q "%~1"
+            rd /S /Q "%~1"
         ) else (
-    		rd /S "%~1"
+            rd /S "%~1"
         )
-	) else (
-		echo Could Not Find "%~1"
-	)
+    ) else (
+        echo Could Not Find "%~1"
+    )
 :: Return to the caller
 goto :EOF
 
