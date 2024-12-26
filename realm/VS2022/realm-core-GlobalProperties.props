@@ -4,7 +4,9 @@
         <!-- If the Realm paths and other settings are not desired in build output, set WOLFSSL_VERBOSE_MSBUILD to a value other than `True` -->
         <REALM_VERBOSE_MSBUILD>True</REALM_VERBOSE_MSBUILD>
 
-        <!-- Enter Windows paths, no trailing slash: -->
+        <!-- See https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2022 -->
+
+        <!-- Enter Windows paths, include trailing slash: -->
         <!--
         <REALM_DIR_TEMP>$([System.String]::Copy('$(MSBuildThisFileDirectory)').Replace('/', '\'))</REALM_DIR_TEMP>
         <REALM_DIRECTORY>$([System.String]::Copy('$(REALM_DIR_TEMP)').Replace('\\', '\'))</REALM_DIRECTORY>
@@ -21,7 +23,7 @@
 -->
         <GlobalPropertiesRootPath>$(MSBuildThisFileDirectory)</GlobalPropertiesRootPath>
         <REALM_CORE_ROOT>$(GlobalPropertiesRootPath)/../realm-core/</REALM_CORE_ROOT>
-        <REALM_VS2022_ROOT>C:/test/osp/realm/VS2022/</REALM_VS2022_ROOT>
+        <REALM_VS2022_ROOT>$(GlobalPropertiesRootPath)</REALM_VS2022_ROOT>
         <REALM_DIR_TEMP>$(GlobalPropertiesRootPath)/../realm-core/</REALM_DIR_TEMP>
 
     </PropertyGroup>
