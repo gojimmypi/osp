@@ -138,6 +138,16 @@ git apply ../osp-gojimmypi/realm/realm-commit-a5e87a39.patch
 
 There's an enclosed WSL script called [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) that automates installation.
 
+## Build from Visual Studio Developer Command Prompt
+
+Start a Developer Command Prompt for VS 2022
+
+```
+cd C:\workspace\osp-%USERNAME%\realm\VS2022
+msbuild .\wolfssl-VS2022-cmake.vcxproj /p:Configuration=Debug /p:Platform=x64
+msbuild .\ALL_BUILD.vcxproj /p:Configuration=Debug /p:Platform=x64
+```
+
 ## Generating a new Realm-core patch file:
 
 To generate a new patch compare a particular commit (a5e87a39) to your fork/branch (`dev`):
