@@ -22,9 +22,11 @@
         <REALM_VS2022_ROOT>$(MSBuildThisFileDirectory)</REALM_VS2022_ROOT>
 -->
         <GlobalPropertiesRootPath>$(MSBuildThisFileDirectory)</GlobalPropertiesRootPath>
-        <REALM_CORE_ROOT>$(GlobalPropertiesRootPath)/../realm-core/</REALM_CORE_ROOT>
         <REALM_VS2022_ROOT>$(GlobalPropertiesRootPath)</REALM_VS2022_ROOT>
+
+        <!--Reminder REALM_CORE_ROOT is later tidied with NormalizePathTask. -->
         <REALM_DIR_TEMP>$(GlobalPropertiesRootPath)/../realm-core/</REALM_DIR_TEMP>
+        <REALM_CORE_ROOT>$(GlobalPropertiesRootPath)/../realm-core/</REALM_CORE_ROOT>
 
     </PropertyGroup>
     <UsingTask TaskName="NormalizePathTask" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
@@ -44,7 +46,7 @@
 
     <Target Name="ValidateDirectories" BeforeTargets="init;CustomBuild;Compile;Build">
 
-        <Message Text="Success: REALM_DIR_TEMP directory found: 12   $(REALM_DIR_TEMP)" Importance="high" />
+        <Message Text="Success: REALM_DIR_TEMP directory found:    $(REALM_DIR_TEMP)" Importance="high" />
         <Message Text="Success: REALM_DIRECTORY directory found:   $(REALM_DIRECTORY)" Importance="high" />
         <Message Text="Success: REALM_CORE_ROOT1 directory found:  $(REALM_CORE_ROOT1)" Importance="high" />
         <Message Text="Success: REALM_CORE_ROOT directory found:   $(REALM_CORE_ROOT)" Importance="high" />
