@@ -51,20 +51,20 @@
 
     <!-- Validate directory existence -->
     <PropertyGroup Condition="!Exists('$(REALM_CORE_ROOT)')">
-        <REALM_CORE_ROOT>NOT_FOUND</REALM_CORE_ROOT>
+        <REALM_CORE_ROOT_FLAG>NOT_FOUND</REALM_CORE_ROOT_FLAG>
     </PropertyGroup>
 
     <PropertyGroup Condition="!Exists('$(REALM_VS2022_ROOT)')">
-        <REALM_VS2022_ROOT>NOT_FOUND</REALM_VS2022_ROOT>
+        <REALM_VS2022_ROOT_FLAG>NOT_FOUND</REALM_VS2022_ROOT_FLAG>
     </PropertyGroup>
 
     <Target Name="ValidateDirectories" BeforeTargets="Build">
         <!-- Error for REALM_CORE_ROOT -->
-        <Error Condition="$(REALM_CORE_ROOT) == 'NOT_FOUND'"
+        <Error Condition="$(REALM_CORE_ROOT_FLAG) == 'NOT_FOUND'"
                Text="Error: REALM_CORE_ROOT directory not found: $(REALM_CORE_ROOT)" />
 
         <!-- Error for REALM_VS2022_ROOT -->
-        <Error Condition="$(REALM_VS2022_ROOT) == 'NOT_FOUND'"
+        <Error Condition="$(REALM_VS2022_ROOT_FLAG) == 'NOT_FOUND'"
                Text="Error: REALM_VS2022_ROOT directory not found: $(REALM_VS2022_ROOT)" />
     </Target>
 
@@ -83,14 +83,14 @@
         <Message Text="REALM_CORE_ROOT   directory found: $(REALM_CORE_ROOT)" Importance="high" />
         <Message Text="REALM_VS2022_ROOT directory found: $(REALM_VS2022_ROOT)" Importance="high" />
 
-        <Message Condition="$(REALM_CORE_ROOT) == 'NOT_FOUND'"
+        <Message Condition="$(REALM_CORE_ROOT_FLAG) == 'NOT_FOUND'"
                  Text="ERROR: REALM_CORE_ROOT directory does not exist! value='$(REALM_CORE_ROOT)'" Importance="high" />
-        <Message Condition="$(REALM_CORE_ROOT) != 'NOT_FOUND'"
+        <Message Condition="$(REALM_CORE_ROOT_FLAG) != 'NOT_FOUND'"
                  Text="Success: REALM_CORE_ROOT directory found: $(REALM_CORE_ROOT)" Importance="high" />
 
-        <Message Condition="$(REALM_VS2022_ROOT) == 'NOT_FOUND'"
+        <Message Condition="$(REALM_VS2022_ROOT_FLAG) == 'NOT_FOUND'"
                  Text="ERROR: REALM_VS2022_ROOT directory  does not exist! value='$(REALM_VS2022_ROOT)'" Importance="high" />
-        <Message Condition="$(REALM_VS2022_ROOT) != 'NOT_FOUND'"
+        <Message Condition="$(REALM_VS2022_ROOT_FLAG) != 'NOT_FOUND'"
                  Text="Success: REALM_VS2022_ROOT directory found: $(REALM_VS2022_ROOT)" Importance="high" />
 
         <Message Text="*******************************************" Importance="high" />
