@@ -95,6 +95,11 @@ git submodule update --init --recursive
 # realm-core is part of wolfssl osp/realm
 cd realm
 git clone https://github.com/gojimmypi/realm-core.git
+
+# If not cloned to osp/realm/realm-core, 
+# Edit REALM_DIR_TEMP and REALM_CORE_ROOT values in
+#   [workspace]/osp/realm/VS2022/realm-core-GlobalProperties.props
+
 cd realm-core
 git checkout dev
 git submodule update --init --recursive
@@ -102,7 +107,7 @@ git submodule update --init --recursive
 
 The main Ream-Core solution file is located in `VS2022\RealmCore.sln`.
 
-There's also a stand-along wolfSSH solution that contains only the wolfSSL project in `VS2022\wolfssl-VS2022-cmake.sln`
+There's also a stand-alone wolfSSH solution that contains only the wolfSSL project in `VS2022\wolfssl-VS2022-cmake.sln`
 
 The platform and machine independent settings such as `$(CurrentVsInstallRoot)` will likely be reset to fully-qualified paths at build time.
 
@@ -138,6 +143,22 @@ git apply ../osp-gojimmypi/realm/realm-commit-a5e87a39.patch
 
 There's an enclosed WSL script called [build_wolfssl_with_realm.sh](./build_wolfssl_with_realm.sh) that automates installation.
 
+## Clean from DOS Prompt or Visual Studio Developer Command Prompt
+
+Run the enclosed `clean_realm.bat` in the `osp[-%USERNAME%]/realm` directory to delete all build-time generated files:
+
+```
+cd realm
+.\clean_realm.bat
+```
+
+Optionally clean in quiet mode with `/Q` parameter:
+
+```
+cd realm
+.\clean_realm.bat /Q
+```
+
 ## Build from Visual Studio Developer Command Prompt
 
 Start a Developer Command Prompt for VS 2022
@@ -147,6 +168,18 @@ cd C:\workspace\osp-%USERNAME%\realm\VS2022
 msbuild .\wolfssl-VS2022-cmake.vcxproj /p:Configuration=Debug /p:Platform=x64
 msbuild .\ALL_BUILD.vcxproj /p:Configuration=Debug /p:Platform=x64
 ```
+
+## Known Visual Studio Issues
+
+Occasionally the project files may spotaneously reload, replacing all parameterized values with current fixed paths. 
+
+This should be fine for typical end-users, but is highly undesired for developers wishing to contribute changes to project files.
+
+There's no known solution at this time. Undo all changes in the `VS2022` directories, in particular for `.vscproj` and `.filters` files.
+
+Consider performing a full, brute-force clean with `clean_realm.bat`.
+
+For more information see [dotnet/msbuild #5486](https://github.com/dotnet/msbuild/issues/5486) and [Visual Studio Developer Community](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?).
 
 ## Generating a new Realm-core patch file:
 
