@@ -27,7 +27,6 @@ call :DEL_FILE "VS2022\_deps\libuv-subbuild\CMakeCache.txt"
 call :DEL_FILE "VS2022\_deps\libuv-subbuild\CMakeLists.txt"
 call :DEL_FILE "VS2022\_deps\libuv-build\DartConfiguration.tcl"
 
-
 call :DEL_TREE "%REALM_DIR%\out"
 call :DEL_TREE "VS2022\x64"
 call :DEL_TREE "VS2022\Debug"
@@ -166,7 +165,7 @@ goto :EOF
 :DEL_FILE
     :: echo Calling DEL_FILE: %~1
 
-    if exist "%~1\" (
+    if exist "%~1" (
         echo Deleting file: "%~1"
         if "%PARAM%" == "/Q" (
             del /Q "%~1"
