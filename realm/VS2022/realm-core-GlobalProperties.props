@@ -19,9 +19,10 @@
         <Message Text="REALM_CORE_ROOT1  directory found: $(REALM_CORE_ROOT1)" Importance="high" />
         <REALM_VS2022_ROOT>$(MSBuildThisFileDirectory)</REALM_VS2022_ROOT>
 -->
-        <REALM_CORE_ROOT>C://test//osp//realm//realm-CORE</REALM_CORE_ROOT>
-        <REALM_VS2022_ROOT>C:/test/osp/realm/VS2022</REALM_VS2022_ROOT>
-        <REALM_DIR_TEMP>$(MSBuildThisFileDirectory)/../realm-core</REALM_DIR_TEMP>
+        <GlobalPropertiesRootPath>$(MSBuildThisFileDirectory)</GlobalPropertiesRootPath>
+        <REALM_CORE_ROOT>$(GlobalPropertiesRootPath)/../realm-core/</REALM_CORE_ROOT>
+        <REALM_VS2022_ROOT>C:/test/osp/realm/VS2022/</REALM_VS2022_ROOT>
+        <REALM_DIR_TEMP>$(GlobalPropertiesRootPath)/../realm-core/</REALM_DIR_TEMP>
 
     </PropertyGroup>
     <UsingTask TaskName="NormalizePathTask" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
