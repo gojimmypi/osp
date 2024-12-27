@@ -32,23 +32,6 @@ call :DEL_TREE "VS2022\x64"
 call :DEL_TREE "VS2022\Debug"
 call :DEL_TREE "VS2022\test\benchmark-common-tasks\Debug"
 
-call :DEL_TREE C:\test\osp\realm\VS2022\external\catch\src\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\external\IntelRDFPMathLib20U2\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\external\s2\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\realm\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\realm\exec\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\realm\object-store\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\realm\object-store\c_api\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\realm\parser\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\realm\sync\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\src\realm\sync\noinst\server\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\test\benchmark-crud\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\test\benchmark-sync\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\test\object-store\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\test\object-store\benchmarks\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\test\util\NOT_FOUND
-call :DEL_TREE C:\test\osp\realm\VS2022\_deps\libuv-build\NOT_FOUND
-
 call :DEL_TREE "realm-core\out\build\x64-Debug"
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\x64"
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\VCTargetsPath\x64"
@@ -60,6 +43,7 @@ call :DEL_TREE "VS2022\CMakeFiles\3.29.5-msvc4\VCTargetsPath\x64"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\x64"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\CMakeFiles\3.29.5-msvc4\x64"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\CMakeFiles\3.29.5-msvc4\VCTargetsPath\x64"
+call :DEL_TREE "VS2022\_deps\libuv-subbuild\libuv-populate-prefix\tmp"
 
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\CompilerIdC\Debug"
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\CompilerIdCXX\Debug"
