@@ -43,6 +43,7 @@ call :DEL_TREE "VS2022\CMakeFiles\3.29.5-msvc4\VCTargetsPath\x64"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\x64"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\CMakeFiles\3.29.5-msvc4\x64"
 call :DEL_TREE "VS2022\_deps\libuv-subbuild\CMakeFiles\3.29.5-msvc4\VCTargetsPath\x64"
+call :DEL_TREE "VS2022\_deps\libuv-subbuild\libuv-populate-prefix\tmp"
 
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\CompilerIdC\Debug"
 call :DEL_TREE "realm-core\out\build\x64-Debug\CMakeFiles\3.29.5-msvc4\CompilerIdCXX\Debug"
