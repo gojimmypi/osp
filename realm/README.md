@@ -96,7 +96,7 @@ git submodule update --init --recursive
 cd realm
 git clone https://github.com/gojimmypi/realm-core.git
 
-# If not cloned to osp/realm/realm-core, 
+# If not cloned to osp/realm/realm-core,
 # Edit REALM_DIR_TEMP and REALM_CORE_ROOT values in
 #   [workspace]/osp/realm/VS2022/realm-core-GlobalProperties.props
 
@@ -171,7 +171,13 @@ msbuild .\ALL_BUILD.vcxproj /p:Configuration=Debug /p:Platform=x64
 
 ## Known Visual Studio Issues
 
-Occasionally the project files may spotaneously reload, replacing all parameterized values with current fixed paths. This often occurs during a fresh clone.
+Project files were designed with Visual Studio 2022 version 17.11.5.
+
+Some minor issues are known:
+
+### Project Reload Path Replacements
+
+Occasionally the project files may spontaneously reload, replacing all parameterized values with current fixed paths.
 
 This should be fine for typical end-users, but is highly undesired for developers wishing to contribute changes to project files.
 
@@ -183,12 +189,24 @@ For more information see [dotnet/msbuild #5486](https://github.com/dotnet/msbuil
 
 After the initial undo of changes, the reload typically does not occur again. 
 
+This issue seems to be related to the `VS2022/CMakeFiles/VerifyGlobs.cmake` file (see below).
+
+### Maximum Path Length
+
+The default Windows configuration has a maximum 256 character path limitation.
+See [Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry) for more details.
+
+###  VerifyGlobs.cmake Placeholder
+
+Without the `VS2022/CMakeFiles/VerifyGlobs.cmake` file, the initial project build fails due to this auto-generated file being "missing".
+
+Subsequent build attempts are typically successful. Not that _including_ this file also seems to be related to the undesired Project Reload (see above).
+
 ## Generating a new Realm-core patch file:
 
 To generate a new patch compare a particular commit (a5e87a39) to your fork/branch (`dev`):
 
 Save the generated file from this link to the `realm-commit-a5e87a39.patch` file:
-
 
 
 ```
@@ -233,6 +251,8 @@ openSSL disabled `0` and wolfSSL enabled `1` like this:
 ```
 
 ### CMake error Not a file: VerifyGlobs.cmake
+
+This file is typically not included in source control, but was found to be problematic when missing in this solution. Thus, there's a placeholder file.
 
 ```
 1>Checking File Globs
