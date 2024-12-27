@@ -96,7 +96,7 @@ git submodule update --init --recursive
 cd realm
 git clone https://github.com/gojimmypi/realm-core.git
 
-# If not cloned to osp/realm/realm-core, 
+# If not cloned to osp/realm/realm-core,
 # Edit REALM_DIR_TEMP and REALM_CORE_ROOT values in
 #   [workspace]/osp/realm/VS2022/realm-core-GlobalProperties.props
 
@@ -171,7 +171,13 @@ msbuild .\ALL_BUILD.vcxproj /p:Configuration=Debug /p:Platform=x64
 
 ## Known Visual Studio Issues
 
-Occasionally the project files may spotaneously reload, replacing all parameterized values with current fixed paths. 
+Project files were designed with Visual Studio 2022 version 17.11.5.
+
+Some minor issues are known:
+
+### Project Reload Path Replacements
+
+Occasionally the project files may spontaneously reload, replacing all parameterized values with current fixed paths.
 
 This should be fine for typical end-users, but is highly undesired for developers wishing to contribute changes to project files.
 
@@ -180,6 +186,11 @@ There's no known solution at this time. Undo all changes in the `VS2022` directo
 Consider performing a full, brute-force clean with `clean_realm.bat`.
 
 For more information see [dotnet/msbuild #5486](https://github.com/dotnet/msbuild/issues/5486) and [Visual Studio Developer Community](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?).
+
+### Maximum Path Length
+
+The default Windows configuration has a maximum 256 character path limitation.
+See [Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry) for more details.
 
 ## Generating a new Realm-core patch file:
 
