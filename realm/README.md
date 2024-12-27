@@ -187,6 +187,10 @@ Consider performing a full, brute-force clean with `clean_realm.bat`.
 
 For more information see [dotnet/msbuild #5486](https://github.com/dotnet/msbuild/issues/5486) and [Visual Studio Developer Community](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?).
 
+After the initial undo of changes, the reload typically does not occur again. 
+
+This issue seems to be related to the `VS2022/CMakeFiles/VerifyGlobs.cmake` file (see below).
+
 # Extra VerifyGlobs.cmake file in CMakeFiles
 
 There's a `VerifyGlobs.cmake` placeholder file located in `[osp]\realm\VS2022\CMakeFiles` that is required for fresh clones to build properly.
@@ -196,12 +200,17 @@ There's a `VerifyGlobs.cmake` placeholder file located in `[osp]\realm\VS2022\CM
 The default Windows configuration has a maximum 256 character path limitation.
 See [Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry) for more details.
 
+###  VerifyGlobs.cmake Placeholder
+
+Without the `VS2022/CMakeFiles/VerifyGlobs.cmake` file, the initial project build fails due to this auto-generated file being "missing".
+
+Subsequent build attempts are typically successful. Not that _including_ this file also seems to be related to the undesired Project Reload (see above).
+
 ## Generating a new Realm-core patch file:
 
 To generate a new patch compare a particular commit (a5e87a39) to your fork/branch (`dev`):
 
 Save the generated file from this link to the `realm-commit-a5e87a39.patch` file:
-
 
 
 ```
@@ -246,6 +255,8 @@ openSSL disabled `0` and wolfSSL enabled `1` like this:
 ```
 
 ### CMake error Not a file: VerifyGlobs.cmake
+
+This file is typically not included in source control, but was found to be problematic when missing in this solution. Thus, there's a placeholder file.
 
 ```
 1>Checking File Globs
