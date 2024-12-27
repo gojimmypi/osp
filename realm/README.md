@@ -171,7 +171,7 @@ msbuild .\ALL_BUILD.vcxproj /p:Configuration=Debug /p:Platform=x64
 
 ## Known Visual Studio Issues
 
-Occasionally the project files may spotaneously reload, replacing all parameterized values with current fixed paths. 
+Occasionally the project files may spotaneously reload, replacing all parameterized values with current fixed paths. This often occurs during a fresh clone.
 
 This should be fine for typical end-users, but is highly undesired for developers wishing to contribute changes to project files.
 
@@ -180,6 +180,8 @@ There's no known solution at this time. Undo all changes in the `VS2022` directo
 Consider performing a full, brute-force clean with `clean_realm.bat`.
 
 For more information see [dotnet/msbuild #5486](https://github.com/dotnet/msbuild/issues/5486) and [Visual Studio Developer Community](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?).
+
+After the initial undo of changes, the reload typically does not occur again. 
 
 ## Generating a new Realm-core patch file:
 
