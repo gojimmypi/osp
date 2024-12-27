@@ -187,6 +187,10 @@ Consider performing a full, brute-force clean with `clean_realm.bat`.
 
 For more information see [dotnet/msbuild #5486](https://github.com/dotnet/msbuild/issues/5486) and [Visual Studio Developer Community](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?).
 
+# Extra VerifyGlobs.cmake file in CMakeFiles
+
+There's a `VerifyGlobs.cmake` placeholder file located in `[osp]\realm\VS2022\CMakeFiles` that is required for fresh clones to build properly.
+
 ### Maximum Path Length
 
 The default Windows configuration has a maximum 256 character path limitation.
