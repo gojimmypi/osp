@@ -187,7 +187,7 @@ Consider performing a full, brute-force clean with `clean_realm.bat`.
 
 For more information see [dotnet/msbuild #5486](https://github.com/dotnet/msbuild/issues/5486) and [Visual Studio Developer Community](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?).
 
-After the initial undo of changes, the reload typically does not occur again. 
+After the initial undo of changes, the reload typically does not occur again.
 
 This issue seems to be related to the `VS2022/CMakeFiles/VerifyGlobs.cmake` file (see below).
 
