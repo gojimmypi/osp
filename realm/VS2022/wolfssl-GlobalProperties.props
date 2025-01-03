@@ -4,9 +4,11 @@
         <!-- If the wolfSSL paths and other settings are not desired in build output, set WOLFSSL_VERBOSE_MSBUILD to a value other than `True` -->
         <WOLFSSL_VERBOSE_MSBUILD>True</WOLFSSL_VERBOSE_MSBUILD>
 
-        <!-- Enter Windows paths, no trailing slash: -->
-        <!-- Ensure wolfSSL is configured properly! (double-dash example ./configure not allowed here. See README.md) -->
-        <WOLFSSL_ROOT>c:\workspace\wolfssl</WOLFSSL_ROOT>
+        <!-- Use Windows paths, no trailing slash: -->
+        <!-- Ensure wolfSSL is configured properly! (double-dash example for ./configure not allowed here. See README.md) -->
+		<!-- Set WOLFSSL_ROOT to the environment variable if it exists and is not blank, otherwise use the default value -->
+		<WOLFSSL_ROOT Condition="'$(WOLFSSL_ROOT)' == ''">c:\workspace\wolfssl</WOLFSSL_ROOT>
+		<WOLFSSL_ROOT Condition="'$(WOLFSSL_ROOT)' != ''">$(WOLFSSL_ROOT)</WOLFSSL_ROOT>
 
         <!-- Optional path based on current username
         <WOLFSSL_USER_PATH>c:\workspace\wolfssl-$(USERNAME)</WOLFSSL_USER_PATH>
