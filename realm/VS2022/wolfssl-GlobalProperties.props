@@ -19,6 +19,9 @@
         <WOLFSSL_USER_SETTINGS_DIR_TEMP>$([System.String]::Copy('$(MSBuildThisFileDirectory)/include').Replace('/', '\'))</WOLFSSL_USER_SETTINGS_DIR_TEMP>
         <WOLFSSL_USER_SETTINGS_DIRECTORY>$([System.String]::Copy('$(WOLFSSL_USER_SETTINGS_DIR_TEMP)').Replace('\\', '\'))</WOLFSSL_USER_SETTINGS_DIRECTORY>
         <WOLFSSL_USER_SETTINGS_FILE>$(WOLFSSL_USER_SETTINGS_DIRECTORY)\user_settings.h</WOLFSSL_USER_SETTINGS_FILE>
+
+		<!-- Ensure there are no embedded quotes, such as perhaps those from SET/SETX environment variables -->
+		<WOLFSSL_ROOT>$([System.String]::Copy('$(WOLFSSL_ROOT)').Replace('"', ''))</WOLFSSL_ROOT>
     </PropertyGroup>
 
     <Target Name="ValidateDirectories" BeforeTargets="init;CustomBuild;Compile;Build">
