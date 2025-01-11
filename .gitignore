@@ -111,15 +111,18 @@ stunnel/example/echoserver/echoserver*
 *.plist
 server_err.log
 
+# Visual Studio
 **/.vs
 
-# CMake files to exclude
-**/CMakeCache.txt
-**/*.cmake
-
+# All backup files
 *.bak
-**/install_manifest_devel.txt
-**/build/wolfssl
+
+# CMake files to exclude
+/realm/VS2022/**/CMakeCache.txt
+/realm/VS2022/**/*.cmake
+
+/realm/VS2022/**/install_manifest_devel.txt
+/realm/VS2022/**/build/wolfssl
 
 
 # Download by build process:
@@ -128,7 +131,7 @@ server_err.log
 /realm/VS2022/**/*.log
 
 # Build-time cache
-/realm/VS2022/CMakeFiles
+/realm/VS2022/CMakeFiles/**/*
 /realm/VS2022/test/DebugSync_**
 /realm/VS2022/test/*.lock
 /realm/VS2022/test/*.realm
@@ -157,3 +160,7 @@ server_err.log
 /realm/VS2022/_deps/libuv-subbuild/CMakeFiles
 /realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/tmp
 /realm/VS2022/_deps/libuv-subbuild/libuv-populate-prefix/src
+
+# Ensure a couple of placeholder files are always included
+!/realm/VS2022/CMakeFiles/VerifyGlobs.cmake
+!/realm/VS2022/CMakeFiles/cmake.verify_globs

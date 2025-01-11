@@ -1,5 +1,5 @@
-#ifndef _WIN_USER_SETTINGS_IDE_H_
-#define _WIN_USER_SETTINGS_IDE_H_
+#ifndef _USER_SETTINGS_H_
+#define _USER_SETTINGS_H_
 
 /* Verify this is Windows */
 #ifdef _WIN32
@@ -167,4 +167,4 @@
 
 
 
-#endif /* _WIN_USER_SETTINGS_H_ */
+#endif /* _USER_SETTINGS_H_ */

@@ -15,7 +15,7 @@ echo.
 del failure_list.log
 for /R "%rootDir%" %%f in (*.vcxproj) do (
     echo Building: %%f
-    call :run_command "msbuild %%f /t:Build /p:Configuration=Debug /p:Platform=x64 "
+    call :run_command "msbuild %%f /t:Build /p:Configuration=Debug /p:Platform=x64 /p:WOLFSSL_ROOT=%rootDir%\..\..\..\wolfssl "
     if !errorlevel! neq 0 (
         echo FAILED: %%f
         echo FAILED: %%f >> failure_list.log

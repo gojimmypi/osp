@@ -21,12 +21,31 @@ MY_SHELLCHECK="shellcheck"
 
 # Check if the executable is available in the PATH
 if command -v "$MY_SHELLCHECK" >/dev/null 2>&1; then
-    # Run your command here
     $MY_SHELLCHECK "$0" || exit 1
 else
-    echo "$MY_SHELLCHECK is not installed. Please install it if changes to this script have been made."
+    echo "ERROR: $MY_SHELLCHECK is not installed. Please install it if changes to this script have been made."
     exit 1
 fi
+
+# Check if the autoconf executable is available in the PATH
+
+# if command -v "$MY_SHELLCHECK" >/dev/null 2>&1; then
+if command -v "autoconf" > /dev/null 2>&1; then
+    echo "Confirmed autoconf is installed"
+else
+    echo "ERROR: autoconf is not installed.."
+    exit 1
+fi
+
+# Check if the libtool executable is available in the PATH
+if dpkg -L libtool | grep -q '/bin/libtool'; then
+    # Run your command here
+    echo "Confirmed libtool is installed"
+else
+    echo "ERROR: libtool is not installed.."
+    exit 1
+fi
+
 
 # Command-line parameters
 
@@ -191,12 +210,12 @@ fi
 if [ "$CONFIGURE_WOLFSSL" = true ]; then
     cd "$WOLFSSL_DIR" || exit 1
     # Step 3: Build and install wolfSSL
+    echo "Running wolfSSL autogen.sh ..."
+    ./autogen.sh
     if [ "$USE_SYSTEM_INSTALL" = true ]; then
         echo "Configuring wolfSSL for system-wide installation..."
-        ./autogen.sh
         ./configure --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data
     else
-        ./autogen.sh
         echo "Configuring wolfSSL for local installation at $WOLFSSL_INSTALL_DIR..."
         ./configure --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data --prefix="$WOLFSSL_INSTALL_DIR"
     fi
