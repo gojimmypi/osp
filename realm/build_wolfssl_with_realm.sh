@@ -19,6 +19,11 @@
 # Specify the executable shell checker you want to use:
 MY_SHELLCHECK="shellcheck"
 
+echo "clean out"
+# rm -rf ./realm-core-gojimmypi/out
+echo "clean build"
+# rm -rf ./realm-core-gojimmypi/build
+
 # Check if the executable is available in the PATH
 if command -v "$MY_SHELLCHECK" >/dev/null 2>&1; then
     $MY_SHELLCHECK "$0" || exit 1
@@ -107,6 +112,10 @@ else
     REALM_CORE_DIR="realm-core"
 fi
 
+# WOLFSSL_DIR="/home/gojimmypi/wolfssl-install-dir"
+
+WOLFSSL_DIR="/mnt/c/workspace/wolfssl-gojimmypi-master"
+
 WOLFSSL_VERSION="v5.7.2-stable"
 REALM_CORE_VERSION="v13.26.0"
 WOLFSSL_TAR="${WOLFSSL_VERSION}.tar.gz"
@@ -130,11 +139,12 @@ BUILD_WOLFSSL=false
 INSTALL_WOLFSSL=false
 
 # Choose to skip parts of realm-core build:
-FETCH_REALM_CORE=true
+FETCH_REALM_CORE=false
 
 # Show summary of key config settings:
 echo "USE_GIT:             $USE_GIT"
 
+echo "WOLFSSL_ROOT:        $WOLFSSL_ROOT"
 echo "WOLFSSL_REPO:        $WOLFSSL_REPO"
 echo "WOLFSSL_DIR:         $WOLFSSL_DIR"
 echo "FETCH_WOLFSSL:       $FETCH_WOLFSSL"
@@ -144,7 +154,7 @@ echo "WOLFSSL_INSTALL_DIR: $WOLFSSL_INSTALL_DIR"
 
 echo "REALM_CORE_REPO:     $REALM_CORE_REPO"
 echo "REALM_CORE_DIR:      $REALM_CORE_DIR"
-
+echo "REALM_HAVE_WOLFSSL:  $REALM_HAVE_WOLFSSL"
 
 # Patch file based on REALM_CORE_COMMIT or REALM_CORE_VERSION
 PATCH_FILE=""
@@ -197,6 +207,7 @@ if [ "$FETCH_WOLFSSL" = true ]; then
 else
     echo "Skipping wolfSSL source fetch"
     if [ ! -d "$WOLFSSL_DIR" ]; then
+        echo "Current directory: $(pwd)"
         echo "Warning: wolfSSL fetch skipped, but directory not found: $WOLFSSL_DIR"
     fi
     if [ ! -d "$WOLFSSL_INSTALL_DIR" ]; then
@@ -214,10 +225,10 @@ if [ "$CONFIGURE_WOLFSSL" = true ]; then
     ./autogen.sh
     if [ "$USE_SYSTEM_INSTALL" = true ]; then
         echo "Configuring wolfSSL for system-wide installation..."
-        ./configure --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data
+        ./configure --enable-static                       --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data
     else
         echo "Configuring wolfSSL for local installation at $WOLFSSL_INSTALL_DIR..."
-        ./configure --enable-static --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data --prefix="$WOLFSSL_INSTALL_DIR"
+        ./configure --enable-static --enable-opensslextra --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data --prefix="$WOLFSSL_INSTALL_DIR"
     fi
     cd ..
 else
@@ -350,11 +361,16 @@ if [ "$USE_SYSTEM_INSTALL" = true ]; then
     cmake -B "$BUILD_DIR"                         -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL="$REALM_HAVE_WOLFSSL" -DREALM_WOLFSSL_ROOT_DIR="/usr/local/lib"        || { echo "cmake failed"; exit 1; }
 else
     echo "Configuring realm-core to use local wolfSSL installation from $WOLFSSL_INSTALL_DIR"
-    cmake -B "$BUILD_DIR" -DREALM_INCLUDE_CERTS=1 -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL="$REALM_HAVE_WOLFSSL" -DREALM_WOLFSSL_ROOT_DIR="$WOLFSSL_INSTALL_DIR"  || { echo "cmake failed"; exit 1; }
+    echo "Current directory: $(pwd)"
+    echo ""
+    echo "cmake -B \"$BUILD_DIR\"                          -DREALM_INCLUDE_CERTS=1 -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL=\"$REALM_HAVE_WOLFSSL\" -DREALM_WOLFSSL_ROOT_DIR=\"$WOLFSSL_INSTALL_DIR\""
+          cmake -B  "$BUILD_DIR" -DWOLFSSL_USE_OPTIONS_H=1 -DREALM_INCLUDE_CERTS=1 -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL="$REALM_HAVE_WOLFSSL"   -DREALM_WOLFSSL_ROOT_DIR="$WOLFSSL_INSTALL_DIR"  || { echo "cmake failed"; exit 1; }
 fi
 
 echo "realm-core configuration complete."
+echo "==============================================================================================="
 echo "Building realm-core..."
+echo "==============================================================================================="
 cmake --build "$BUILD_DIR" || { echo "Build failed"; exit 1; }
 #2>&1 | tee -a output.log
 
