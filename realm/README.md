@@ -44,6 +44,12 @@ BUILD_WOLFSSL=false
 INSTALL_WOLFSSL=false
 ```
 
+Example:
+
+```bash
+cmake -B build -DREALM_INCLUDE_CERTS=1 -DREALM_ENABLE_ENCRYPTION=1 -DREALM_ENABLE_SYNC=1 -DREALM_HAVE_WOLFSSL=1 -DREALM_WOLFSSL_ROOT_DIR=/home/gojimmypi/wolfssl-install-dir
+```
+
 ## Linux manual build: Build wolfSSL
 
 These commands are wrapped in the `build_wolfssl_with_realm.sh` script, mentioned above:
@@ -224,6 +230,28 @@ https://github.com/gojimmypi/realm-core/compare/a5e87a39...gojimmypi:realm-core:
 Do *not* edit the patch file for tailing spaces, etc. It must be saved exactly as generated.
 
 ## Troubleshooting
+
+### Unexpected value of WOLFSSL_ROOT
+
+Check system and user environment settings.
+
+```powershell
+Get-ChildItem Env:WOLFSSL_ROOT
+```
+
+Check registry, particularly if you use `SETX`:
+
+* User-specific: `HKEY_CURRENT_USER\Environment`
+* System-wide: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment`
+
+Check any other parent processes, startup scripts, Group Policy, etc.
+
+If the registry value continues to be undesirably cached, try one or more of these options:
+
+* Use `SET` and `SETX` to update the value.
+* Log out and back in.
+* Restart Windows Explorer from Task Manager.
+* Reboot.
 
 ### Confirming build with wolfSSL
 
