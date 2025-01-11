@@ -19,11 +19,6 @@
 # Specify the executable shell checker you want to use:
 MY_SHELLCHECK="shellcheck"
 
-echo "clean out"
-# rm -rf ./realm-core-gojimmypi/out
-echo "clean build"
-# rm -rf ./realm-core-gojimmypi/build
-
 # Check if the executable is available in the PATH
 if command -v "$MY_SHELLCHECK" >/dev/null 2>&1; then
     $MY_SHELLCHECK "$0" || exit 1
@@ -60,24 +55,42 @@ USE_GIT=true
 # Default repo names is not to use user name suffix. -u to enable.
 USER_REPO_NAME=false
 
+# default is to use out and build prior builds
+FORCE_CLEAN=false
+
 # Check if user wants to use git
-while getopts ":tu" opt; do
-  case $opt in
-    # Specify -t to use tarball, not git
+while getopts ":hctu" opt; do
+    case $opt in
+        # Specify -t to use tarball, not git
+    # help
+    h)
+        echo "-c clean: delete ./out and ./build directories."
+        echo "-h this help."
+        echo "-t use tarball, not git."
+        echo "-u  user username suffixes in directories."
+        ;;
+
+    # -c for brute-force clean (deletes `out` and `build` directories)
+    c)
+        FORCE_CLEAN=true
+        ;;
+
     t)
-      USE_GIT=false
-      ;;
+        USE_GIT=false
+        ;;
 
     # specify -u to use $USER repository fork and file suffix
     u)
-      USER_REPO_NAME=true
-      ;;
+        USER_REPO_NAME=true
+        ;;
+
+    # everything else is an error
     \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
-  esac
-done
+        echo "Invalid option: -$OPTARG, try -h for help" >&2
+        exit 1
+        ;;
+    esac
+done # getopts
 
 # Commit hashes for specific versions when using git
 WOLFSSL_COMMIT="e814d1ba"
@@ -93,6 +106,15 @@ REALM_HAVE_WOLFSSL=1
 
 WOLFSSL_UPSTREAM=""
 REALM_CORE_UPSTREAM=""
+
+#Optionally perform brute force clean
+if [ "$FORCE_CLEAN" = true ]; then
+    echo "clean out"
+    rm -rf ./realm-core-gojimmypi/out
+    echo "clean build"
+    rm -rf ./realm-core-gojimmypi/build
+fi
+
 
 if [ "$USER_REPO_NAME" = true ]; then
     echo "Found user-suffix for repository clones: -$USER"
