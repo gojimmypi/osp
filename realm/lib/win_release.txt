@@ -1,0 +1,70 @@
+Realm version: 13.26.0 with Debug Disabled
+Platform: Windows Win32 unknown 10.0.22621.4391 x86_64
+Encryption: Enabled at compile-time (always encrypt = no)
+
+REALM_MAX_BPNODE_SIZE = 1000
+REALM_MEMDEBUG = Disabled
+
+sizeof (size_t) * 8 = 64
+
+Compiler supported SSE (auto detect):       Yes
+This CPU supports SSE (auto detect):        4.2
+Compiler supported AVX (auto detect):       Yes
+This CPU supports AVX (AVX1) (auto detect): Yes
+
+UNITTEST_RANDOM_SEED:                       4251434855
+Test path prefix:                           C:\workspace\osp-gojimmypi\realm\VS2022\test\Release
+Test resource path:                         C:\workspace\osp-gojimmypi\realm\VS2022\test\Release\resources\
+
+Number of test threads: 20 (default)
+(Use UNITTEST_THREADS=1 to serialize testing)
+
+100000 rows - sequential
+   insertion time: 277 ns/key
+  compaction time: 5 ms
+   lookup obj    : 56 ns/key
+   lookup field  : 70 ns/key
+   lookup same   : 83 ns/key
+   update time   : 162 ns/key
+   erase time    : 546 ns/key
+1000 repetitions of find_all
+    time: 3212 ns/rep
+1000 values in dictionary
+    insertion: 545 ns/val
+    lookup: 438 ns/val
+1000 repetitions in Query_IntPerformance
+    time equal: 6774 ns/rep
+    time not_equal: 6731 ns/rep
+    time sum: 5941 ns/rep
+Normal: 95268 us
+Compacting: 101878 us
+Establishing scenario seq ins/rnd erase
+  compaction time: 4 ms
+Scenario has 100000 rows. Timing....
+   lookup obj    : 145 ns/key
+   lookup field  : 151 ns/key
+   lookup same   : 163 ns/key
+   insertion time: 1538 ns/key
+   lookup time: 758 ns/key
+100000 rows - random
+   insertion time: 531 ns/key
+  compaction time: 4 ms
+   lookup obj    : 171 ns/key
+   lookup field  : 181 ns/key
+   lookup same   : 217 ns/key
+   update time   : 303 ns/key
+   erase time    : 733 ns/key
+5000 BPlusTree - sequential
+   insertion time: 46 ns/row
+   lookup time   : 12 ns/row
+Success: All 1577 tests passed (97233583 checks).
+Test time: 1m22s
+
+Top 5 time usage:
+------------------------------------------------
+Shared_LockFileConcurrentInit             35.63s
+LangBindHelper_ConcurrentLinkViewDeletes  25.22s
+LangBindHelper_HandoverBetweenThreads     22.03s
+Shared_WriterThreads                      19.58s
+Transactions_ListOfBinary                 18.77s
+

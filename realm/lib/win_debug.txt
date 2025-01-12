@@ -1,0 +1,69 @@
+Realm version: 13.26.0 with Debug Enabled
+Platform: Windows Win32 unknown 10.0.22621.4391 x86_64
+Encryption: Enabled at compile-time (always encrypt = no)
+
+REALM_MAX_BPNODE_SIZE = 1000
+REALM_MEMDEBUG = Disabled
+
+sizeof (size_t) * 8 = 64
+
+Compiler supported SSE (auto detect):       Yes
+This CPU supports SSE (auto detect):        4.2
+Compiler supported AVX (auto detect):       Yes
+This CPU supports AVX (AVX1) (auto detect): Yes
+
+UNITTEST_RANDOM_SEED:                       2913318907
+Test path prefix:        C:\..\realm\VS2022\test\Debug
+Test resource path:      C:\..\realm\VS2022\test\Debug\resources\
+
+Number of test threads: 20 (default)
+(Use UNITTEST_THREADS=1 to serialize testing)
+
+100000 rows - sequential
+   insertion time: 3030 ns/key
+  compaction time: 7 ms
+   lookup obj    : 358 ns/key
+   lookup field  : 573 ns/key
+   lookup same   : 577 ns/key
+   update time   : 1305 ns/key
+   erase time    : 39801 ns/key
+Establishing scenario seq ins/rnd erase
+  compaction time: 6 ms
+Scenario has 100000 rows. Timing....
+   lookup obj    : 607 ns/key
+   lookup field  : 767 ns/key
+   lookup same   : 836 ns/key
+1000 repetitions in Query_IntPerformance
+    time equal: 48710 ns/rep
+    time not_equal: 46511 ns/rep
+    time sum: 32135 ns/rep
+1000 repetitions of find_all
+    time: 16736 ns/rep
+1000 values in dictionary
+    insertion: 2398 ns/val
+    lookup: 1723 ns/val
+Normal: 164089 us
+Compacting: 147888 us
+   insertion time: 9643 ns/key
+   lookup time: 5448 ns/key
+100000 rows - random
+   insertion time: 5493 ns/key
+  compaction time: 10 ms
+   lookup obj    : 1414 ns/key
+   lookup field  : 1171 ns/key
+   lookup same   : 1295 ns/key
+   update time   : 2131 ns/key
+   erase time    : 80019 ns/key
+5000 BPlusTree - sequential
+   insertion time: 481 ns/row
+   lookup time   : 61 ns/row
+Success: All 1582 tests passed (116765592 checks).
+Test time: 3m6s
+
+Top 5 time usage:
+---------------------------------------------------------------
+Shared_ManyReaders                                        1m26s
+BPlusTree_FuzzBinary                                     55.38s
+LangBindHelper_RacingAttachers                           50.75s
+Compaction_Large<struct+std::integral_constant<bool,1>>  50.28s
+Many_ConcurrentReaders                                   49.56s
