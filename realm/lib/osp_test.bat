@@ -1,51 +1,20 @@
-# wolfSSL Realm Visual Studio
-
-This VS2022 directory is for building Realm with wolfSSL support in Visual Studio 2022.
-
-The main solution file is named `RealmCore.sln`.
-
-Ensure `#pragma comment(lib, "Ws2_32.lib")` exists in the `user_settings.h` This
-is required to ensure the lrquired library is linked, Otherwise errors like this will be encountered:
-
-```
-Error	LNK2019	unresolved external symbol __imp_closesocket referenced in function wolfSSL_BIO_free	Realm2JSON	[wolfssl/osp]\realm\VS2022\src\realm\exec\wolfssl.lib(ssl.obj)	1
-Error	LNK2001	unresolved external symbol __imp_htons	Realm2JSON
-...etc
-```
-
-This is a typical section in the `user_settings.h`:
-
-```
-/* Verify this is Windows */
-#ifdef _WIN32
-    #ifdef WOLFSSL_VERBOSE_MSBUILD
-        #pragma message("include Ws2_32")
-    #endif
-    /* Microsoft-specific pragma to link Ws2_32.lib */
-    #pragma comment(lib, "Ws2_32.lib")
-#else
-    #error This user_settings.h header is only designed for Windows
-#endif
-
-#ifdef WOLFSSL_VERBOSE_MSBUILD
-    /* See the wolfssl-GlobalProperties.props for build verbosity setting */
-    #pragma message("Confirmed using realm/VS2022/include/user_settings.h")
-#endif
-```
-
-The enclosed project files use cmake. See the [Microsoft CMake projects in Visual Studio](https://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-170).
-
-## Sample Build
-
-Create a directory called `C:\test` and put this text in a batch file called `osp_test.bat`:
-
-```DOS
 :: set THIS_CLONE_DEPTH=--depth 1
 set THIS_CLONE_DEPTH=
 set THIS_GIT_CONFIG=--config core.fileMode=false
-set REALM_CORE_COMMIT="a5e87a39"
+
+:: Choose wolfSSL Version:
 set THIS_WOLFSSL_VERSION="v5.7.6-stable"
+
+:: Original development was for the a5e8 for realm-core v13.26.0 release on 1/22/2024
+:: set REALM_CORE_COMMIT="a5e87a39"
+
+:: We can use the same patch file, and instead apply it to the 5533 commit from 1/29/2024
+set REALM_CORE_COMMIT="5533505d1"
+
+:: Reference the PR branch or dev branch:
 set THIS_OSP_BRANCH="pr-realm-vs2022"
+:: set THIS_OSP_BRANCH="dev"
+
 set USE_REALM_CORE_DEV=1
 
 :: Ensure %ERRORLEVEL% inside if/elsee blocks not evaulated too early
@@ -60,7 +29,7 @@ if exist ".\osp"     echo "osp exists, remove to proceed." && exit /b 1
 if exist ".\wolfssl" echo "wolfssl exists,remove to proceed." && exit /b 1
 
 set THIS_PATH=%cd%
-echo Setting up wolfSSL OSP Realm for Visual Studio in %THIS_PATH%
+echo Setting up wolfSSL OSP Realm for Visual Studio in %THIS_PATH% 
 
 :: # wolfSSL
 git clone %THIS_GIT_CONFIG% --branch %THIS_WOLFSSL_VERSION% https://github.com/wolfssl/wolfssl.git %THIS_CLONE_DEPTH%
@@ -92,12 +61,16 @@ if "%USE_REALM_CORE_DEV%"=="1" (
 
     cd realm-core
 
+    echo "Checking out REALM_CORE_COMMIT=%REALM_CORE_COMMIT%"
     git checkout %REALM_CORE_COMMIT%
     if !ERRORLEVEL! neq 0 goto ERROR
 
     git apply ../realm-commit-a5e87a39.patch
     if !ERRORLEVEL! neq 0 goto ERROR
-    echo "Patch applied"
+    echo "Patch applied to commit %REALM_CORE_COMMIT%"
+
+    :: If later calling the build_wolfssl_with_realm.sh bash script, create semaphore file that patch was applied:
+    echo "Patch Applied to %REALM_CORE_COMMIT% from DOS Batch file" > REALM_CORE_COMMIT_COMPLETE.log
 
     git submodule update --init --recursive
     if !ERRORLEVEL! neq 0 goto ERROR
@@ -126,4 +99,3 @@ echo Error: !ERRORLEVEL!
 
 
 :DONE
-```
