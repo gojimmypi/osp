@@ -140,6 +140,7 @@ server_err.log
 /realm/VS2022/**/generate.stamp
 /realm/VS2022/**/generate.stamp.depend
 /realm/VS2022/external/catch/src/Catch2.dir/**/objects.txt
+/realm/VS2022/**/obj
 
 # Realm build-time generated test files
 /realm/VS2022/Testing/**/CTestCheckpoint.txt
@@ -164,3 +165,4 @@ server_err.log
 # Ensure a couple of placeholder files are always included
 !/realm/VS2022/CMakeFiles/VerifyGlobs.cmake
 !/realm/VS2022/CMakeFiles/cmake.verify_globs
+
