@@ -96,8 +96,9 @@ done # getopts
 WOLFSSL_COMMIT="e814d1ba"
 
 # Adjust if necessary:
-#REALM_CORE_COMMIT="c729fc80"
-REALM_CORE_COMMIT="a5e87a39"
+# REALM_CORE_COMMIT="c729fc80"
+# REALM_CORE_COMMIT="a5e87a39"
+REALM_CORE_COMMIT="5533505d1"
 
 # Variables
 
@@ -109,12 +110,18 @@ REALM_CORE_UPSTREAM=""
 
 #Optionally perform brute force clean
 if [ "$FORCE_CLEAN" = true ]; then
-    echo "clean out"
-    rm -rf ./realm-core-gojimmypi/out
-    echo "clean build"
-    rm -rf ./realm-core-gojimmypi/build
+    if [ "$USER_REPO_NAME" = true ]; then
+        echo "clean ./realm-core-$USER/out"
+        rm -rf "./realm-core-$USER/out"
+        echo "clean ./realm-core-$USER/build"
+        rm -rf "./realm-core-$USER/build"
+    else
+        echo "clean ./realm-core/out"
+        rm -rf "./realm-core/out"
+        echo "clean ./realm-core/build"
+        rm -rf "./realm-core/build"
+    fi
 fi
-
 
 if [ "$USER_REPO_NAME" = true ]; then
     echo "Found user-suffix for repository clones: -$USER"
