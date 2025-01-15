@@ -24,10 +24,21 @@
         <GlobalPropertiesRootPath>$(MSBuildThisFileDirectory)</GlobalPropertiesRootPath>
         <REALM_VS2022_ROOT>$(GlobalPropertiesRootPath)</REALM_VS2022_ROOT>
 
-        <!--Reminder REALM_CORE_ROOT is later tidied with NormalizePathTask from REALM_DIR_TEMP. -->
-        <REALM_DIR_TEMP>$(GlobalPropertiesRootPath)/../realm-core-gojimmypi/</REALM_DIR_TEMP>
-        <REALM_CORE_ROOT>$(GlobalPropertiesRootPath)/../realm-core-gojimmypi/</REALM_CORE_ROOT>
+        <!-- Use MSBuild parameter, or registry if explicitly set -->
+        <REALM_CORE_ROOT Condition="'$(REALM_CORE_ROOT)' != ''">$(REALM_CORE_ROOT)</REALM_CORE_ROOT>
 
+        <!-- Use the environment variable if MSBuild parameter and registry is not set -->
+        <REALM_CORE_ROOT Condition="'$(REALM_CORE_ROOT)' == '' and '$(env:REALM_CORE_ROOT)' != ''">$(env:REALM_CORE_ROOT)</REALM_CORE_ROOT>
+
+        <!-- Fallback to the default value if neither MSBuild parameter nor environment variable is set -->
+        <REALM_CORE_ROOT Condition="'$(REALM_CORE_ROOT)' == '' and '$(env:REALM_CORE_ROOT)' == ''">c:\workspace\realm-core</REALM_CORE_ROOT>
+
+        <!--Reminder REALM_CORE_ROOT is later tidied with NormalizePathTask from REALM_DIR_TEMP. -->
+        <REALM_DIR_TEMP>$(REALM_CORE_ROOT)</REALM_DIR_TEMP>
+        <!--
+        <REALM_DIR_TEMP>$(GlobalPropertiesRootPath)/../realm-core-$(USERNAME)/</REALM_DIR_TEMP>
+        <REALM_CORE_ROOT>$(GlobalPropertiesRootPath)/../realm-core-$(USERNAME)/</REALM_CORE_ROOT>
+        -->
     </PropertyGroup>
     <ItemDefinitionGroup>
         <PreBuildEvent>
@@ -87,7 +98,7 @@
     </Target>
 
     <Target Name="realmShowProjectMessages" BeforeTargets="init;CustomBuild;Compile;Build" Condition="'$(REALM_VERBOSE_MSBUILD)' == 'True'">
-        <NormalizePathTask InputPath="$(REALM_DIR_TEMP)">
+        <NormalizePathTask InputPath="$(REALM_DIR_TEMP)" Condition="'$(REALM_DIR_TEMP)' != ''">
             <Output TaskParameter="OutputPath" PropertyName="REALM_CORE_ROOT" />
         </NormalizePathTask>
 

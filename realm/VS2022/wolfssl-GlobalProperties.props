@@ -30,7 +30,6 @@
         <!-- Fallback to the default value if neither MSBuild parameter nor environment variable is set -->
         <WOLFSSL_ROOT Condition="'$(WOLFSSL_ROOT)' == '' and '$(env:WOLFSSL_ROOT)' == ''">c:\workspace\wolfssl</WOLFSSL_ROOT>
 
-        <WOLFSSL_ROOT>c:\workspace\wolfssl-gojimmypi-master</WOLFSSL_ROOT>
         <!-- Optional path based on current username
         <WOLFSSL_USER_PATH>c:\workspace\wolfssl-$(USERNAME)</WOLFSSL_USER_PATH>
         <WOLFSSL_ROOT Condition="Exists('$(WOLFSSL_USER_PATH)')">$(WOLFSSL_USER_PATH)</WOLFSSL_ROOT>
