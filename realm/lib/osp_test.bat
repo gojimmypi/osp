@@ -1,6 +1,7 @@
 :: set THIS_CLONE_DEPTH=--depth 1
 set THIS_CLONE_DEPTH=
 set THIS_GIT_CONFIG=--config core.fileMode=false
+SET THIS_WOLFSSL_CLONE_DEPTH=--depth 1
 
 :: Choose wolfSSL Version:
 set THIS_WOLFSSL_VERSION="v5.7.6-stable"
@@ -33,7 +34,7 @@ set THIS_PATH=%cd%
 echo Setting up wolfSSL OSP Realm for Visual Studio in %THIS_PATH% 
 
 :: # wolfSSL
-git clone %THIS_GIT_CONFIG% --branch %THIS_WOLFSSL_VERSION% https://github.com/wolfssl/wolfssl.git %THIS_CLONE_DEPTH%
+git clone %THIS_GIT_CONFIG% --branch %THIS_WOLFSSL_VERSION% https://github.com/wolfssl/wolfssl.git %THIS_WOLFSSL_CLONE_DEPTH%
 if %ERRORLEVEL% neq 0 goto ERROR
 
 :: # wolfSSL OSP branch pr-realm-vs2022 from gojimmypi fork
@@ -48,6 +49,7 @@ cd osp
 :: # realm-core is part of wolfssl osp/realm
 cd realm
 
+echo "Checking if using gojimmypi DEV branch."
 if "%USE_REALM_CORE_DEV%"=="0" goto REALM_FETCH
 
 :REALM_DEV_FETCH
@@ -61,6 +63,7 @@ if "%USE_REALM_CORE_DEV%"=="0" goto REALM_FETCH
     goto REALM_FETCH_DONE
 
 :REALM_FETCH
+    :: Note the desired commit is so old, we can't do a shallow clone
     git clone %THIS_GIT_CONFIG% https://github.com/realm/realm-core.git
     if !ERRORLEVEL! neq 0 goto ERROR
 
