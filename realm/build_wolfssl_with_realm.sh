@@ -46,7 +46,6 @@ else
     exit 1
 fi
 
-
 # Command-line parameters
 
 # Default method is using git, -t to disable; set this to false to use curl for tarball
@@ -58,8 +57,13 @@ USER_REPO_NAME=false
 # default is to use out and build prior builds
 FORCE_CLEAN=false
 
+# Use -i to enable wolfssl config/build/install
+CONFIGURE_WOLFSSL=false
+BUILD_WOLFSSL=false
+INSTALL_WOLFSSL=false
+
 # Check if user wants to use git
-while getopts ":hctu" opt; do
+while getopts ":hictu" opt; do
     case $opt in
         # Specify -t to use tarball, not git
     # help
@@ -68,6 +72,13 @@ while getopts ":hctu" opt; do
         echo "-h this help."
         echo "-t use tarball, not git."
         echo "-u  user username suffixes in directories."
+        ;;
+
+    # specify -i to install wolfssl to
+    i)
+        CONFIGURE_WOLFSSL=true
+        BUILD_WOLFSSL=true
+        INSTALL_WOLFSSL=true
         ;;
 
     # -c for brute-force clean (deletes `out` and `build` directories)
@@ -96,9 +107,8 @@ done # getopts
 WOLFSSL_COMMIT="e814d1ba"
 
 # Adjust if necessary:
-# REALM_CORE_COMMIT="c729fc80"
-# REALM_CORE_COMMIT="a5e87a39"
-REALM_CORE_COMMIT="5533505d1"
+#REALM_CORE_COMMIT="c729fc80"
+REALM_CORE_COMMIT="a5e87a39"
 
 # Variables
 
@@ -143,7 +153,7 @@ fi
 
 # WOLFSSL_DIR="/home/gojimmypi/wolfssl-install-dir"
 
-WOLFSSL_DIR="/mnt/c/workspace/wolfssl-gojimmypi-master"
+# WOLFSSL_DIR="/mnt/c/workspace/wolfssl-gojimmypi-master"
 
 WOLFSSL_VERSION="v5.7.2-stable"
 REALM_CORE_VERSION="v13.26.0"
@@ -163,9 +173,6 @@ USE_SYSTEM_INSTALL=false
 
 # Choose to skip parts of wolfSSL build:
 FETCH_WOLFSSL=false
-CONFIGURE_WOLFSSL=false
-BUILD_WOLFSSL=false
-INSTALL_WOLFSSL=false
 
 # Choose to skip parts of realm-core build:
 FETCH_REALM_CORE=false
@@ -206,6 +213,8 @@ if [ "$FETCH_WOLFSSL" = true ]; then
             if [ -n "$WSL_DISTRO_NAME" ]; then
                 # Ignore file permissions changes in WSL
                 git config core.fileMode false
+                # never convert line endings
+                git config core.autocrlf false
             fi
 
             echo "Checking out commit $WOLFSSL_COMMIT..."
@@ -238,9 +247,19 @@ else
     if [ ! -d "$WOLFSSL_DIR" ]; then
         echo "Current directory: $(pwd)"
         echo "Warning: wolfSSL fetch skipped, but directory not found: $WOLFSSL_DIR"
+        echo "Checking parent..."
+        ls ..
+        if [ -d "../$WOLFSSL_DIR" ]; then
+            WOLFSSL_DIR="../$WOLFSSL_DIR"
+            echo "Found woulfSSL in parent directory: '$WOLFSSL_DIR'"
+        fi
+        if [ -d "../../$WOLFSSL_DIR" ]; then
+            WOLFSSL_DIR="../../$WOLFSSL_DIR"
+            echo "Found woulfSSL in parent directory: '$WOLFSSL_DIR'"
+        fi
     fi
-    if [ ! -d "$WOLFSSL_INSTALL_DIR" ]; then
-        echo "Error: wolfSSL fetch skipped and install directory not found: $WOLFSSL_INSTALL_DIR"
+    if [[ (! -d "$WOLFSSL_INSTALL_DIR") && (! "$CONFIGURE_WOLFSSL" == true || ! "$BUILD_WOLFSSL" == true || ! "$INSTALL_WOLFSSL" == true) ]]; then
+        echo "Error: wolfSSL fetch skipped and install directory not found: '$WOLFSSL_INSTALL_DIR'. Try using '-i'"
         exit 1
     else
         echo "Warning: wolfSSL fetch skipped, using prior install found in: $WOLFSSL_INSTALL_DIR"
@@ -248,7 +267,8 @@ else
 fi
 
 if [ "$CONFIGURE_WOLFSSL" = true ]; then
-    cd "$WOLFSSL_DIR" || exit 1
+    echo "$WOLFSSL_DIR"
+    pushd "$WOLFSSL_DIR" || exit 1
     # Step 3: Build and install wolfSSL
     echo "Running wolfSSL autogen.sh ..."
     ./autogen.sh
@@ -259,24 +279,24 @@ if [ "$CONFIGURE_WOLFSSL" = true ]; then
         echo "Configuring wolfSSL for local installation at $WOLFSSL_INSTALL_DIR..."
         ./configure --enable-static --enable-opensslextra --enable-opensslall --enable-enckeys --enable-certgen --enable-context-extra-user-data --prefix="$WOLFSSL_INSTALL_DIR"
     fi
-    cd ..
+    popd || exit 1
 else
     echo "Skipping wolfSSL configure"
 fi
 
 if [ "$BUILD_WOLFSSL" = true ]; then
-    cd "$WOLFSSL_DIR" || exit 1
+    pushd "$WOLFSSL_DIR" || exit 1
     echo "Building and installing wolfSSL..."
     make -j"$(nproc)"
-    cd ..
+    popd || exit 1
 else
     echo "Skipping wolfSSL build"
 fi
 
 if [ "$INSTALL_WOLFSSL" = true ]; then
-    cd "$WOLFSSL_DIR" || exit
+    pushd "$WOLFSSL_DIR" || exit
     make install
-    cd ..
+    popd || exit 1
 else
     echo "Skipping wolfSSL install"
 fi
@@ -310,6 +330,8 @@ if [ "$FETCH_REALM_CORE" = true ]; then
             echo "Found WSL distro, setting core.fileMode"
             # Ignore file permissions changes in WSL
             git config core.fileMode false
+            # never convert line endings
+            git config core.autocrlf false
         else
             echo "Not a WSL distro, not setting core.fileMode"
         fi
