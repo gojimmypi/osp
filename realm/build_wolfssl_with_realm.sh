@@ -47,6 +47,7 @@ else
 fi
 
 # Command-line parameters
+USE_REALM_CORE_DEV=1
 
 # Default method is using git, -t to disable; set this to false to use curl for tarball
 USE_GIT=true
@@ -107,8 +108,12 @@ done # getopts
 WOLFSSL_COMMIT="e814d1ba"
 
 # Adjust if necessary:
-#REALM_CORE_COMMIT="c729fc80"
-REALM_CORE_COMMIT="a5e87a39"
+# REALM_CORE_COMMIT="c729fc80"
+# REALM_CORE_COMMIT="a5e87a39"
+REALM_CORE_COMMIT="5533505d1"
+
+# Patch file based on REALM_CORE_COMMIT or REALM_CORE_VERSION
+PATCH_FILE="realm-commit-$REALM_CORE_COMMIT.patch"
 
 # Variables
 
@@ -191,9 +196,6 @@ echo "WOLFSSL_INSTALL_DIR: $WOLFSSL_INSTALL_DIR"
 echo "REALM_CORE_REPO:     $REALM_CORE_REPO"
 echo "REALM_CORE_DIR:      $REALM_CORE_DIR"
 echo "REALM_HAVE_WOLFSSL:  $REALM_HAVE_WOLFSSL"
-
-# Patch file based on REALM_CORE_COMMIT or REALM_CORE_VERSION
-PATCH_FILE=""
 
 if [ "$FETCH_WOLFSSL" = true ]; then
     # Step 2: Download or clone wolfSSL
@@ -383,20 +385,24 @@ cd "$REALM_CORE_DIR" || { echo "Cannot find $REALM_CORE_DIR"; exit 1; }
 if [ -f "REALM_CORE_COMMIT_COMPLETE.log" ]; then
     echo "Found REALM_CORE_COMMIT_COMPLETE.log, skipping patch."
 else
-    echo "Current directory to apply $PATCH_FILE patch: $(pwd)"
-    # Step 5: Apply patch if patch file exists for realm-core
-    echo "Looking for path file $PATCH_FILE in $(pwd)"
-    if [ -f "../$PATCH_FILE" ]; then
-        echo "Applying patch to realm-core: ../$PATCH_FILE"
-
-        git apply "../$PATCH_FILE" || { echo "Failed to apply patch: ../$PATCH_FILE"; git status; exit 1; }
-
-        echo "breadcrumb" > "REALM_CORE_COMMIT_COMPLETE.log"
+    if [ "$USE_REALM_CORE_DEV" == 1 ]; then
+        echo "USE_REALM_CORE_DEV==1 skips patch"
     else
-        # The current build systems expect no upstream support. Patch is required.
-        # See also: https://github.com/realm/realm-core/pull/6535
-        echo "No patch applied, abort"
-        exit 1
+        echo "Current directory to apply $PATCH_FILE patch: $(pwd)"
+        # Step 5: Apply patch if patch file exists for realm-core
+        echo "Looking for patch file $PATCH_FILE in $(pwd)"
+        if [ -f "../$PATCH_FILE" ]; then
+            echo "Applying patch to realm-core: ../$PATCH_FILE"
+
+            git apply "../$PATCH_FILE" || { echo "Failed to apply patch: ../$PATCH_FILE"; git status; exit 1; }
+
+            echo "breadcrumb" > "REALM_CORE_COMMIT_COMPLETE.log"
+        else
+            # The current build systems expect no upstream support. Patch is required.
+            # See also: https://github.com/realm/realm-core/pull/6535
+            echo "No patch applied, abort"
+            exit 1
+        fi
     fi
 fi
 
