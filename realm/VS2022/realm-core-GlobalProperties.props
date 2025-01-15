@@ -30,6 +30,9 @@
         <!-- Use the environment variable if MSBuild parameter and registry is not set -->
         <REALM_CORE_ROOT Condition="'$(REALM_CORE_ROOT)' == '' and '$(env:REALM_CORE_ROOT)' != ''">$(env:REALM_CORE_ROOT)</REALM_CORE_ROOT>
 
+        <!-- Look in parent neither MSBuild parameter nor environment variable is set -->
+        <REALM_CORE_ROOT Condition="'$(REALM_CORE_ROOT)' == '' and '$(env:REALM_CORE_ROOT)' == '' and Exists('$(REALM_VS2022_ROOT)..\realm-core')">$(REALM_VS2022_ROOT)..\realm-core</REALM_CORE_ROOT>
+
         <!-- Fallback to the default value if neither MSBuild parameter nor environment variable is set -->
         <REALM_CORE_ROOT Condition="'$(REALM_CORE_ROOT)' == '' and '$(env:REALM_CORE_ROOT)' == ''">c:\workspace\realm-core</REALM_CORE_ROOT>
 
