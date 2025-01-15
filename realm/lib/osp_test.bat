@@ -1,3 +1,6 @@
+:: set USE_REALM_CORE_DEV for gojimmypi dev branch, otherwise realm/realm-core with patch applied
+set USE_REALM_CORE_DEV=1
+
 :: set THIS_CLONE_DEPTH=--depth 1
 set THIS_CLONE_DEPTH=
 set THIS_GIT_CONFIG=--config core.fileMode=false
@@ -14,10 +17,8 @@ set REALM_CORE_COMMIT="5533505d1"
 
 :: Reference the PR branch or dev branch:
 set THIS_OSP_BRANCH="pr-realm-vs2022"
-:: set THIS_OSP_BRANCH="dev"
 
-:: set USE_REALM_CORE_DEV for gojimmypi dev branch, otherwise realm/realm-core with patch applied
-set USE_REALM_CORE_DEV=1
+if "%USE_REALM_CORE_DEV%"=="1" set THIS_OSP_BRANCH="dev"
 
 :: Ensure %ERRORLEVEL% inside if/else blocks not evaluated too early
 SETLOCAL EnableDelayedExpansion
