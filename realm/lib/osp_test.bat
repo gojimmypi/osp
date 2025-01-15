@@ -15,9 +15,10 @@ set REALM_CORE_COMMIT="5533505d1"
 set THIS_OSP_BRANCH="pr-realm-vs2022"
 :: set THIS_OSP_BRANCH="dev"
 
+:: set USE_REALM_CORE_DEV for gojimmypi dev branch, otherwise realm/realm-core with patch applied
 set USE_REALM_CORE_DEV=1
 
-:: Ensure %ERRORLEVEL% inside if/elsee blocks not evaulated too early
+:: Ensure %ERRORLEVEL% inside if/else blocks not evaluated too early
 SETLOCAL EnableDelayedExpansion
 
 if "%VSCMD_VER%"=="" (
@@ -47,7 +48,9 @@ cd osp
 :: # realm-core is part of wolfssl osp/realm
 cd realm
 
-if "%USE_REALM_CORE_DEV%"=="1" (
+if "%USE_REALM_CORE_DEV%"=="0" goto REALM_FETCH
+
+:REALM_DEV_FETCH
     git clone %THIS_GIT_CONFIG% --branch dev https://github.com/gojimmypi/realm-core.git %THIS_CLONE_DEPTH%
     if !ERRORLEVEL! neq 0 goto ERROR
 
@@ -55,7 +58,9 @@ if "%USE_REALM_CORE_DEV%"=="1" (
 
     git submodule update --init --recursive
     if !ERRORLEVEL! neq 0 goto ERROR
-) else (
+    goto REALM_FETCH_DONE
+
+:REALM_FETCH
     git clone %THIS_GIT_CONFIG% https://github.com/realm/realm-core.git
     if !ERRORLEVEL! neq 0 goto ERROR
 
@@ -74,7 +79,8 @@ if "%USE_REALM_CORE_DEV%"=="1" (
 
     git submodule update --init --recursive
     if !ERRORLEVEL! neq 0 goto ERROR
-)
+
+:REALM_FETCH_DONE
 
 cd ..\..\..\
 
