@@ -33,6 +33,8 @@ Unfortunately the output error when Visual Studio is unable to launch is not dis
 
 Once Visual Studio is running with the `RealmCore.sln` solution file, right click on an application project such as `CoreTests` and select "_Set as Startup Project_". Press the green "Local Windows Debugger" to run, or press `F5`.
 
+There are additional settings inside the source of `osp_text.bat` that may be helpful under a variety of different circumstances.
+
 ### Getting Started with WSL
 
 Be sure the Linux build requirements are satisfied for [realm-core](https://github.com/realm/realm-core/blob/master/how-to-build.md) and [wolfSSL](https://github.com/wolfSSL/wolfssl/blob/master/INSTALL) (see "0. Building on *nix from git repository").
@@ -53,6 +55,8 @@ cd    /mnt/c/testw
 curl -o osp_test.sh https://raw.githubusercontent.com/gojimmypi/osp/refs/heads/pr-realm-vs2022/realm/lib/osp_test.sh
 ./osp_test.sh
 ```
+
+There are additional settings inside the source of `build_wolfssl_with_realm.sh` that may be helpful under a variety of different circumstances.
 
 ## Development
 
