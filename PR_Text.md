@@ -117,6 +117,6 @@ The patch files are code-only. Some of the tests require updated certificates. (
 There's one highly undesired oddity that has not yet been resolved: Upon a fresh clone, the first build causes all of the project files to
 spontaneously replace all `msbuild` macros in the various project files with actual values for the current user.
 
-For details see the thread in https://github.com/dotnet/msbuild/issues/5486a and the related [Visual Studio Developer Community Issue](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?viewtype=all).
+For details see the thread in https://github.com/dotnet/msbuild/issues/5486 and the related [Visual Studio Developer Community Issue](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?viewtype=all).
 
 There's no problem for the current user, although the automatic changes reverting to hard-coded user names, paths, and VS editions makes it very difficult to contribute to upstream `osp` repository. It also makes it more difficult to find any explicit local changes.
