@@ -99,6 +99,7 @@ There some known issues to be aware of:
 - The `cmake.verify_globs` and `VerifyGlobs.cmake` files in `[OSP_ROOT]/realm/VS2022/CMakeFiles/` are auto-generated but must exist to build the solution.
 - Fallback to OpenSSL in realm-core is known to be incomplete and  will be addressed in a future PR.
 - The project files are likely incompatible with prior versions of Visual Studio, although this was not tested.
+- Unrelated to wolfSSL integration, there's an [included fix](https://github.com/gojimmypi/osp/blob/8858056bc490d8700f2503f6a33166e848dffe48/realm/realm-commit-5533505d1.patch#L2433) for [special characters](https://github.com/realm/realm-core/blob/a5e87a39cffdcc591f3203c11cfca68100d0b9a6/test/test_query2.cpp#L5984) that causes odd test failures. This was later fixed in upstream `realm-core`.
 
 ### realm-core
 
