@@ -4,7 +4,57 @@ This PR builds on https://github.com/wolfSSL/osp/pull/210, adding support for Vi
 
 Tested with latest wolfSSL release v5.7.6-stable, [origin Realm-core}(https://github.com/realm/realm-core) commit `a5e87a39`.
 
-Developed with Visual Studio 2022 v17.11.5.
+I suggest first merging this PR before https://github.com/wolfSSL/osp/pull/228 as some of my changes are included there, but have since been updated.
+
+## Getting Started
+
+From Windows, either `[Windows Key] + S` or just `[Windows Key]` and search for the "Developer Command Prompt for VS 2022". Typically "deve" will be enough to find it. Click to start.
+
+From the Developer Command Prompt, create and navigate to a test directory, then copy the `osp_test.bat` file there:
+
+```
+mkdir c:\test
+cd c:\test
+curl -o osp_test.bat https://raw.githubusercontent.com/gojimmypi/osp/refs/heads/pr-realm-vs2022/realm/lib/osp_test.bat
+
+:: Run the osp_test.bat
+osp_text.bat
+```
+
+Upon successful execution of the script, the [VS2022](https://github.com/gojimmypi/osp/tree/pr-realm-vs2022/realm/VS2022) `RealmCore.sln` should open automatically.
+
+Note: There's a critical Windows update this week that affects Visual Studio. If this script does not launch Visual Studio, check to see if updates are in progress by launching manually:
+
+```
+devenv C:\test\osp\realm\VS2022\RealmCore.sln
+```
+
+Unfortunately the output error when Visual Studio is unable to launch is not displayed in the current `osp_test.bat` script.
+
+Once Visual Studio is running with the `RealmCore.sln` solution file, right click on an application project such as `CoreTests` and select "Set as Startup Project". Press the green "Local Windows Debugger" to run, or press `F5`.
+
+### Getting Started with WSL
+
+If the Windows batch file has already been run as described above, navigate to `osp/realm` and run the `build_wolfssl_with_realm.sh`.
+
+```bash
+cd /mnt/c/test/osp/realm
+./build_wolfssl_with_realm.sh -i -r
+```
+
+Otherwise, there's an enclosed `osp_test.sh` also found in [realm/lib](https://github.com/gojimmypi/osp/tree/pr-realm-vs2022/realm/lib). Download run it:
+
+```bash
+mkdir /mnt/c/testw
+cd    /mnt/c/testw
+
+curl -o osp_test.sh https://raw.githubusercontent.com/gojimmypi/osp/refs/heads/pr-realm-vs2022/realm/lib/osp_test.sh
+./osp_test.sh
+```
+
+## Development
+
+Developed with Visual Studio 2022 v17.11.5 on Windows 11.
 
 The files in the `VS2022` directory were initially generated using `cmake`:
 
@@ -15,16 +65,15 @@ cmake -B build -S . -G "Visual Studio 17 2022" -DWOLFSSL_PATH="C:/workspace/wolf
 cmake --build build --target ALL_BUILD
 ```
 
-Subsequent edits were then applied manually to make the project files more portable related to various
-paths that were system and user specific.
+Subsequent edits were then applied manually to make the project files more portable related to various paths that were otherwise system and user specific.
 
 Configuration files `realm-core-GlobalProperties.props` and `wolfssl-GlobalProperties.props` were hand crafted and manually inserted into project files as appropriate.
 
 ### wolfssl library
 
-The enclosed `wolfssl-VS2022-cmake.vcxproj` is based on [wolfSSL/wolfssl-VS2022.vcxproj)](https://github.com/wolfSSL/wolfssl/blob/master/wolfssl-VS2022.vcxproj) and was crafted specifically for this exercise with different configuration options.
+This PR is configure and was tested using [wolfSSL Release 5.7.6](https://github.com/wolfSSL/wolfssl/releases/tag/v5.7.6-stable).
 
-Included is the [wolfssl-VS2022-cmake.sln](https://github.com/gojimmypi/osp/blob/pr-realm-vs2022/realm/VS2022/wolfssl-VS2022-cmake.sln) optional solution file for stand-alone wolfssl.
+The enclosed `wolfssl-VS2022-cmake.vcxproj` is based on [wolfSSL/wolfssl-VS2022.vcxproj)](https://github.com/wolfSSL/wolfssl/blob/master/wolfssl-VS2022.vcxproj) and was crafted specifically for this exercise with different configuration options.
 
 For additional details, see:
 
@@ -35,17 +84,20 @@ For additional details, see:
 
 There some known issues to be aware of:
 
-- Upstream `realm-core` needs a patch applied for `wolfssl` library support.
+- Upstream `realm-core` needs a patch applied for `wolfssl` library support. Originally this was `a5e87a39`
 - Visual Studio projects reload upon first build after fresh clone.
 - Not all projects are runnable applications; some are just libraries.
 - Local and/or Network firewalls, anti-virus, or other malware detection software and tools may interfere with program operation and test results.
-- Not all realm-core test apps have been updated to support wolfSSL. (e.g. `SyncTests`)
+- Not all realm-core test apps are passing. (e.g. `SyncTests`) See the outdated debug scripts and expired certificates in the older realm-core being used.
 - The `INSTALL` and `PACKAGE` projects have not been tested.
 - The `cmake.verify_globs` and `VerifyGlobs.cmake` files in `[OSP_ROOT]/realm/VS2022/CMakeFiles/` are auto-generated but must exist to build the solution.
+- Fallback to OpenSSL in realm-core is known to be incomplete and  will be addressed in a future PR.
 
 ### realm-core
 
 A wolfssl-specific needs to be applied to realm-core. See [updated realm-commit-a5e87a39.patch](https://github.com/gojimmypi/osp/blob/pr-realm-vs2022/realm/realm-commit-a5e87a39.patch).
+
+The requirements were later revised to be based on a slightly newer, post-release commit.  See [realm-commit-5533505d1.patch](https://github.com/gojimmypi/osp/blob/pr-realm-vs2022/realm/realm-commit-5533505d1.patch)
 
 ### Visual Studio Projects Reload
 
@@ -54,106 +106,3 @@ spontaneously replace all `msbuild` macros in the various project files with act
 
 For details see https://github.com/dotnet/msbuild/issues/5486a the related [Visual Studio Developer Community Issue](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?viewtype=all).
 
-```dos
-:: set THIS_CLONE_DEPTH=--depth 1
-set THIS_CLONE_DEPTH=
-set THIS_GIT_CONFIG=--config core.fileMode=false
-
-:: Choose wolfSSL Version:
-set THIS_WOLFSSL_VERSION="v5.7.6-stable"
-
-:: Original development was for the a5e8 for realm-core v13.26.0 release on 1/22/2024
-:: set REALM_CORE_COMMIT="a5e87a39"
-
-:: We can use the same patch file, and instead apply it to the 5533 commit from 1/29/2024
-set REALM_CORE_COMMIT="5533505d1"
-
-:: Reference the PR branch or dev branch:
-set THIS_OSP_BRANCH="pr-realm-vs2022"
-:: set THIS_OSP_BRANCH="dev"
-
-set USE_REALM_CORE_DEV=1
-
-:: Ensure %ERRORLEVEL% inside if/elsee blocks not evaulated too early
-SETLOCAL EnableDelayedExpansion
-
-if "%VSCMD_VER%"=="" (
-    echo This script must be run from a Visual Studio Developer Command Prompt.
-    exit /b 1
-)
-
-if exist ".\osp"     echo "osp exists, remove to proceed." && exit /b 1
-if exist ".\wolfssl" echo "wolfssl exists,remove to proceed." && exit /b 1
-
-set THIS_PATH=%cd%
-echo Setting up wolfSSL OSP Realm for Visual Studio in %THIS_PATH%
-
-:: # wolfSSL
-git clone %THIS_GIT_CONFIG% --branch %THIS_WOLFSSL_VERSION% https://github.com/wolfssl/wolfssl.git %THIS_CLONE_DEPTH%
-if %ERRORLEVEL% neq 0 goto ERROR
-
-:: # wolfSSL OSP branch pr-realm-vs2022 from gojimmypi fork
-git clone %THIS_GIT_CONFIG% --branch %THIS_OSP_BRANCH% https://github.com/gojimmypi/osp.git %THIS_CLONE_DEPTH%
-if %ERRORLEVEL% neq 0 goto ERROR
-
-cd osp
-
-:: git checkout dev
-:: # git submodule update --init --recursive
-
-:: # realm-core is part of wolfssl osp/realm
-cd realm
-
-if "%USE_REALM_CORE_DEV%"=="1" (
-    git clone %THIS_GIT_CONFIG% --branch dev https://github.com/gojimmypi/realm-core.git %THIS_CLONE_DEPTH%
-    if !ERRORLEVEL! neq 0 goto ERROR
-
-    cd realm-core
-
-    git submodule update --init --recursive
-    if !ERRORLEVEL! neq 0 goto ERROR
-) else (
-    git clone %THIS_GIT_CONFIG% https://github.com/realm/realm-core.git
-    if !ERRORLEVEL! neq 0 goto ERROR
-
-    cd realm-core
-
-    echo "Checking out REALM_CORE_COMMIT=%REALM_CORE_COMMIT%"
-    git checkout %REALM_CORE_COMMIT%
-    if !ERRORLEVEL! neq 0 goto ERROR
-
-    git apply ../realm-commit-a5e87a39.patch
-    if !ERRORLEVEL! neq 0 goto ERROR
-    echo "Patch applied to commit %REALM_CORE_COMMIT%"
-
-    :: If later calling the build_wolfssl_with_realm.sh bash script, create semaphore file that patch was applied:
-    echo "Patch Applied to %REALM_CORE_COMMIT% from DOS Batch file" > REALM_CORE_COMMIT_COMPLETE.log
-
-    git submodule update --init --recursive
-    if !ERRORLEVEL! neq 0 goto ERROR
-)
-
-cd ..\..\..\
-
-:: Set wolfSSL config (instead of ./configure --options...)
-copy %THIS_PATH%\osp\realm\lib\options.h %THIS_PATH%\wolfssl\wolfssl\options.h
-
-:: # Do not use quotes in path here:
-set  WOLFSSL_ROOT=%THIS_PATH%\wolfssl
-
-:: # Quotes are required here:
-setx WOLFSSL_ROOT "%WOLFSSL_ROOT%"
-
-echo See %THIS_PATH%\osp\realm\VS2022 for WOLFSSL_ROOT to %THIS_PATH%\wolfssl
-
-:: start Visual Studio from a fresh shell that contains a new WOLFSSL_ROOT value
-start "wolfSSL Realm" /wait cmd /c "@echo 'WOLFSSL_ROOT=%WOLFSSL_ROOT%' && devenv %THIS_PATH%\osp\realm\VS2022\RealmCore.sln"
-goto DONE
-
-
-:ERROR
-echo Error: !ERRORLEVEL!
-
-
-:DONE
-```
