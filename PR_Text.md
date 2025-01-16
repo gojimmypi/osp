@@ -86,7 +86,7 @@ For additional details, see:
 
 There some known issues to be aware of:
 
-- Upstream `realm-core` needs a patch applied for `wolfssl` library support. Originally this was `a5e87a39`. later updated to `5533505d1`.
+- Upstream `realm-core` needs a patch applied for `wolfssl` library support. Originally this was `a5e87a39` and later updated to `5533505d1`.
 - Visual Studio projects reload upon first build after fresh clone. (see below)
 - Not all projects are runnable applications; some are just libraries.
 - Local and/or Network firewalls, anti-virus, or other malware detection software and tools may interfere with program operation and test results.
