@@ -60,7 +60,7 @@ There are additional settings inside the source of `build_wolfssl_with_realm.sh`
 
 ## Development
 
-Developed with Visual Studio 2022 v17.11.5 on Windows 11. My development branch is [osp/dev)](https://github.com/gojimmypi/osp/tree/dev)
+Developed with Visual Studio 2022 v17.11.5 on Windows 11. My development branch is [osp/dev](https://github.com/gojimmypi/osp/tree/dev)
 
 The files in the `VS2022` directory were initially generated using `cmake`:
 
@@ -111,12 +111,12 @@ Patch files have been generated from my [dev-consolidated](https://github.com/go
 
 The patch can be applied to either desired `realm-core` commit (`a5e87a39` or `5533505d1`), so the files `realm-commit-a5e87a39.patch` and `realm-commit-5533505d1.patch` are the same.
 
-The patch files are code-only. Some of the tests require updated certificates. (e.g. certs at the commits have since expired). See the [upstream realm-core certificate-authority](https://github.com/realm/realm-core/tree/master/certificate-authority) and [upstream realm-core test](https://github.com/realm/realm-core/tree/master/test) for various `.pem` certificates and other testing support files.
+The patch files are code-only updates, primarily as related to wolfSSL. Some of the tests require updated certificates. (e.g. certs at the commits have since expired). See the [upstream realm-core certificate-authority](https://github.com/realm/realm-core/tree/master/certificate-authority) and [upstream realm-core test](https://github.com/realm/realm-core/tree/master/test) for various `.pem` certificates and other testing support files.
 
 ### Visual Studio Projects Reload
 
 There's one highly undesired oddity that has not yet been resolved: Upon a fresh clone, the first build causes all of the project files to
-spontaneously replace all `msbuild` macros in the various project files with actual values for the current user.
+spontaneously replace all `msbuild` macros in the various project files with actual values for the current user. Occasionally afterwards, even when reverting all changes, an unknown spontaneous event will re-trigger the project file edits and reload.
 
 For details see the thread in https://github.com/dotnet/msbuild/issues/5486 and the related [Visual Studio Developer Community Issue](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?viewtype=all).
 
