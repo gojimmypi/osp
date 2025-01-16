@@ -2,13 +2,13 @@
 
 This PR builds on https://github.com/wolfSSL/osp/pull/210, adding support for Visual Studio 2022 Projects for wolfSSL and Realm-core.
 
-Tested with latest wolfSSL release v5.7.6-stable, [origin Realm-core}(https://github.com/realm/realm-core) commit `a5e87a39`.
+Tested with latest wolfSSL release v5.7.6-stable, [origin Realm-core](https://github.com/realm/realm-core) commit `a5e87a39`.
 
 I suggest first merging this PR before https://github.com/wolfSSL/osp/pull/228 as some of my changes are included there, but have since been updated.
 
 ## Getting Started
 
-From Windows, either `[Windows Key] + S` or just `[Windows Key]` and search for the "Developer Command Prompt for VS 2022". Typically "deve" will be enough to find it. Click to start.
+From Windows, either `[Windows Key] + S` or just `[Windows Key]` and search for the "`Developer Command Prompt for VS 2022`". Typically typing `deve` will be enough to find it. Click to start.
 
 From the Developer Command Prompt, create and navigate to a test directory, then copy the `osp_test.bat` file there:
 
@@ -31,11 +31,13 @@ devenv C:\test\osp\realm\VS2022\RealmCore.sln
 
 Unfortunately the output error when Visual Studio is unable to launch is not displayed in the current `osp_test.bat` script.
 
-Once Visual Studio is running with the `RealmCore.sln` solution file, right click on an application project such as `CoreTests` and select "Set as Startup Project". Press the green "Local Windows Debugger" to run, or press `F5`.
+Once Visual Studio is running with the `RealmCore.sln` solution file, right click on an application project such as `CoreTests` and select "_Set as Startup Project_". Press the green "Local Windows Debugger" to run, or press `F5`.
 
 ### Getting Started with WSL
 
-If the Windows batch file has already been run as described above, navigate to `osp/realm` and run the `build_wolfssl_with_realm.sh`.
+Be sure the Linux build requirements are satisfied for [realm-core](https://github.com/realm/realm-core/blob/master/how-to-build.md) and [wolfSSL](https://github.com/wolfSSL/wolfssl/blob/master/INSTALL) (see "0. Building on *nix from git repository").
+
+If the Windows batch file has already been run as described above, navigate to `osp/realm` and run the `build_wolfssl_with_realm.sh` from a bash script in the Windows Subsystem for Linux (WSL):
 
 ```bash
 cd /mnt/c/test/osp/realm
@@ -54,7 +56,7 @@ curl -o osp_test.sh https://raw.githubusercontent.com/gojimmypi/osp/refs/heads/p
 
 ## Development
 
-Developed with Visual Studio 2022 v17.11.5 on Windows 11.
+Developed with Visual Studio 2022 v17.11.5 on Windows 11. My development branch is [](https://github.com/gojimmypi/osp/tree/dev)
 
 The files in the `VS2022` directory were initially generated using `cmake`:
 
@@ -92,12 +94,17 @@ There some known issues to be aware of:
 - The `INSTALL` and `PACKAGE` projects have not been tested.
 - The `cmake.verify_globs` and `VerifyGlobs.cmake` files in `[OSP_ROOT]/realm/VS2022/CMakeFiles/` are auto-generated but must exist to build the solution.
 - Fallback to OpenSSL in realm-core is known to be incomplete and  will be addressed in a future PR.
+- The project files are likely incompatible with prior versions of Visual Studio, although this was not tested.
 
 ### realm-core
 
 A wolfssl-specific needs to be applied to realm-core. See [updated realm-commit-a5e87a39.patch](https://github.com/gojimmypi/osp/blob/pr-realm-vs2022/realm/realm-commit-a5e87a39.patch).
 
 The requirements were later revised to be based on a slightly newer, post-release commit.  See [realm-commit-5533505d1.patch](https://github.com/gojimmypi/osp/blob/pr-realm-vs2022/realm/realm-commit-5533505d1.patch)
+
+Patch files have been generated from my [dev-consolidated](https://github.com/gojimmypi/realm-core/compare/a5e87a39...gojimmypi:realm-core:dev-consolidated.patch) patch link.
+
+The patch can be applied to either desired `realm-core` commit, so the files `realm-commit-a5e87a39.patch` and `realm-commit-5533505d1.patch` are the same.
 
 ### Visual Studio Projects Reload
 
