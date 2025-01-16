@@ -391,6 +391,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\build_wolfssl_with_realm.sh = ..\build_wolfssl_with_realm.sh
 		..\clean_realm.bat = ..\clean_realm.bat
+		..\lib\osp_test.bat = ..\lib\osp_test.bat
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
