@@ -23,7 +23,7 @@ osp_text.bat
 
 Upon successful execution of the script, the [VS2022](https://github.com/gojimmypi/osp/tree/pr-realm-vs2022/realm/VS2022) `RealmCore.sln` should open automatically.
 
-Note: There's a critical Windows update this week that affects Visual Studio. If this script does not launch Visual Studio, check to see if updates are in progress by launching manually:
+*Note*: There's a critical Windows update this week that affects Visual Studio. If the `osp_text.bat` script does not launch Visual Studio, check to see if updates are in progress by launching manually:
 
 ```
 devenv C:\test\osp\realm\VS2022\RealmCore.sln
