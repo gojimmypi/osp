@@ -2,7 +2,7 @@
 
 This PR builds on https://github.com/wolfSSL/osp/pull/210, adding support for Visual Studio 2022 Projects for wolfSSL and Realm-core.
 
-Tested with latest wolfSSL release v5.7.6-stable, [origin Realm-core](https://github.com/realm/realm-core) commit `a5e87a39`.
+Tested with latest wolfSSL release v5.7.6-stable, [origin Realm-core](https://github.com/realm/realm-core) commit `a5e87a39` or `5533505d1`.
 
 I suggest first merging this PR before https://github.com/wolfSSL/osp/pull/228 as some of my changes are included there, but have since been updated.
 
@@ -44,7 +44,7 @@ cd /mnt/c/test/osp/realm
 ./build_wolfssl_with_realm.sh -i -r
 ```
 
-Otherwise, there's an enclosed `osp_test.sh` also found in [realm/lib](https://github.com/gojimmypi/osp/tree/pr-realm-vs2022/realm/lib). Download run it:
+Otherwise, there's an enclosed `osp_test.sh` also found in [realm/lib](https://github.com/gojimmypi/osp/tree/pr-realm-vs2022/realm/lib). Download and run it:
 
 ```bash
 mkdir /mnt/c/testw
@@ -56,7 +56,7 @@ curl -o osp_test.sh https://raw.githubusercontent.com/gojimmypi/osp/refs/heads/p
 
 ## Development
 
-Developed with Visual Studio 2022 v17.11.5 on Windows 11. My development branch is [](https://github.com/gojimmypi/osp/tree/dev)
+Developed with Visual Studio 2022 v17.11.5 on Windows 11. My development branch is [osp/dev)](https://github.com/gojimmypi/osp/tree/dev)
 
 The files in the `VS2022` directory were initially generated using `cmake`:
 
@@ -75,19 +75,19 @@ Configuration files `realm-core-GlobalProperties.props` and `wolfssl-GlobalPrope
 
 This PR is configure and was tested using [wolfSSL Release 5.7.6](https://github.com/wolfSSL/wolfssl/releases/tag/v5.7.6-stable).
 
-The enclosed `wolfssl-VS2022-cmake.vcxproj` is based on [wolfSSL/wolfssl-VS2022.vcxproj)](https://github.com/wolfSSL/wolfssl/blob/master/wolfssl-VS2022.vcxproj) and was crafted specifically for this exercise with different configuration options.
+The enclosed `wolfssl-VS2022-cmake.vcxproj` is based on [wolfSSL/wolfssl-VS2022.vcxproj](https://github.com/wolfSSL/wolfssl/blob/master/wolfssl-VS2022.vcxproj) and was crafted specifically for this exercise with different configuration options.
 
 For additional details, see:
 
 - Newly added [realm/VS2022/REAME.md](https://github.com/gojimmypi/osp/blob/pr-realm-vs2022/realm/VS2022/README.md)
-- Updated [realm/REAME.md](https://github.com/gojimmypi/osp/blob/pr-realm-vs2022/realm/README.md)
+- Updated [realm/REAME.md](https://github.com/gojimmypi/osp/blob/pr-realm-vs2022/realm/README.md#visual-studio)
 
 ## Known Issues
 
 There some known issues to be aware of:
 
-- Upstream `realm-core` needs a patch applied for `wolfssl` library support. Originally this was `a5e87a39`
-- Visual Studio projects reload upon first build after fresh clone.
+- Upstream `realm-core` needs a patch applied for `wolfssl` library support. Originally this was `a5e87a39`. later updated to `5533505d1`.
+- Visual Studio projects reload upon first build after fresh clone. (see below)
 - Not all projects are runnable applications; some are just libraries.
 - Local and/or Network firewalls, anti-virus, or other malware detection software and tools may interfere with program operation and test results.
 - Not all realm-core test apps are passing. (e.g. `SyncTests`) See the outdated debug scripts and expired certificates in the older realm-core being used.
@@ -104,7 +104,9 @@ The requirements were later revised to be based on a slightly newer, post-releas
 
 Patch files have been generated from my [dev-consolidated](https://github.com/gojimmypi/realm-core/compare/a5e87a39...gojimmypi:realm-core:dev-consolidated.patch) patch link.
 
-The patch can be applied to either desired `realm-core` commit, so the files `realm-commit-a5e87a39.patch` and `realm-commit-5533505d1.patch` are the same.
+The patch can be applied to either desired `realm-core` commit (`a5e87a39` or `5533505d1`), so the files `realm-commit-a5e87a39.patch` and `realm-commit-5533505d1.patch` are the same.
+
+The patch files are code-only. Some of the tests require updated certificates. (e.g. certs at the commits have since expired). See the [upstream realm-core certificate-authority](https://github.com/realm/realm-core/tree/master/certificate-authority) and [upstream realm-core test](https://github.com/realm/realm-core/tree/master/test) for various `.pem` certificates and other testing support files.
 
 ### Visual Studio Projects Reload
 
@@ -112,4 +114,3 @@ There's one oddity that has not year been resolved: Upon a fresh clone, the firs
 spontaneously replace all `msbuild` macros in the various project files with actual values for the current user.
 
 For details see https://github.com/dotnet/msbuild/issues/5486a the related [Visual Studio Developer Community Issue](https://developercommunity.visualstudio.com/t/NETSdk-build-runs-unexpectedly-undesir/10816622?viewtype=all).
-
