@@ -1,7 +1,7 @@
 From a86eceee0a2df37ef5191387ed935aa95c81114c Mon Sep 17 00:00:00 2001
 From: gojimmypi <jim@wolfssl.com>
 Date: Mon, 18 Nov 2024 17:22:20 -0800
-Subject: [PATCH 1/5] squashed changes to create patch from a5e87a39
+Subject: [PATCH 1/6] squashed changes to create patch from a5e87a39
 
 ---
  .gitignore                                    | 10 +-
@@ -1250,7 +1250,7 @@ index 4f652f1d6a8..d59848e466a 100644
 From 9c35110861a6f33474ce459ea2bb6418c650a639 Mon Sep 17 00:00:00 2001
 From: gojimmypi <jim@wolfssl.com>
 Date: Mon, 6 Jan 2025 10:56:03 -0800
-Subject: [PATCH 2/5] VS2022 updates for patch update
+Subject: [PATCH 2/6] VS2022 updates for patch update
 
 ---
  CMakeLists.txt                              | 121 ++++++++++++++++++--
@@ -1846,7 +1846,7 @@ index d59848e466a..582bba78ee3 100644
 From 017e7f7557c932bad1d6fdf876d1d98e6165108a Mon Sep 17 00:00:00 2001
 From: gojimmypi <jim@wolfssl.com>
 Date: Mon, 6 Jan 2025 14:50:13 -0800
-Subject: [PATCH 3/5] Optional WOLFSSL_ROOT from env
+Subject: [PATCH 3/6] Optional WOLFSSL_ROOT from env
 
 ---
  CMakeLists.txt | 22 ++++++++++++++++------
@@ -1902,7 +1902,7 @@ index 37e2694e588..e8dffef49b3 100644
 From f472b91833c11fb7d23bdefdd7d597a93c0cd356 Mon Sep 17 00:00:00 2001
 From: gojimmypi <jim@wolfssl.com>
 Date: Sun, 12 Jan 2025 12:58:18 -0800
-Subject: [PATCH 4/5] sync from dev Jan 12
+Subject: [PATCH 4/6] sync from dev Jan 12
 
 ---
  .gitignore                                  |  5 +-
@@ -2759,7 +2759,7 @@ index 582bba78ee3..93762434dda 100644
 From 38aaf166b103cde368b7912b560a1e664645567d Mon Sep 17 00:00:00 2001
 From: gojimmypi <jim@wolfssl.com>
 Date: Wed, 15 Jan 2025 14:23:22 -0800
-Subject: [PATCH 5/5] improved VS detection
+Subject: [PATCH 5/6] improved VS detection
 
 ---
  CMakeLists.txt | 64 ++++++++++++++++++++++++++++++++++++++++++++++++--
@@ -2847,3 +2847,31 @@ index e22e36278cc..7c9dbe75264 100644
  
      # Optional pre-build project steps could go here
      if(0)
+
+From c5e6afc0c463070decaab79b3b85f7238e921e68 Mon Sep 17 00:00:00 2001
+From: gojimmypi <jim@wolfssl.com>
+Date: Thu, 16 Jan 2025 11:20:52 -0800
+Subject: [PATCH 6/6] Add John's cross-compile flag update
+
+---
+ tools/cross_compile.sh | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/tools/cross_compile.sh b/tools/cross_compile.sh
+index 2ef59406733..4a84f52b591 100755
+--- a/tools/cross_compile.sh
++++ b/tools/cross_compile.sh
+@@ -77,6 +77,13 @@ if [ "${OS}" == "android" ]; then
+           -D CMAKE_TOOLCHAIN_FILE="./tools/cmake/android.toolchain.cmake" \
+           -D REALM_ENABLE_ENCRYPTION=1 \
+           -D REALM_VERSION="${VERSION}" \
++          -D WOLFSSL_USE_OPTIONS_H=1 \
++          -D REALM_INCLUDE_CERTS=1 \
++          -D REALM_ENABLE_ENCRYPTION=1 \
++          -D REALM_ENABLE_SYNC=1 \
++          -D REALM_HAVE_WOLFSSL=1 \
++          -D REALM_HAVE_OPENSSL=0 \
++          -D REALM_WOLFSSL_ROOT_DIR="${WOLFSSL_ROOT_DIR}" \
+           -D CPACK_SYSTEM_NAME="Android-${ARCH}" \
+           -D CMAKE_MAKE_PROGRAM=ninja \
+           -G Ninja \
