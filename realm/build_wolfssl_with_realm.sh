@@ -63,14 +63,20 @@ CONFIGURE_WOLFSSL=false
 BUILD_WOLFSSL=false
 INSTALL_WOLFSSL=false
 
+# Choose to skip parts of realm-core build:
+FETCH_REALM_CORE=false
+
+
 # Check if user wants to use git
-while getopts ":hictu" opt; do
+while getopts ":hictur" opt; do
     case $opt in
         # Specify -t to use tarball, not git
     # help
     h)
         echo "-c clean: delete ./out and ./build directories."
         echo "-h this help."
+        echo "-i install wolfssl"
+        echo "-r fetch realm"
         echo "-t use tarball, not git."
         echo "-u  user username suffixes in directories."
         ;;
@@ -89,6 +95,10 @@ while getopts ":hictu" opt; do
 
     t)
         USE_GIT=false
+        ;;
+
+    r)
+        FETCH_REALM_CORE=true
         ;;
 
     # specify -u to use $USER repository fork and file suffix
@@ -178,9 +188,6 @@ USE_SYSTEM_INSTALL=false
 
 # Choose to skip parts of wolfSSL build:
 FETCH_WOLFSSL=false
-
-# Choose to skip parts of realm-core build:
-FETCH_REALM_CORE=false
 
 # Show summary of key config settings:
 echo "USE_GIT:             $USE_GIT"
