@@ -109,7 +109,7 @@ The requirements were later revised to be based on a slightly newer, post-releas
 
 Patch files have been generated from my [dev-consolidated](https://github.com/gojimmypi/realm-core/compare/a5e87a39...gojimmypi:realm-core:dev-consolidated.patch) patch link.
 
-The patch can be applied to either desired `realm-core` commit (`a5e87a39` or `5533505d1`), so the files `realm-commit-a5e87a39.patch` and `realm-commit-5533505d1.patch` are the same.
+The patch can be applied to either desired `realm-core` commit (`a5e87a39` or `5533505d1`), so the files `realm-commit-a5e87a39.patch` and `realm-commit-5533505d1.patch` are the same and can each be a.plied to either commit.
 
 The patch files are code-only updates, primarily as related to wolfSSL. Some of the tests require updated certificates. (e.g. certs at the commits have since expired). See the [upstream realm-core certificate-authority](https://github.com/realm/realm-core/tree/master/certificate-authority) and [upstream realm-core test](https://github.com/realm/realm-core/tree/master/test) for various `.pem` certificates and other testing support files.
 
